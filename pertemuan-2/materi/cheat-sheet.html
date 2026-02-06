@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat Sheet - Pertemuan 2: Gambar & Warna</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navigation Bar */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+            padding: 10px 20px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-bar .nav-title {
+            color: white;
+            font-weight: bold;
+            font-size: 1em;
+        }
+
+        .nav-bar .nav-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 12px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+            font-size: 0.85em;
+        }
+
+        .nav-bar a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 70px 20px 20px 20px;
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+        }
+
+        h1 {
+            color: #d35400;
+            text-align: center;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #e67e22;
+            border-left: 5px solid #d35400;
+            padding-left: 15px;
+            margin-top: 30px;
+        }
+
+        .section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        pre {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 10px;
+            overflow-x: auto;
+            border-left: 4px solid #3498db;
+        }
+
+        code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+        }
+
+        .example {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            border: 2px dashed #4caf50;
+        }
+
+        .result {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            border: 2px solid #9e9e9e;
+        }
+
+        .note {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #ff9800;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th,
+        td {
+            border: 2px solid #d35400;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #fdcb6e;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background: #fef5e7;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-bar {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .nav-bar .nav-links {
+                justify-content: center;
+            }
+        }
+
+        .emoji {
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+        <div class="nav-title">🎨 Pertemuan 2: Cheat Sheet</div>
+        <div class="nav-links">
+            <a href="../../index.html">🏠 Home</a>
+            <a href="index.html">📖 Presentasi</a>
+            <a href="template-siswa.html">✍️ Template</a>
+            <a href="../../pertemuan-1/materi/cheat-sheet.html">⬅️ Pertemuan 1</a>
+        </div>
+    </nav>
+
+    <h1>🎨 Cheat Sheet HTML - Pertemuan 2</h1>
+    <p style="text-align: center; font-size: 1.2em; color: #555;">
+        <b>Gambar, Warna & Gaya Tulisan</b>
+    </p>
+
+    <!-- Gambar -->
+    <div class="section">
+        <h2><span class="emoji">🖼️</span> 1. Memasukkan Gambar</h2>
+
+        <p><b>Tag:</b> <code>&lt;img&gt;</code></p>
+
+        <div class="example">
+            <b>Contoh Kode:</b>
+            <pre><code>&lt;img src="kucing.jpg" width="300px"&gt;</code></pre>
+        </div>
+
+        <table>
+            <tr>
+                <th>Atribut</th>
+                <th>Kegunaan</th>
+                <th>Contoh</th>
+            </tr>
+            <tr>
+                <td><code>src</code></td>
+                <td>Nama/path file gambar</td>
+                <td><code>src="kucing.jpg"</code></td>
+            </tr>
+            <tr>
+                <td><code>width</code></td>
+                <td>Lebar gambar</td>
+                <td><code>width="300px"</code></td>
+            </tr>
+            <tr>
+                <td><code>height</code></td>
+                <td>Tinggi gambar</td>
+                <td><code>height="200px"</code></td>
+            </tr>
+            <tr>
+                <td><code>alt</code></td>
+                <td>Teks alternatif jika gambar tidak muncul</td>
+                <td><code>alt="Foto Kucing"</code></td>
+            </tr>
+        </table>
+
+        <div class="note">
+            <b>⚠️ Penting:</b>
+            <ul>
+                <li>File gambar harus ada di <b>folder yang sama</b> dengan file HTML</li>
+                <li>Perhatikan nama file (huruf besar/kecil harus sama)</li>
+                <li>Tag <code>&lt;img&gt;</code> tidak perlu penutup!</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Warna Tulisan -->
+    <div class="section">
+        <h2><span class="emoji">🌈</span> 2. Memberi Warna Tulisan</h2>
+
+        <p><b>Atribut:</b> <code>style="color:namaWarna"</code></p>
+
+        <div class="example">
+            <b>Contoh Kode:</b>
+            <pre><code>&lt;h1 style="color:red"&gt;Halo Merah!&lt;/h1&gt;
+&lt;p style="color:blue"&gt;Paragraf biru.&lt;/p&gt;</code></pre>
+        </div>
+
+        <div class="result">
+            <b>Hasilnya:</b>
+            <h1 style="color:red; margin: 10px 0;">Halo Merah!</h1>
+            <p style="color:blue; margin: 10px 0;">Paragraf biru.</p>
+        </div>
+
+        <table>
+            <tr>
+                <th>Warna</th>
+                <th>Nama Inggris</th>
+                <th>Contoh</th>
+            </tr>
+            <tr style="color: red;">
+                <td><b>Merah</b></td>
+                <td><code>red</code></td>
+                <td><code>color:red</code></td>
+            </tr>
+            <tr style="color: blue;">
+                <td><b>Biru</b></td>
+                <td><code>blue</code></td>
+                <td><code>color:blue</code></td>
+            </tr>
+            <tr style="color: green;">
+                <td><b>Hijau</b></td>
+                <td><code>green</code></td>
+                <td><code>color:green</code></td>
+            </tr>
+            <tr style="color: orange;">
+                <td><b>Oranye</b></td>
+                <td><code>orange</code></td>
+                <td><code>color:orange</code></td>
+            </tr>
+            <tr style="color: purple;">
+                <td><b>Ungu</b></td>
+                <td><code>purple</code></td>
+                <td><code>color:purple</code></td>
+            </tr>
+            <tr style="color: pink;">
+                <td><b>Pink</b></td>
+                <td><code>pink</code></td>
+                <td><code>color:pink</code></td>
+            </tr>
+            <tr style="color: yellow; background: #333;">
+                <td><b>Kuning</b></td>
+                <td><code>yellow</code></td>
+                <td><code>color:yellow</code></td>
+            </tr>
+            <tr style="color: brown;">
+                <td><b>Coklat</b></td>
+                <td><code>brown</code></td>
+                <td><code>color:brown</code></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Warna Background -->
+    <div class="section">
+        <h2><span class="emoji">🖌️</span> 3. Warna Latar Belakang</h2>
+
+        <p><b>Atribut:</b> <code>style="background-color:namaWarna"</code></p>
+
+        <div class="example">
+            <b>Contoh untuk tulisan:</b>
+            <pre><code>&lt;h1 style="background-color:yellow"&gt;Stabilo Kuning&lt;/h1&gt;</code></pre>
+        </div>
+
+        <div class="result">
+            <b>Hasilnya:</b>
+            <h1 style="background-color:yellow; display: inline-block; padding: 10px; margin: 10px 0;">Stabilo Kuning
+            </h1>
+        </div>
+
+        <div class="example">
+            <b>Contoh untuk seluruh halaman:</b>
+            <pre><code>&lt;body style="background-color:lightblue"&gt;
+  &lt;h1&gt;Website Saya&lt;/h1&gt;
+  &lt;p&gt;Latar belakang halaman biru muda.&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+        </div>
+
+        <div class="note">
+            <b>💡 Warna Background Populer:</b>
+            <ul>
+                <li><code>lightblue</code> - Biru muda</li>
+                <li><code>lightgreen</code> - Hijau muda</li>
+                <li><code>lightyellow</code> - Kuning muda</li>
+                <li><code>lightpink</code> - Pink muda</li>
+                <li><code>lavender</code> - Ungu muda</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Gaya Tulisan -->
+    <div class="section">
+        <h2><span class="emoji">✨</span> 4. Gaya Tulisan (Formatting)</h2>
+
+        <table>
+            <tr>
+                <th>Gaya</th>
+                <th>Tag</th>
+                <th>Contoh Kode</th>
+                <th>Hasil</th>
+            </tr>
+            <tr>
+                <td>Tebal (Bold)</td>
+                <td><code>&lt;b&gt;&lt;/b&gt;</code></td>
+                <td><code>&lt;b&gt;tebal&lt;/b&gt;</code></td>
+                <td><b>tebal</b></td>
+            </tr>
+            <tr>
+                <td>Miring (Italic)</td>
+                <td><code>&lt;i&gt;&lt;/i&gt;</code></td>
+                <td><code>&lt;i&gt;miring&lt;/i&gt;</code></td>
+                <td><i>miring</i></td>
+            </tr>
+            <tr>
+                <td>Garis Bawah</td>
+                <td><code>&lt;u&gt;&lt;/u&gt;</code></td>
+                <td><code>&lt;u&gt;garis&lt;/u&gt;</code></td>
+                <td><u>garis</u></td>
+            </tr>
+        </table>
+
+        <div class="example">
+            <b>Contoh Kombinasi:</b>
+            <pre><code>&lt;p&gt;Saya &lt;b&gt;sangat&lt;/b&gt; suka makan &lt;i&gt;Nasi Goreng&lt;/i&gt;!&lt;/p&gt;
+&lt;p&gt;&lt;u&gt;Ini digarisbawahi&lt;/u&gt; dan &lt;b&gt;&lt;i&gt;ini tebal miring&lt;/i&gt;&lt;/b&gt;.&lt;/p&gt;</code></pre>
+        </div>
+
+        <div class="result">
+            <b>Hasilnya:</b>
+            <p>Saya <b>sangat</b> suka makan <i>Nasi Goreng</i>!</p>
+            <p><u>Ini digarisbawahi</u> dan <b><i>ini tebal miring</i></b>.</p>
+        </div>
+    </div>
+
+    <!-- Contoh Lengkap -->
+    <div class="section">
+        <h2><span class="emoji">📝</span> 5. Contoh Lengkap</h2>
+
+        <div class="example">
+            <b>Kode HTML Lengkap:</b>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+&lt;head&gt;
+    &lt;title&gt;Kartun Favoritku&lt;/title&gt;
+&lt;/head&gt;
+&lt;body style="background-color:lightblue"&gt;
+    
+    &lt;h1 style="color:red"&gt;Naruto Uzumaki&lt;/h1&gt;
+    
+    &lt;img src="naruto.jpg" width="300px"&gt;
+    
+    &lt;h3 style="color:orange"&gt;Mengapa Saya Suka Naruto?&lt;/h3&gt;
+    
+    &lt;p&gt;
+        Saya suka &lt;b&gt;Naruto&lt;/b&gt; karena dia &lt;i&gt;pantang menyerah&lt;/i&gt;!
+        Dia selalu berusaha &lt;u&gt;melindungi teman-temannya&lt;/u&gt;.
+    &lt;/p&gt;
+    
+    &lt;p style="background-color:yellow"&gt;
+        &lt;b&gt;Jutsu favorit:&lt;/b&gt; Rasengan!
+    &lt;/p&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+    </div>
+
+    <!-- Tips -->
+    <div class="section">
+        <h2><span class="emoji">💡</span> Tips & Trik</h2>
+
+        <div class="note">
+            <b>✅ Yang Perlu Diingat:</b>
+            <ol>
+                <li>Simpan gambar di <b>folder yang sama</b> dengan file HTML</li>
+                <li>Nama file gambar harus <b>persis sama</b> (huruf besar/kecil)</li>
+                <li>Gunakan <code>width</code> agar gambar tidak terlalu besar</li>
+                <li>Tutup semua tag yang dibuka (kecuali <code>&lt;img&gt;</code> dan <code>&lt;br&gt;</code>)</li>
+                <li>Kombinasikan warna dan gaya untuk hasil menarik!</li>
+            </ol>
+        </div>
+
+        <div class="note">
+            <b>❌ Kesalahan Umum:</b>
+            <ul>
+                <li>Lupa menulis <code>px</code> di <code>width="300px"</code></li>
+                <li>Salah ketik nama file gambar</li>
+                <li>Gambar tidak di folder yang sama</li>
+                <li>Lupa tanda kutip di atribut <code>src=""</code></li>
+            </ul>
+        </div>
+    </div>
+
+    <div
+        style="text-align: center; margin-top: 40px; padding: 20px; background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+        <h3 style="color: #d35400;">🎉 Selamat Belajar!</h3>
+        <p>Simpan halaman ini sebagai referensi saat mengerjakan tugas.</p>
+    </div>
+</body>
+
+</html>

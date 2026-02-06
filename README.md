@@ -1,111 +1,125 @@
-# 📚 Materi HTML Interaktif - Pertemuan 1
-
-## 🎯 Tentang Materi Ini
+# 📚 Kursus HTML untuk Anak SD
 
 Materi pembelajaran HTML interaktif yang dirancang khusus untuk anak-anak usia 11 tahun (SD) dengan pendekatan yang fun, engaging, dan mudah dipahami.
 
-## ✨ Fitur Unggulan
+## 📂 Struktur Folder
 
-### 🔐 Kode Akses
+```
+MATERI LES/HTML/
+│
+├── 📁 pertemuan-1/           # Materi Pertemuan 1: Dasar HTML
+│   └── materi/
+│       ├── index.html        # ⭐ Presentasi utama
+│       ├── template-siswa.html
+│       └── cheat-sheet.html
+│
+├── 📁 pertemuan-2/           # Materi Pertemuan 2: Gambar & Warna
+│   └── materi/
+│       ├── index.html        # ⭐ Presentasi utama
+│       ├── template-siswa.html
+│       └── cheat-sheet.html
+│
+├── 📁 docs/                  # Dokumentasi
+│   ├── PANDUAN-INSTRUKTUR.md
+│   ├── STRUKTUR-FOLDER.md
+│   ├── FITUR-IMPROVEMENTS.md
+│   └── OPTIMASI-LAPTOP.md
+│
+└── 📄 README.md              # File ini
+```
 
-- Sistem proteksi dengan kode akses untuk menjaga materi
-- **Kode default:** `html2025` (dapat diubah di file HTML)
+## 🚀 Quick Start
 
-### 🎨 Desain Menarik
+### Pertemuan 1:
 
-- Gradient background yang eye-catching
-- Animasi hover pada elemen interaktif
-- Box shadow dan border radius modern
-- Warna-warna cerah yang ramah anak
+1. Buka folder **pertemuan-1/materi/**
+2. Double-click **index.html**
+3. Masukkan kode akses: `html2025`
+4. Mulai pembelajaran!
 
-### 📊 Progress Indicator
+### Pertemuan 2:
 
-- Indikator slide di pojok kanan bawah
-- Membantu siswa melacak kemajuan pembelajaran
+1. Buka folder **pertemuan-2/materi/**
+2. Double-click **index.html**
+3. Mulai pembelajaran!
 
-### 🎮 Interaktivitas
+## 📖 Materi Pertemuan 1: Dasar HTML
 
-1. **Quiz Pembuka** - Warm-up dengan klik button interaktif
-2. **Demo Langsung** - Siswa bisa mencoba menampilkan tag HTML
-3. **Animasi Fragment** - Konten muncul bertahap saat presentasi
-
-### 📖 Konten Terstruktur
+**Topik:** Pengenalan HTML, Struktur Dasar, Tag Heading & Paragraph
 
 **12 Slide Pembelajaran:**
 
-1. **Opening** - Sambutan dan overview durasi
-2. **Ice Breaking** - Apa yang akan dipelajari hari ini
-3. **Warm-up Quiz** - Mengenal website yang familiar
-4. **Apa itu HTML** - Penjelasan dengan analogi mudah
-5. **Browser** - Mengenal berbagai browser
-6. **Struktur HTML** - Struktur dasar dengan line numbers
-7. **Tag HTML** - Konsep pembuka dan penutup tag
-8. **Heading & Paragraph** - Praktek dengan preview hasil
-9. **Kamus Kode** - Referensi tag yang dipelajari
-10. **Demo Interaktif** - Siswa bisa klik dan lihat hasilnya
-11. **Challenge** - Tugas membuat website tentang diri sendiri
-12. **Closing** - Recap dan preview pertemuan berikutnya
+1. Opening - Sambutan dan overview durasi
+2. Ice Breaking - Apa yang akan dipelajari hari ini
+3. Warm-up Quiz - Mengenal website yang familiar
+4. Apa itu HTML - Penjelasan dengan analogi mudah
+5. Browser - Mengenal berbagai browser
+6. Struktur HTML - Struktur dasar dengan line numbers
+7. Tag HTML - Konsep pembuka dan penutup tag
+8. Heading & Paragraph - Praktek dengan preview hasil
+9. Kamus Kode - Referensi tag yang dipelajari
+10. Demo Interaktif - Siswa bisa klik dan lihat hasilnya
+11. Challenge - Tugas membuat website tentang diri sendiri
+12. Closing - Recap dan preview pertemuan berikutnya
+
+**Outcome:** Siswa dapat membuat halaman HTML sederhana dengan heading dan paragraf
+
+## 📖 Materi Pertemuan 2: Gambar & Warna
+
+**Topik:** Memasukkan Gambar, Memberi Warna, dan Gaya Tulisan
+
+**9 Slide Pembelajaran:**
+
+1. Opening - Mewarnai Web
+2. Review - Mengulang materi pertemuan 1
+3. Memasukkan Gambar - Tag `<img>` dan atribut
+4. Bedah Kode Gambar - Penjelasan src, width
+5. Memberi Warna - Atribut style dan color
+6. Warna Latar Belakang - background-color
+7. Gaya Tulisan - Bold, Italic, Underline
+8. Challenge - Membuat website tentang kartun/hewan favorit
+9. Closing - Recap dan preview pertemuan berikutnya
+
+**Outcome:** Siswa dapat membuat halaman HTML berwarna dengan gambar dan gaya tulisan
+
+## ✨ Fitur Unggulan
+
+- 🔐 **Kode Akses** - Sistem proteksi materi (default: `html2025`)
+- 🎨 **Desain Menarik** - Gradient background yang eye-catching
+- 📊 **Progress Indicator** - Melacak kemajuan pembelajaran
+- 🎮 **Interaktivitas** - Quiz, demo langsung, dan animasi
+- 📖 **Konten Terstruktur** - 12 slide pembelajaran bertahap
 
 ## 🚀 Cara Menggunakan
 
 ### Untuk Instruktur:
 
-1. **Buka File:**
-   - Buka `index.html` di browser (Chrome/Firefox/Edge)
-   - Atau double-click file tersebut
-
-2. **Masukkan Kode Akses:**
-   - Ketik: `html2025` (atau kode yang Anda ubah)
-   - Tekan Enter atau klik tombol Masuk
-
-3. **Navigasi:**
-   - **Spasi** atau **→** untuk slide berikutnya
-   - **←** untuk slide sebelumnya
-   - **Home** untuk ke slide pertama
-   - **End** untuk ke slide terakhir
-   - **ESC** untuk overview mode
-
-4. **Mengganti Kode Akses:**
-   - Buka file HTML dengan text editor
-   - Cari baris: `const correctCode = 'html2025';`
-   - Ubah `html2025` dengan kode pilihan Anda
+1. Buka `pertemuan-1/materi/index.html`
+2. Masukkan kode akses: `html2025`
+3. Navigasi:
+   - **Spasi** / **→** : Slide berikutnya
+   - **←** : Slide sebelumnya
+   - **ESC** : Overview mode
 
 ### Untuk Siswa:
 
 1. Tunggu instruktur memberikan kode akses
-2. Ikuti slide dengan menekan tombol Spasi
-3. Klik button interaktif saat diminta
-4. Selesaikan tantangan di slide akhir
+2. Ikuti slide dengan menekan Spasi
+3. Selesaikan tantangan di slide akhir
 
-## 🎨 Customization
+## 📚 File Lainnya
 
-### Mengubah Warna:
+- **template-siswa.html** - Template untuk tugas praktik siswa
+- **cheat-sheet.html** - Referensi cepat semua materi
 
-Cari bagian CSS dan ubah nilai warna:
+## 📖 Dokumentasi Lengkap
 
-```css
-/* Gradient utama */
-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+Lihat folder `docs/` untuk panduan lebih detail:
 
-/* Ubah menjadi: */
-background: linear-gradient(135deg, #your-color1 0%, #your-color2 100%);
-```
-
-### Menambah/Mengurangi Slide:
-
-```html
-<section>
-  <h2>Judul Slide Baru</h2>
-  <p>Konten slide...</p>
-</section>
-```
-
-## 📦 Teknologi yang Digunakan
-
-- **Reveal.js 4.5.0** - Framework presentasi
-- **Highlight.js 11.7.0** - Syntax highlighting untuk kode
-- **CSS3** - Styling modern dengan flexbox & grid
-- **JavaScript Vanilla** - Interaktivitas tanpa dependency
+- **PANDUAN-INSTRUKTUR.md** - Tips dan cara mengajar
+- **STRUKTUR-FOLDER.md** - Penjelasan struktur project
+- **FITUR-IMPROVEMENTS.md** - Rencana pengembangan
+- **OPTIMASI-LAPTOP.md** - Tips performa
 
 ## 🎓 Outcome Pembelajaran
 
@@ -115,28 +129,7 @@ Setelah mengikuti materi ini, siswa akan:
 ✅ Mengenal struktur HTML (html, head, body)  
 ✅ Bisa menggunakan tag: `<h1>`, `<h3>`, `<p>`, `<br>`  
 ✅ Membuat halaman web sederhana sendiri  
-✅ Siap untuk materi lanjutan (warna, gambar, link)
-
-## 📝 Tips Mengajar
-
-1. **Gunakan Analogi:** Rumah, pondasi, tulang - anak-anak lebih mudah paham
-2. **Interaktif:** Minta siswa klik button, jangan hanya menonton
-3. **Hands-on:** Beri waktu 15-20 menit untuk praktik langsung
-4. **Berkeliling:** Pastikan semua siswa bisa mengikuti
-5. **Encourage:** Berikan pujian saat mereka berhasil
-
-## 🔄 Update Log
-
-**v1.0** (30 Januari 2026)
-
-- Desain awal dengan 12 slide
-- Sistem kode akses
-- Quiz interaktif dan demo
-- Progress indicator
-
-## 📞 Support
-
-Jika ada pertanyaan atau masalah teknis, silakan hubungi instruktur.
+✅ Siap untuk materi lanjutan
 
 ---
 

@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Kursus HTML Pertemuan 2 - Gambar & Warna</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/beige.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+
+    <style>
+        /* Navigation Bar */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+            padding: 10px 20px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-bar .nav-title {
+            color: white;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .nav-bar .nav-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 15px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+            font-size: 0.9em;
+        }
+
+        .nav-bar a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Reveal.js Adjustments */
+        .reveal {
+            padding-top: 50px;
+        }
+
+        .reveal h1,
+        .reveal h2,
+        .reveal h3 {
+            font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+            color: #d35400;
+            /* Warna oranye semangat */
+        }
+
+        .reveal pre {
+            box-shadow: 5px 5px 0px #333;
+            border: 2px solid #333;
+            border-radius: 8px;
+        }
+
+        .code-highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .box-warning {
+            background-color: #f1c40f;
+            color: black;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 0.8em;
+            border: 2px solid black;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-bar {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .nav-bar .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+        <div class="nav-title">🎨 Pertemuan 2: Gambar & Warna</div>
+        <div class="nav-links">
+            <a href="../../index.html">🏠 Home</a>
+            <a href="../../pertemuan-1/materi/index.html">📖 Pertemuan 1</a>
+            <a href="template-siswa.html">✍️ Template</a>
+            <a href="cheat-sheet.html">📝 Cheat Sheet</a>
+        </div>
+    </nav>
+
+    <div class="reveal">
+        <div class="slides">
+
+            <section>
+                <h1>🎨 Mewarnai Web</h1>
+                <h3>Kursus HTML Pertemuan 2</h3>
+                <p>Menambahkan Gambar, Warna, dan Gaya Tulisan</p>
+                <small>Usia 11 Tahun | 2 Jam</small>
+            </section>
+
+            <section>
+                <h2>Review Dulu Yuk! 🧐</h2>
+                <p>Minggu lalu kita belajar apa?</p>
+                <ul>
+                    <li class="fragment"><code>&lt;h1&gt;</code> untuk apa? <span class="fragment" style="color:blue">→
+                            Judul Besar</span></li>
+                    <li class="fragment"><code>&lt;p&gt;</code> untuk apa? <span class="fragment" style="color:blue">→
+                            Paragraf</span></li>
+                    <li class="fragment"><code>&lt;br&gt;</code> untuk apa? <span class="fragment" style="color:blue">→
+                            Ganti Baris</span></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>1. Memasukkan Gambar 🖼️</h2>
+                <p>Supaya tidak bosan tulisan terus, ayo pasang foto!</p>
+                <p>Kodenya:</p>
+                <pre><code class="language-html" data-trim>
+<img src="kucing.jpg" width="300px">
+                </code></pre>
+                <div class="box-warning fragment">
+                    ⚠️ <b>PENTING:</b><br>
+                    File gambar harus ada di <u>FOLDER YANG SAMA</u> dengan file HTML kamu.
+                </div>
+            </section>
+
+            <section>
+                <h2>Bedah Kode Gambar 🔍</h2>
+                <ul>
+                    <li><code>&lt;img&gt;</code> : Tag Image (Gambar).</li>
+                    <li><code>src="..."</code> : Source (Nama file gambarnya)[cite: 34].</li>
+                    <li><code>width="..."</code> : Lebar gambar (biar tidak kegedean)[cite: 34].</li>
+                </ul>
+                <p style="margin-top:20px; font-size:0.8em;"><i>*Uniknya, tag img tidak perlu penutup &lt;/img&gt;
+                        lho!</i></p>
+            </section>
+
+            <section>
+                <h2>2. Memberi Warna 🌈</h2>
+                <p>Jangan hitam putih terus! Gunakan atribut <code>style</code>.</p>
+                <pre><code class="language-html" data-trim>
+<h1 style="color:red">Halo Merah!</h1>
+
+<p style="color:blue">Paragraf ini warnanya biru.</p>
+                </code></pre>
+                <p>Bisa pakai bahasa Inggris: <i>red, green, blue, pink, orange, purple</i>[cite: 36].</p>
+            </section>
+
+            <section>
+                <h2>Warna Latar Belakang 🖌️</h2>
+                <p>Kita bisa mewarnai latar belakang tulisan, atau bahkan satu halaman penuh!</p>
+                <pre><code class="language-html" data-trim>
+<h1 style="background-color:yellow">Stabilo Kuning</h1>
+
+<body style="background-color:lightblue">
+  ...isi web...
+</body>
+                </code></pre>
+                <small>Ingat: <code>background-color</code> [cite: 37]</small>
+            </section>
+
+            <section>
+                <h2>3. Gaya Tulisan (Formatting) ✨</h2>
+                <p>Biar tulisan makin keren:</p>
+                <ul>
+                    <li><b>Tebal (Bold)</b> : <code>&lt;b&gt;tebal&lt;/b&gt;</code> </li>
+                    <li><i>Miring (Italic)</i> : <code>&lt;i&gt;miring&lt;/i&gt;</code> </li>
+                    <li><u>Garis Bawah (Underline)</u> : <code>&lt;u&gt;garis&lt;/u&gt;</code> </li>
+                </ul>
+                <br>
+                <pre><code class="language-html" data-trim>
+<p>Saya <b>sangat</b> suka makan <i>Nasi Goreng</i>!</p>
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>🚀 Misi Hari Ini: Website Favoritku</h2>
+                <div
+                    style="text-align: left; font-size: 0.9em; border: 2px dashed #d35400; padding: 20px; border-radius: 10px;">
+                    <p>Buat halaman baru tentang <b>Kartun / Hewan Kesukaanmu</b> [cite: 45] yang berisi:</p>
+                    <ol>
+                        <li>Judul nama karakter/hewan (Warna-warni).</li>
+                        <li>Foto karakter tersebut (<code>img</code>).</li>
+                        <li>Penjelasan kenapa kamu suka (Gunakan <b>Tebal</b> atau <i>Miring</i>).</li>
+                        <li>Warna background halaman jangan putih!</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section>
+                <h1>🎉 Selesai!</h1>
+                <p>Sekarang website kalian sudah berwarna.</p>
+                <hr>
+                <p><b>Minggu Depan:</b> Kita akan membuat <span style="text-decoration: underline; color: blue;">Tombol
+                        & Link</span> agar bisa diklik!</p>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/highlight.min.js"></script>
+    <script>
+        Reveal.initialize({
+            controls: true, progress: true, center: true, hash: true,
+            plugins: [RevealHighlight]
+        });
+    </script>
+</body>
+
+</html>

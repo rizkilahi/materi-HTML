@@ -13,10 +13,52 @@
             box-sizing: border-box;
         }
 
+        /* Navigation Bar */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 10px 20px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-bar .nav-title {
+            color: white;
+            font-weight: bold;
+            font-size: 1em;
+        }
+
+        .nav-bar .nav-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 12px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+            font-size: 0.85em;
+        }
+
+        .nav-bar a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 20px;
+            padding: 70px 20px 20px 20px;
         }
 
         .container {
@@ -98,6 +140,17 @@
             border-left: 4px solid #ff9800;
         }
 
+        @media screen and (max-width: 768px) {
+            .nav-bar {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .nav-bar .nav-links {
+                justify-content: center;
+            }
+        }
+
         ul {
             margin-left: 20px;
             margin-top: 10px;
@@ -116,6 +169,17 @@
 </head>
 
 <body>
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+        <div class="nav-title">🚀 Pertemuan 1: Cheat Sheet</div>
+        <div class="nav-links">
+            <a href="../../index.html">🏠 Home</a>
+            <a href="index.html">📖 Presentasi</a>
+            <a href="template-siswa.html">✍️ Template</a>
+            <a href="../../pertemuan-2/materi/cheat-sheet.html">➡️ Pertemuan 2</a>
+        </div>
+    </nav>
+
     <div class="container">
         <h1>📖 Cheat Sheet HTML - Pertemuan 1</h1>
 

@@ -1,0 +1,1148 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Kursus HTML Anak SD - Pertemuan 1</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/sky.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/monokai.min.css">
+
+    <style>
+        /* ============================================
+           BASE STYLES
+        ============================================ */
+        \n * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* ============================================
+           NAVIGATION BAR
+        ============================================ */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 10px 20px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            display: none;
+            /* Hidden until access granted */
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-bar.show {
+            display: flex;
+        }
+
+        .nav-bar .nav-title {
+            color: white;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .nav-bar .nav-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 15px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+            font-size: 0.9em;
+        }
+
+        .nav-bar a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* ============================================
+           ACCESS LOCK
+        ============================================ */
+        #accessLock {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .lock-box {
+            background: white;
+            padding: 30px 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 450px;
+            width: 100%;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .lock-box h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .lock-box p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .lock-box input {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1em;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: center;
+            transition: border-color 0.3s;
+        }
+
+        .lock-box input:focus {
+            outline: none;
+            border-color: #764ba2;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .lock-box button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            font-weight: 600;
+        }
+
+        .lock-box button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .error-message {
+            color: #e74c3c;
+            margin-top: 15px;
+            display: none;
+            font-weight: 600;
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-10px);
+            }
+
+            75% {
+                transform: translateX(10px);
+            }
+        }
+
+        .hint {
+            color: #7f8c8d;
+            font-size: 0.85em;
+            margin-top: 15px;
+            line-height: 1.5;
+        }
+
+        /* ============================================
+           REVEAL.JS OVERRIDES
+        ============================================ */
+        .reveal h1,
+        .reveal h2,
+        .reveal h3 {
+            color: #2c3e50;
+            text-transform: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .reveal h1 {
+            font-size: 1.8em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+        }
+
+        .reveal h2 {
+            font-size: 1.4em;
+            margin-bottom: 12px;
+        }
+
+        .reveal h3 {
+            font-size: 1em;
+            margin-bottom: 8px;
+        }
+
+        .reveal p,
+        .reveal li {
+            font-size: 0.7em;
+            text-align: left;
+            line-height: 1.4;
+            margin-bottom: 6px;
+        }
+
+        .reveal ul,
+        .reveal ol {
+            margin-left: 20px;
+            margin-top: 6px;
+            margin-bottom: 6px;
+        }
+
+        .reveal pre {
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            font-size: 0.4em;
+            margin: 10px auto;
+            width: 100%;
+        }
+
+        .reveal pre code {
+            max-height: 350px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .reveal code {
+            font-family: 'Courier New', Consolas, monospace;
+        }
+
+        .reveal small {
+            font-size: 0.65em;
+        }
+
+        /* Allow scrolling for slides with overflow */
+        .reveal .slides section {
+            overflow-y: auto !important;
+            overflow-x: hidden !important;
+            max-height: 100vh;
+            padding: 20px 40px;
+        }
+
+        .reveal .slides section::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .reveal .slides section::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .reveal .slides section::-webkit-scrollbar-thumb {
+            background: rgba(102, 126, 234, 0.5);
+            border-radius: 10px;
+        }
+
+        .reveal .slides section::-webkit-scrollbar-thumb:hover {
+            background: rgba(102, 126, 234, 0.8);
+        }
+
+        /* ============================================
+           LAYOUT COMPONENTS
+        ============================================ */
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: stretch;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .box {
+            background: white;
+            padding: 15px 12px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            flex: 1;
+            min-width: 160px;
+            max-width: 250px;
+            transition: all 0.3s ease;
+        }
+
+        .box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .box h3 {
+            margin: 6px 0;
+            color: #667eea;
+            font-size: 0.95em;
+        }
+
+        .box p {
+            font-size: 0.7em;
+            margin: 4px 0;
+        }
+
+        .emoji {
+            font-size: 1.6em;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        /* ============================================
+           INFO BOXES
+        ============================================ */
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px;
+            border-radius: 12px;
+            margin: 12px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .highlight-box p {
+            margin: 5px 0;
+        }
+
+        .info-box {
+            background: #e0f7fa;
+            padding: 12px;
+            border-radius: 12px;
+            border-left: 4px solid #00bcd4;
+            margin: 12px 0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-box ul {
+            margin: 8px 0 8px 20px;
+        }
+
+        .warning-box {
+            background: #fff3e0;
+            padding: 12px;
+            border-radius: 12px;
+            border: 2px dashed #ff9800;
+            margin: 12px 0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .warning-box ol {
+            margin: 8px 0 8px 25px;
+        }
+
+        .success-box {
+            background: #e8f5e9;
+            padding: 12px;
+            border-radius: 12px;
+            border-left: 4px solid #4caf50;
+            margin: 12px 0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .success-box ul {
+            margin: 8px 0 8px 20px;
+        }
+
+        /* ============================================
+           INTERACTIVE ELEMENTS
+        ============================================ */
+        .quiz-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            margin: 5px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.75em;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .quiz-button:hover {
+            background: #764ba2;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .quiz-button:active {
+            transform: translateY(-1px);
+        }
+
+        .quiz-button.correct {
+            background: #4caf50;
+            animation: pulse 0.5s;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .quiz-button.wrong {
+            background: #e74c3c;
+        }
+
+        .demo-output {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            border: 2px solid #667eea;
+            min-height: 80px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ============================================
+           PROGRESS INDICATOR
+        ============================================ */
+        .progress-indicator {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            font-weight: bold;
+            color: #667eea;
+            font-size: 0.9em;
+            transition: all 0.3s;
+        }
+
+        .progress-indicator:hover {
+            transform: scale(1.05);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN
+        ============================================ */
+        /* Laptop/Desktop standar (1366x768, 1920x1080) */
+        @media screen and (min-width: 769px) and (max-height: 900px) {
+            .reveal .slides section {
+                padding: 25px 35px;
+            }
+
+            .reveal h1 {
+                font-size: 1.7em;
+                margin-bottom: 12px;
+            }
+
+            .reveal h2 {
+                font-size: 1.35em;
+                margin-bottom: 10px;
+            }
+
+            .reveal h3 {
+                font-size: 0.95em;
+                margin-bottom: 6px;
+            }
+
+            .reveal p,
+            .reveal li {
+                font-size: 0.68em;
+                line-height: 1.35;
+                margin-bottom: 5px;
+            }
+
+            .emoji {
+                font-size: 1.5em;
+            }
+
+            .highlight-box,
+            .info-box,
+            .warning-box,
+            .success-box {
+                padding: 10px;
+                margin: 10px 0;
+            }
+
+            .box {
+                padding: 12px 10px;
+                min-width: 145px;
+            }
+
+            .container {
+                gap: 12px;
+                margin: 12px 0;
+            }
+
+            .reveal pre {
+                font-size: 0.4em;
+                margin: 10px auto;
+            }
+
+            .reveal pre code {
+                padding: 10px;
+                max-height: 320px;
+            }
+
+            .quiz-button {
+                padding: 7px 14px;
+                font-size: 0.72em;
+                margin: 5px;
+            }
+
+            .demo-output {
+                padding: 13px;
+                min-height: 75px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .lock-box {
+                padding: 25px 20px;
+                margin: 15px;
+            }
+
+            .lock-box h2 {
+                font-size: 1.3rem;
+            }
+
+            .lock-box input,
+            .lock-box button {
+                font-size: 1em;
+                padding: 12px 20px;
+            }
+
+            .reveal h1 {
+                font-size: 2em;
+            }
+
+            .reveal h2 {
+                font-size: 1.5em;
+            }
+
+            .reveal h3 {
+                font-size: 1.2em;
+            }
+
+            .reveal p,
+            .reveal li {
+                font-size: 0.85em;
+            }
+
+            .reveal pre {
+                font-size: 0.45em;
+            }
+
+            .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .box {
+                max-width: 100%;
+                width: 100%;
+                padding: 20px 15px;
+            }
+
+            .emoji {
+                font-size: 2em;
+            }
+
+            .quiz-button {
+                padding: 10px 20px;
+                font-size: 0.85em;
+                margin: 5px;
+                width: calc(50% - 10px);
+                display: inline-block;
+            }
+
+            .progress-indicator {
+                bottom: 10px;
+                right: 10px;
+                padding: 10px 15px;
+                font-size: 0.8em;
+            }
+
+            .highlight-box,
+            .info-box,
+            .warning-box,
+            .success-box {
+                padding: 15px;
+                margin: 15px 0;
+            }
+
+            .demo-output {
+                padding: 15px;
+                min-height: 100px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .lock-box {
+                padding: 20px 15px;
+            }
+
+            .reveal h1 {
+                font-size: 1.6em;
+            }
+
+            .reveal h2 {
+                font-size: 1.3em;
+            }
+
+            .reveal pre {
+                font-size: 0.4em;
+            }
+
+            .quiz-button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+
+        /* ============================================
+           PRINT STYLES
+        ============================================ */
+        @media print {
+
+            #accessLock,
+            .progress-indicator,
+            .nav-bar {
+                display: none !important;
+            }
+        }
+
+        /* ============================================
+           RESPONSIVE NAV
+        ============================================ */
+        @media screen and (max-width: 768px) {
+            .nav-bar {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .nav-bar .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        /* ============================================
+           ACCESSIBILITY
+        ============================================ */
+        .reveal :focus {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+
+        button:focus {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+
+        /* ============================================
+           ANIMATIONS
+        ============================================ */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal .fragment {
+            animation: fadeIn 0.5s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="nav-bar" id="navBar">
+        <div class="nav-title">🚀 Pertemuan 1: Dasar HTML</div>
+        <div class="nav-links">
+            <a href="../../index.html">🏠 Home</a>
+            <a href="../../pertemuan-2/materi/index.html">📖 Pertemuan 2</a>
+            <a href="template-siswa.html">✍️ Template</a>
+            <a href="cheat-sheet.html">📝 Cheat Sheet</a>
+        </div>
+    </nav>
+
+    <!-- Access Lock -->
+    <div id="accessLock">
+        <div class="lock-box">
+            <h2>🔐 Kode Akses Diperlukan</h2>
+            <p>Silakan masukkan kode akses untuk membuka materi pembelajaran ini:</p>
+            <input type="password" id="accessCode" placeholder="Masukkan kode akses" />
+            <button onclick="checkAccess()">🔓 Masuk</button>
+            <p class="error-message" id="errorMsg">❌ Kode akses salah! Silakan coba lagi.</p>
+            <p class="hint">💡 <i>Petunjuk: Kode akses diberikan oleh instruktur</i></p>
+        </div>
+    </div>
+
+    <!-- Progress Indicator -->
+    <div class="progress-indicator" id="progressIndicator" style="display:none;">
+        Slide <span id="currentSlide">1</span> / <span id="totalSlides">12</span>
+    </div>
+
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- Slide 1: Opening -->
+            <section>
+                <div
+                    style="display:flex; flex-direction:column; justify-content:center; align-items:center; min-height:75vh;">
+                    <h1 style="margin-bottom:20px;">👋 Halo, Calon Programmer!</h1>
+                    <p style="text-align:center; font-size:1.1em; margin-bottom:25px;">Kenalan dengan Website & Membuat
+                        Halaman Pertamamu</p>
+                    <p style="text-align:center;">
+                        <small>Tekan <b>Spasi</b> atau <b>→</b> untuk lanjut</small>
+                    </p>
+                </div>
+            </section>
+
+            <!-- Slide 2: Ice Breaking -->
+            <section>
+                <div
+                    style="display:flex; flex-direction:column; justify-content:center; align-items:center; min-height:70vh;">
+                    <h2 style="margin-bottom:25px;">🎯 Apa yang Akan Kita Pelajari Hari Ini?</h2>
+                    <div class="container" style="max-width:800px;">
+                        <div class="box" style="text-align:center;">
+                            <span class="emoji">🌐</span>
+                            <h3>Website itu Apa?</h3>
+                            <p style="text-align:center;">Kenalan sama dunia web</p>
+                        </div>
+                        <div class="box" style="text-align:center;">
+                            <span class="emoji">🏗️</span>
+                            <h3>Struktur HTML</h3>
+                            <p style="text-align:center;">Belajar kerangka website</p>
+                        </div>
+                    </div>
+                    <div class="container" style="max-width:800px; margin-top:15px;">
+                        <div class="box" style="text-align:center;">
+                            <span class="emoji">✍️</span>
+                            <h3>Nulis Kode</h3>
+                            <p style="text-align:center;">Bikin halaman sendiri</p>
+                        </div>
+                        <div class="box" style="text-align:center;">
+                            <span class="emoji">🚀</span>
+                            <h3>Project Kecil</h3>
+                            <p style="text-align:center;">Website tentang dirimu</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 3: Warm-up Quiz -->
+            <section>
+                <div
+                    style="display:flex; flex-direction:column; justify-content:center; align-items:center; min-height:70vh;">
+                    <h2 style="margin-bottom:20px;">🤔 Quiz Pembuka: Kalian Sering Buka Apa?</h2>
+                    <p style="text-align:center; margin-bottom:25px;">Klik salah satu yang paling sering kalian buka:
+                    </p>
+                    <div style="text-align:center; margin:20px 0;">
+                        <button class="quiz-button" onclick="answerWarmup(this, true)">📺 YouTube</button>
+                        <button class="quiz-button" onclick="answerWarmup(this, true)">🔍 Google</button>
+                        <button class="quiz-button" onclick="answerWarmup(this, true)">📱 Instagram</button>
+                        <button class="quiz-button" onclick="answerWarmup(this, true)">🎮 Game Online</button>
+                    </div>
+                    <div id="warmupResult" class="fragment fade-up"
+                        style="text-align:center; font-size:1.2em; margin-top:25px; display:none; max-width:600px;">
+                        <div class="success-box">
+                            <p style="margin:0; text-align:center;">
+                                ✅ <b>Betul!</b> Itu semua namanya <b>WEBSITE</b>! <br>
+                                Hari ini kita akan belajar cara membuatnya. 🎉
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 4: Apa itu HTML -->
+            <section>
+                <div style="display:flex; flex-direction:column; justify-content:center; min-height:70vh;">
+                    <h2 style="text-align:center; margin-bottom:20px;">Apa itu HTML? 🤔</h2>
+                    <div class="info-box" style="max-width:650px; margin:0 auto;">
+                        <p style="text-align:center; font-size:1.1em; margin:0;">
+                            <b>HTML</b> = <i>HyperText Markup Language</i><br>
+                            (Bahasa untuk membuat website)
+                        </p>
+                    </div>
+                    <ul style="margin:20px auto; max-width:650px;">
+                        <li class="fragment"><span class="emoji" style="font-size:1.2em;">🏗️</span> HTML itu seperti
+                            <b>Tulang</b> atau <b>Pondasi Rumah</b>.
+                        </li>
+                        <li class="fragment"><span class="emoji" style="font-size:1.2em;">🧱</span> Tanpa HTML, website
+                            tidak bisa berdiri.</li>
+                        <li class="fragment"><span class="emoji" style="font-size:1.2em;">🌍</span> Semua website di
+                            dunia
+                            pakai HTML!</li>
+                    </ul>
+                    <div class="fragment highlight-box" style="max-width:650px; margin:20px auto;">
+                        <p style="text-align:center; margin:0;">
+                            💡 <b>Analogi Mudah:</b><br>
+                            HTML = Rumah 🏠 | CSS = Cat & Dekorasi 🎨 | JavaScript = Listrik & Perabot ⚡
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 5: Browser -->
+            <section>
+                <div
+                    style="display:flex; flex-direction:column; justify-content:center; align-items:center; min-height:70vh;">
+                    <h2 style="margin-bottom:15px;">🌐 Browser: Jendela ke Dunia Website</h2>
+                    <p style="text-align:center; margin-bottom:25px; max-width:650px;">Browser adalah aplikasi untuk
+                        membuka website. Seperti jendela untuk lihat rumah HTML kita!</p>
+                    <div class="container" style="max-width:600px;">
+                        <div class="box" style="text-align:center;">
+                            <span style="font-size:3em;">🌐</span>
+                            <h3>Chrome</h3>
+                        </div>
+                        <div class="box" style="text-align:center;">
+                            <span style="font-size:3em;">🦊</span>
+                            <h3>Firefox</h3>
+                        </div>
+                    </div>
+                    <div class="container" style="max-width:600px; margin-top:15px;">
+                        <div class="box" style="text-align:center;">
+                            <span style="font-size:3em;">🧭</span>
+                            <h3>Safari</h3>
+                        </div>
+                        <div class="box" style="text-align:center;">
+                            <span style="font-size:3em;">🌊</span>
+                            <h3>Edge</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 6: Struktur HTML -->
+            <section>
+                <h2>📐 Struktur Wajib HTML</h2>
+                <p>Setiap membuat web, harus ada kode ini:</p>
+                <pre><code class="language-html" data-trim data-line-numbers="1|2-9|3-5|6-8">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Judul di Tab Atas&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- Isi website di sini --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+                <div class="info-box" style="margin-top:20px;">
+                    <ul style="margin:0;">
+                        <li><b>&lt;html&gt;</b> : Rumah besar yang bungkus semua</li>
+                        <li><b>&lt;head&gt;</b> : Kepala/otak (info website)</li>
+                        <li><b>&lt;body&gt;</b> : Badan (isi yang terlihat)</li>
+                    </ul>
+                </div>
+                <p style="text-align:center; margin-top:15px;"><small>💾 Tips: Simpan file dengan nama
+                        <b>index.html</b></small></p>
+            </section>
+
+            <!-- Slide 7: Tag HTML -->
+            <section>
+                <h2>🏷️ Mengenal TAG HTML</h2>
+                <p>Tag adalah tanda khusus dalam HTML. Selalu ada <b>pembuka</b> dan <b>penutup</b>:</p>
+                <pre><code class="language-html" data-trim>
+&lt;namatag&gt; Isi konten &lt;/namatag&gt;
+                </code></pre>
+                <div class="container" style="margin-top:30px;">
+                    <div class="box">
+                        <h3 style="text-align:center; color:#667eea;">✅ Benar</h3>
+                        <pre><code class="language-html">&lt;p&gt;Halo!&lt;/p&gt;</code></pre>
+                    </div>
+                    <div class="box">
+                        <h3 style="text-align:center; color:#e74c3c;">❌ Salah</h3>
+                        <pre><code class="language-html">&lt;p&gt;Halo!</code></pre>
+                        <p style="text-align:center; font-size:0.8em;">(Tidak ada penutup)</p>
+                    </div>
+                </div>
+                <div class="warning-box" style="margin-top:20px;">
+                    <p style="text-align:center; margin:0;">⚠️ <b>Ingat!</b> Kalau buka tag, jangan lupa tutup!</p>
+                </div>
+            </section>
+
+            <!-- Slide 8: Heading & Paragraph -->
+            <section>
+                <h2>✍️ Membuat Judul & Paragraf</h2>
+                <p>Ayo tulis ini di dalam <code>&lt;body&gt;</code>:</p>
+                <pre><code class="language-html" data-trim data-line-numbers>
+&lt;body&gt;
+  &lt;h1&gt;Halo, Saya Rizki!&lt;/h1&gt;
+  
+  &lt;h3&gt;Saya Belajar HTML&lt;/h3&gt;
+  
+  &lt;p&gt;Saya suka bermain game dan belajar coding.&lt;/p&gt;
+  &lt;p&gt;Cita-cita saya menjadi programmer hebat.&lt;/p&gt;
+&lt;/body&gt;
+                </code></pre>
+                <div class="info-box" style="margin-top:20px;">
+                    <p style="margin:0;"><b>Hasilnya akan terlihat seperti:</b></p>
+                    <div class="demo-output">
+                        <h1 style="margin:10px 0;">Halo, Saya Rizki!</h1>
+                        <h3 style="margin:10px 0;">Saya Belajar HTML</h3>
+                        <p style="margin:10px 0;">Saya suka bermain game dan belajar coding.</p>
+                        <p style="margin:10px 0;">Cita-cita saya menjadi programmer hebat.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 9: Kamus Kode -->
+            <section>
+                <div
+                    style="display:flex; flex-direction:column; justify-content:center; align-items:center; min-height:70vh;">
+                    <h2 style="margin-bottom:25px;">📖 Kamus Kode Hari Ini</h2>
+                    <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:15px; max-width:700px;">
+                        <div class="box" style="text-align:center;">
+                            <h3 style="color:#667eea; margin:8px 0;"><code>&lt;h1&gt;</code></h3>
+                            <p style="margin:8px 0; font-size:0.75em;">Judul Paling Besar<br>(Heading 1)</p>
+                        </div>
+                        <div class="box" style="text-align:center;">
+                            <h3 style="color:#667eea; margin:8px 0;"><code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>
+                            </h3>
+                            <p style="margin:8px 0; font-size:0.75em;">Judul Sedang<br>(Heading 2, 3)</p>
+                        </div>
+                        <div class="box" style="text-align:center;">
+                            <h3 style="color:#667eea; margin:8px 0;"><code>&lt;p&gt;</code></h3>
+                            <p style="margin:8px 0; font-size:0.75em;">Paragraf<br>(untuk tulisan panjang)</p>
+                        </div>
+                        <div class="box" style="text-align:center;">
+                            <h3 style="color:#667eea; margin:8px 0;"><code>&lt;br&gt;</code></h3>
+                            <p style="margin:8px 0; font-size:0.75em;">Ganti Baris<br>(Break - tanpa penutup)</p>
+                        </div>
+                    </div>
+                    <div class="highlight-box" style="margin-top:20px; max-width:700px; text-align:center;">
+                        <p style="margin:0;">💡 Ada 6 jenis heading: <code>&lt;h1&gt;</code> sampai
+                            <code>&lt;h6&gt;</code><br>
+                            <code>&lt;h1&gt;</code> paling besar, <code>&lt;h6&gt;</code> paling kecil!
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 10: Demo Interaktif -->
+            <section>
+                <div
+                    style="display:flex; flex-direction:column; justify-content:center; align-items:center; min-height:70vh;">
+                    <h2 style="margin-bottom:15px;">🎮 Demo Interaktif: Coba Sendiri!</h2>
+                    <p style="text-align:center; margin-bottom:25px;">Klik tombol di bawah untuk melihat magic HTML:</p>
+                    <div style="text-align:center; margin:20px 0;">
+                        <button class="quiz-button" onclick="showDemo('h1')">Tampilkan &lt;h1&gt;</button>
+                        <button class="quiz-button" onclick="showDemo('h3')">Tampilkan &lt;h3&gt;</button>
+                        <button class="quiz-button" onclick="showDemo('p')">Tampilkan &lt;p&gt;</button>
+                        <button class="quiz-button" onclick="showDemo('all')">Tampilkan Semua</button>
+                        <button class="quiz-button" onclick="showDemo('reset')" style="background:#e74c3c;">🔄
+                            Reset</button>
+                    </div>
+                    <div id="demoOutput" class="demo-output" style="max-width:700px; width:100%;">
+                        <p style="text-align:center; color:#999;">Klik tombol di atas untuk melihat hasilnya!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 11: Challenge -->
+            <section>
+                <h2>🚀 Tantangan: Website Tentang Aku</h2>
+                <div class="warning-box">
+                    <p><b>Buatlah 1 file bernama <code>index.html</code> yang isinya:</b></p>
+                    <ol style="margin:10px 0 10px 30px;">
+                        <li>Nama Lengkapmu (pakai <code>&lt;h1&gt;</code>)</li>
+                        <li>Umur & Kelas (pakai <code>&lt;h3&gt;</code>)</li>
+                        <li>Cerita pendek tentang hobimu (pakai <code>&lt;p&gt;</code>)</li>
+                        <li><b>BONUS:</b> Tambahkan cita-citamu! 🎯</li>
+                    </ol>
+                </div>
+                <div class="info-box" style="margin-top:20px;">
+                    <p style="margin:0;"><b>📝 Langkah-langkah:</b></p>
+                    <ol style="margin:10px 0 0 30px;">
+                        <li>Buka <b>Notepad</b> atau <b>VS Code</b></li>
+                        <li>Ketik kode HTML-mu</li>
+                        <li>Save as <code>index.html</code></li>
+                        <li>Buka file dengan <b>Chrome</b></li>
+                    </ol>
+                </div>
+                <p style="text-align:center; margin-top:20px; font-size:1.1em;">
+                    <i>⏰ Waktu: 15 menit | 🤝 Tanya kalau ada yang bingung!</i>
+                </p>
+            </section>
+
+            <!-- Slide 12: Closing -->
+            <section>
+                <div
+                    style="display:flex; flex-direction:column; justify-content:center; align-items:center; min-height:75vh;">
+                    <h1 style="margin-bottom:15px;">🎉 Selamat!</h1>
+                    <h3 style="margin-bottom:25px;">Kamu Sudah Membuat Website Pertamamu! 🌟</h3>
+                    <div class="success-box" style="max-width:650px;">
+                        <h3 style="text-align:center;">✅ Apa yang Sudah Kita Pelajari?</h3>
+                        <ul style="margin:10px 0;">
+                            <li>✓ Mengenal website dan HTML</li>
+                            <li>✓ Struktur dasar HTML</li>
+                            <li>✓ Tag: <code>&lt;h1&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;p&gt;</code></li>
+                            <li>✓ Membuat halaman web sendiri!</li>
+                        </ul>
+                    </div>
+                    <hr style="margin:25px 0; width:80%; max-width:500px;">
+                    <div class="highlight-box" style="max-width:650px;">
+                        <p style="text-align:center; margin:0; font-size:1.2em;">
+                            <b>📅 Minggu Depan (Pertemuan 2):</b><br>
+                            Kita akan menambahkan <span style="color:#ffeb3b">✨ Warna</span>,
+                            <span style="color:#ffeb3b">🖼️ Gambar</span>, dan
+                            <span style="color:#ffeb3b">🔗 Link</span>!
+                        </p>
+                    </div>
+                    <p style="text-align:center; margin-top:25px; font-size:1.3em;">
+                        <b>Keep Coding! 💻</b>
+                    </p>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/highlight.min.js"></script>
+    <script>
+        // Access Lock Function
+        function checkAccess() {
+            const code = document.getElementById('accessCode').value;
+            const correctCode = 'html2025'; // Ganti dengan kode akses yang Anda inginkan
+
+            if (code === correctCode) {
+                document.getElementById('accessLock').style.display = 'none';
+                document.getElementById('progressIndicator').style.display = 'block';
+                document.getElementById('navBar').classList.add('show');
+            } else {
+                document.getElementById('errorMsg').style.display = 'block';
+                document.getElementById('accessCode').value = '';
+            }
+        }
+
+        // Allow Enter key to submit
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('accessCode').addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    checkAccess();
+                }
+            });
+        });
+
+        // Warm-up Quiz Function
+        function answerWarmup(button, isCorrect) {
+            if (isCorrect) {
+                button.classList.add('correct');
+                document.getElementById('warmupResult').style.display = 'block';
+            }
+        }
+
+        // Demo Function
+        function showDemo(type) {
+            const output = document.getElementById('demoOutput');
+
+            switch (type) {
+                case 'h1':
+                    output.innerHTML = '<h1 style="margin:0;">Ini adalah Heading 1</h1>';
+                    break;
+                case 'h3':
+                    output.innerHTML = '<h3 style="margin:0;">Ini adalah Heading 3</h3>';
+                    break;
+                case 'p':
+                    output.innerHTML = '<p style="margin:0;">Ini adalah paragraf. Paragraf digunakan untuk menulis teks yang lebih panjang.</p>';
+                    break;
+                case 'all':
+                    output.innerHTML = `
+                        <h1 style="margin:10px 0;">Heading 1 - Judul Utama</h1>
+                        <h3 style="margin:10px 0;">Heading 3 - Subjudul</h3>
+                        <p style="margin:10px 0;">Paragraf 1: Ini adalah teks paragraf pertama.</p>
+                        <p style="margin:10px 0;">Paragraf 2: Ini adalah teks paragraf kedua.</p>
+                    `;
+                    break;
+                case 'reset':
+                    output.innerHTML = '<p style="text-align:center; color:#999;">Klik tombol di atas untuk melihat hasilnya!</p>';
+                    break;
+            }
+        }
+
+        // Initialize Reveal.js
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: false, // Disable centering to allow scrolling
+            hash: true,
+            width: '100%',
+            height: '100%',
+            margin: 0,
+            minScale: 1,
+            maxScale: 1,
+            overview: true,
+            touch: true,
+            embedded: false,
+            plugins: [RevealHighlight]
+        });
+
+        // Update Progress Indicator
+        Reveal.on('slidechanged', event => {
+            document.getElementById('currentSlide').textContent = event.indexh + 1;
+            document.getElementById('totalSlides').textContent = Reveal.getTotalSlides();
+        });
+
+        // Set initial slide count
+        Reveal.on('ready', event => {
+            document.getElementById('totalSlides').textContent = Reveal.getTotalSlides();
+        });
+    </script>
+</body>
+
+</html>

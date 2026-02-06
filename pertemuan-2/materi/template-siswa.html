@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartun/Hewan Kesukaanku - Pertemuan 2</title>
+
+    <style>
+        /* Navigation Bar */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+            padding: 10px 20px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-bar .nav-title {
+            color: white;
+            font-weight: bold;
+            font-size: 1em;
+        }
+
+        .nav-bar .nav-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 12px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+            font-size: 0.85em;
+        }
+
+        .nav-bar a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Body Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            padding: 70px 20px 50px 20px;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .instructions {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #d35400;
+            margin-bottom: 30px;
+        }
+
+        .instructions h2 {
+            color: #d35400;
+            margin-top: 0;
+        }
+
+        .instructions ul {
+            color: #555;
+        }
+
+        .instructions code {
+            background: #ffe0b2;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        h1 {
+            color: #d35400;
+            text-align: center;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-bar {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .nav-bar .nav-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+        <div class="nav-title">🎨 Pertemuan 2: Template Tugas</div>
+        <div class="nav-links">
+            <a href="../../index.html">🏠 Home</a>
+            <a href="index.html">📖 Presentasi</a>
+            <a href="cheat-sheet.html">📝 Cheat Sheet</a>
+            <a href="../../pertemuan-1/materi/template-siswa.html">⬅️ Pertemuan 1</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="instructions">
+            <h2>🎨 TUGAS PERTEMUAN 2: WEBSITE FAVORITKU</h2>
+
+            <p><strong>Buat halaman tentang KARTUN atau HEWAN KESUKAANMU dengan:</strong></p>
+
+            <ul>
+                <li>✅ Judul nama karakter/hewan (gunakan warna!)</li>
+                <li>✅ Foto karakter tersebut (gunakan tag <code>&lt;img&gt;</code>)</li>
+                <li>✅ Penjelasan kenapa kamu suka (gunakan <code>&lt;b&gt;</code> atau <code>&lt;i&gt;</code>)</li>
+                <li>✅ Warna background halaman (jangan putih!)</li>
+            </ul>
+
+            <p><strong>📝 CONTOH KODE:</strong></p>
+            <pre style="background: #2c3e50; color: white; padding: 15px; border-radius: 5px; overflow-x: auto;"><code>&lt;h1 style="color:blue"&gt;Naruto&lt;/h1&gt;
+&lt;img src="naruto.jpg" width="300px"&gt;
+&lt;p&gt;Saya suka &lt;b&gt;Naruto&lt;/b&gt; karena dia &lt;i&gt;pantang menyerah&lt;/i&gt;!&lt;/p&gt;</code></pre>
+
+            <p><strong>💡 TIPS:</strong></p>
+            <ul>
+                <li>Simpan file gambar di <strong>FOLDER YANG SAMA</strong> dengan file HTML ini</li>
+                <li>Gunakan nama file gambar yang benar (perhatikan huruf besar/kecil)</li>
+                <li>Jangan lupa tutup semua tag yang kamu buka!</li>
+                <li>Warna yang bisa dipakai: red, blue, green, yellow, orange, purple, pink, brown</li>
+            </ul>
+        </div>
+
+        <!-- Mulai kode kamu di bawah ini -->
+
+        <h1 style="color:blue">Judul Kartun/Hewan Kesukaanku</h1>
+
+        <!-- Contoh: <img src="nama-gambar.jpg" width="300px"> -->
+
+        <p>Cerita tentang karakter favoritku...</p>
+
+        <!-- Akhir kode -->
+    </div>
+</body>
+
+</html>
