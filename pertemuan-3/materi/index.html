@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Kursus HTML Pertemuan 3 - Link & Navigasi</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/moon.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+
+    <style>
+        /* Navigation Bar */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            padding: 10px 20px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-bar .nav-title {
+            color: white;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .nav-bar .nav-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 15px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+            font-size: 0.9em;
+        }
+
+        .nav-bar a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Reveal.js Adjustments */
+        .reveal {
+            padding-top: 50px;
+        }
+
+        .reveal h1,
+        .reveal h2,
+        .reveal h3 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #38ef7d;
+            font-weight: bold;
+        }
+
+        .reveal h1 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .reveal pre {
+            box-shadow: 5px 5px 0px #1a5e4e;
+            border: 2px solid #11998e;
+            border-radius: 8px;
+        }
+
+        .code-highlight {
+            color: #38ef7d;
+            font-weight: bold;
+        }
+
+        .box-info {
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+            color: #00695c;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 0.8em;
+            border: 2px solid #00796b;
+        }
+
+        .box-warning {
+            background-color: #fff3e0;
+            color: #e65100;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 0.8em;
+            border: 2px solid #ff6f00;
+        }
+
+        .demo-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin: 10px;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .demo-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(17, 153, 142, 0.4);
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-bar {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .nav-bar .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+        <div class="nav-title">🔗 Pertemuan 3: Link & Navigasi</div>
+        <div class="nav-links">
+            <a href="../../index.html">🏠 Home</a>
+            <a href="../../pertemuan-2/materi/index.html">📖 Pertemuan 2</a>
+            <a href="template-siswa.html">✍️ Template</a>
+            <a href="cheat-sheet.html">📝 Cheat Sheet</a>
+        </div>
+    </nav>
+
+    <div class="reveal">
+        <div class="slides">
+
+            <section>
+                <h1>🔗 Menghubungkan Halaman</h1>
+                <h3>Kursus HTML Pertemuan 3</h3>
+                <p>Membuat Link dan Navigasi Website</p>
+                <small>Usia 11 Tahun | 2 Jam</small>
+            </section>
+
+            <section>
+                <h2>Review Minggu Lalu! 🧐</h2>
+                <p>Pertemuan 2 kita belajar apa?</p>
+                <ul>
+                    <li class="fragment"><code>&lt;img&gt;</code> untuk apa? <span class="fragment"
+                            style="color:#38ef7d">→ Memasukkan Gambar</span></li>
+                    <li class="fragment"><code>style="color:red"</code> untuk apa? <span class="fragment"
+                            style="color:#38ef7d">→ Memberi Warna</span></li>
+                    <li class="fragment"><code>&lt;b&gt;</code> dan <code>&lt;i&gt;</code> untuk apa? <span
+                            class="fragment" style="color:#38ef7d">→ Tebal & Miring</span></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>1. Apa itu Link? 🔗</h2>
+                <p>Link (tautan) adalah jembatan yang menghubungkan satu halaman dengan halaman lain!</p>
+
+                <div class="box-info fragment">
+                    <p style="margin:0;"><b>Contoh Link yang sering kamu klik:</b></p>
+                    <ul style="margin: 10px 0 0 20px;">
+                        <li>Menu di website (Home, About, Contact)</li>
+                        <li>Tombol "Baca Selengkapnya"</li>
+                        <li>Link ke YouTube, Google, dll</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Tag untuk Membuat Link 🏷️</h2>
+                <p>Menggunakan tag <code>&lt;a&gt;</code> (anchor = jangkar)</p>
+                <pre><code class="language-html" data-trim>
+&lt;a href="https://google.com"&gt;Klik di sini!&lt;/a&gt;
+                </code></pre>
+
+                <p style="margin-top: 20px;">Hasilnya:</p>
+                <a href="https://google.com" class="demo-link" target="_blank">Klik di sini!</a>
+
+                <div class="box-warning fragment" style="margin-top: 20px;">
+                    ⚠️ <b>Penting:</b> Tag <code>&lt;a&gt;</code> harus ada <b>href</b> (hypertext reference) yang
+                    berisi alamat tujuan!
+                </div>
+            </section>
+
+            <section>
+                <h2>Bedah Kode Link 🔍</h2>
+                <pre><code class="language-html" data-trim data-line-numbers>
+&lt;a href="https://google.com"&gt;Klik di sini!&lt;/a&gt;
+                </code></pre>
+
+                <ul style="text-align: left; margin-top: 30px;">
+                    <li><code>&lt;a&gt;</code> : Tag anchor (pembuat link)</li>
+                    <li><code>href="..."</code> : Alamat tujuan link</li>
+                    <li><code>Klik di sini!</code> : Teks yang bisa diklik</li>
+                    <li><code>&lt;/a&gt;</code> : Penutup tag (jangan lupa!)</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>2. Jenis-jenis Link 🌐</h2>
+
+                <div style="text-align: left;">
+                    <h3 style="color: #38ef7d;">A. Link ke Website Lain</h3>
+                    <pre><code class="language-html" data-trim>
+&lt;a href="https://youtube.com"&gt;Ke YouTube&lt;/a&gt;
+&lt;a href="https://wikipedia.org"&gt;Ke Wikipedia&lt;/a&gt;
+                    </code></pre>
+
+                    <h3 style="color: #38ef7d; margin-top: 30px;">B. Link ke Halaman Sendiri</h3>
+                    <pre><code class="language-html" data-trim>
+&lt;a href="about.html"&gt;Tentang Saya&lt;/a&gt;
+&lt;a href="hobi.html"&gt;Hobi Saya&lt;/a&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section>
+                <h2>Membuka Link di Tab Baru 🆕</h2>
+                <p>Tambahkan <code>target="_blank"</code></p>
+
+                <pre><code class="language-html" data-trim>
+&lt;a href="https://google.com" target="_blank"&gt;
+  Buka Google di Tab Baru
+&lt;/a&gt;
+                </code></pre>
+
+                <div class="box-info fragment" style="margin-top: 25px;">
+                    <p style="margin:0;"><b>💡 Kapan pakai target="_blank"?</b></p>
+                    <ul style="margin: 10px 0 0 20px;">
+                        <li>Link ke website lain (agar pengunjung tidak keluar dari website kita)</li>
+                        <li>Link ke PDF atau dokumen</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>3. Membuat Menu Navigasi 🧭</h2>
+                <p>Menu navigasi = kumpulan link yang rapi</p>
+
+                <pre><code class="language-html" data-trim data-line-numbers>
+&lt;nav&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt; | 
+  &lt;a href="tentang.html"&gt;Tentang&lt;/a&gt; | 
+  &lt;a href="galeri.html"&gt;Galeri&lt;/a&gt; | 
+  &lt;a href="kontak.html"&gt;Kontak&lt;/a&gt;
+&lt;/nav&gt;
+                </code></pre>
+
+                <div style="margin-top: 30px; padding: 15px; background: #1a1a2e; border-radius: 10px;">
+                    <a href="#" style="color: #38ef7d; margin: 0 15px;">Home</a> |
+                    <a href="#" style="color: #38ef7d; margin: 0 15px;">Tentang</a> |
+                    <a href="#" style="color: #38ef7d; margin: 0 15px;">Galeri</a> |
+                    <a href="#" style="color: #38ef7d; margin: 0 15px;">Kontak</a>
+                </div>
+            </section>
+
+            <section>
+                <h2>Mewarnai Link 🎨</h2>
+                <p>Link juga bisa dikasih warna dan style!</p>
+
+                <pre><code class="language-html" data-trim>
+&lt;a href="home.html" style="color: red;"&gt;Home Merah&lt;/a&gt;
+
+&lt;a href="about.html" style="color: blue; text-decoration: none;"&gt;
+  About Tanpa Garis Bawah
+&lt;/a&gt;
+                </code></pre>
+
+                <div class="box-info fragment" style="margin-top: 25px;">
+                    <p style="margin:0;"><b>Style Link yang Umum:</b></p>
+                    <ul style="margin: 10px 0 0 20px;">
+                        <li><code>text-decoration: none;</code> → Hilangkan garis bawah</li>
+                        <li><code>color: blue;</code> → Ubah warna</li>
+                        <li><code>font-weight: bold;</code> → Buat tebal</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Tips & Trik Link 💡</h2>
+
+                <div style="text-align: left; font-size: 0.85em;">
+                    <p><b>✅ Yang Baik:</b></p>
+                    <ul>
+                        <li>Gunakan teks yang jelas: "Lihat Galeri Foto" lebih baik dari "Klik di sini"</li>
+                        <li>Pastikan link berfungsi (cek alamatnya)</li>
+                        <li>Link ke website lain pakai <code>target="_blank"</code></li>
+                    </ul>
+
+                    <p style="margin-top: 25px;"><b>❌ Yang Perlu Dihindari:</b></p>
+                    <ul>
+                        <li>Link yang tidak jelas tujuannya</li>
+                        <li>Terlalu banyak link dalam satu paragraf</li>
+                        <li>Lupa tutup tag <code>&lt;/a&gt;</code></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>🚀 Misi Hari Ini: Website Multi-Halaman</h2>
+                <div
+                    style="text-align: left; font-size: 0.85em; border: 2px dashed #38ef7d; padding: 20px; border-radius: 10px;">
+                    <p><b>Buat website dengan 3 halaman yang saling terhubung:</b></p>
+                    <ol>
+                        <li><b>index.html</b> - Halaman utama dengan menu navigasi</li>
+                        <li><b>hobi.html</b> - Halaman tentang hobi kamu</li>
+                        <li><b>favorit.html</b> - Halaman tentang hal favorit kamu</li>
+                    </ol>
+
+                    <p style="margin-top: 15px;"><b>Yang harus ada:</b></p>
+                    <ul>
+                        <li>Menu navigasi di setiap halaman</li>
+                        <li>Minimal 1 link ke website luar (YouTube, Wikipedia, dll)</li>
+                        <li>Gunakan warna dan gambar yang menarik</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h1>🎉 Selesai!</h1>
+                <p>Sekarang website kalian bisa punya banyak halaman yang saling terhubung!</p>
+                <hr>
+                <div class="box-info" style="max-width: 600px; margin: 20px auto;">
+                    <p style="margin:0;"><b>📚 Yang Sudah Kita Pelajari (3 Pertemuan):</b></p>
+                    <ol style="margin: 10px 0 0 20px; text-align: left;">
+                        <li>Struktur HTML & Tag Dasar</li>
+                        <li>Gambar, Warna, & Gaya Tulisan</li>
+                        <li>Link & Navigasi</li>
+                    </ol>
+                </div>
+                <p style="margin-top: 20px;"><b>Minggu Depan:</b> List & Tabel! 📋</p>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/highlight.min.js"></script>
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            hash: true,
+            plugins: [RevealHighlight]
+        });
+    </script>
+</body>
+
+</html>
