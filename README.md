@@ -25,6 +25,12 @@ MATERI LES/HTML/
 │       ├── template-siswa.html
 │       └── cheat-sheet.html
 │
+├── 📁 pertemuan-4/           # Materi Pertemuan 4: List & Tabel
+│   └── materi/
+│       ├── index.html        # ⭐ Presentasi utama
+│       ├── template-siswa.html
+│       └── cheat-sheet.html
+│
 ├── 📁 docs/                  # Dokumentasi
 │   ├── PANDUAN-INSTRUKTUR.md
 │   ├── STRUKTUR-FOLDER.md
@@ -52,6 +58,12 @@ MATERI LES/HTML/
 ### Pertemuan 3:
 
 1. Buka folder **pertemuan-3/materi/**
+2. Double-click **index.html**
+3. Mulai pembelajaran!
+
+### Pertemuan 4:
+
+1. Buka folder **pertemuan-4/materi/**
 2. Double-click **index.html**
 3. Mulai pembelajaran!
 
@@ -115,6 +127,26 @@ MATERI LES/HTML/
 
 **Outcome:** Siswa dapat membuat website multi-halaman dengan sistem navigasi lengkap
 
+## 📖 Materi Pertemuan 4: List & Tabel
+
+**Topik:** Membuat daftar (list) dan tabel untuk merapikan data
+
+**11 Slide Pembelajaran:**
+
+1. Opening - List & Tabel
+2. Review - Ringkasan pertemuan 3
+3. Apa itu List - Fungsi dan jenis list
+4. Unordered List - Tag `<ul>` dan `<li>`
+5. Ordered List - Tag `<ol>` dan `<li>`
+6. Apa itu Tabel - Konsep baris dan kolom
+7. Bedah Tag Tabel - `<table>`, `<tr>`, `<th>`, `<td>`
+8. Contoh Tabel Nilai - Implementasi sederhana
+9. Tips List & Tabel - Best practices
+10. Challenge - Tugas profil kelas
+11. Closing - Recap materi 1 sampai 4
+
+**Outcome:** Siswa dapat membuat daftar dan tabel HTML untuk menampilkan data dengan rapi
+
 ## ✨ Fitur Unggulan
 
 - 🔐 **Kode Akses** - Sistem proteksi materi (default: `html2025`)
@@ -177,6 +209,13 @@ Lihat folder `docs/` untuk panduan lebih detail:
 ✅ Menggunakan atribut target untuk membuka tab baru  
 ✅ Membuat menu navigasi antar halaman  
 ✅ Membuat website multi-halaman dengan navigasi lengkap
+
+### Setelah Pertemuan 4:
+
+✅ Membuat unordered list dengan `<ul>` dan `<li>`  
+✅ Membuat ordered list dengan `<ol>` dan `<li>`  
+✅ Memahami struktur tabel: `<table>`, `<tr>`, `<th>`, `<td>`  
+✅ Menampilkan data sederhana dalam bentuk tabel
 
 ---
 
