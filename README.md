@@ -25,7 +25,13 @@ MATERI LES/HTML/
 │       ├── template-siswa.html
 │       └── cheat-sheet.html
 │
-├── 📁 pertemuan-4/           # Materi Pertemuan 4: List & Tabel
+├── 📁 pertemuan-4/           # Materi Pertemuan 4: Mini Project & Presentasi
+│   └── materi/
+│       ├── index.html        # ⭐ Presentasi utama
+│       ├── template-siswa.html
+│       └── cheat-sheet.html
+│
+├── 📁 pertemuan-5/           # Materi Pertemuan 5: List & Tabel
 │   └── materi/
 │       ├── index.html        # ⭐ Presentasi utama
 │       ├── template-siswa.html
@@ -64,6 +70,12 @@ MATERI LES/HTML/
 ### Pertemuan 4:
 
 1. Buka folder **pertemuan-4/materi/**
+2. Double-click **index.html**
+3. Mulai pembelajaran!
+
+### Pertemuan 5:
+
+1. Buka folder **pertemuan-5/materi/**
 2. Double-click **index.html**
 3. Mulai pembelajaran!
 
@@ -127,7 +139,38 @@ MATERI LES/HTML/
 
 **Outcome:** Siswa dapat membuat website multi-halaman dengan sistem navigasi lengkap
 
-## 📖 Materi Pertemuan 4: List & Tabel
+## 📖 Materi Pertemuan 4: Mini Project & Presentasi
+
+**Topik:** Menyelesaikan website sederhana dan melatih keberanian presentasi
+
+**Materi Inti (2 Jam):**
+
+1. Review semua tag HTML yang sudah dipelajari
+2. Rapikan struktur HTML
+3. Tambah sentuhan akhir (warna dan gambar)
+4. Siapkan narasi presentasi sederhana
+
+**Mini Project (Bebas Pilih):**
+
+- Website Tentang Aku
+- Website Hewan Kesukaan
+- Website Game Favorit
+- Website Keluargaku
+
+**Sesi Presentasi:**
+
+- Anak menjelaskan judul web
+- Anak menjelaskan isi web
+- Anak menjelaskan bagian favorit
+
+**Penutup:**
+
+- Sertifikat mini
+- Foto hasil karya
+
+**Outcome:** Siswa menyelesaikan 1 website sederhana dan percaya diri mempresentasikannya
+
+## 📖 Materi Pertemuan 5: List & Tabel
 
 **Topik:** Membuat daftar (list) dan tabel untuk merapikan data
 
@@ -143,7 +186,7 @@ MATERI LES/HTML/
 8. Contoh Tabel Nilai - Implementasi sederhana
 9. Tips List & Tabel - Best practices
 10. Challenge - Tugas profil kelas
-11. Closing - Recap materi 1 sampai 4
+11. Closing - Recap materi
 
 **Outcome:** Siswa dapat membuat daftar dan tabel HTML untuk menampilkan data dengan rapi
 
@@ -211,6 +254,13 @@ Lihat folder `docs/` untuk panduan lebih detail:
 ✅ Membuat website multi-halaman dengan navigasi lengkap
 
 ### Setelah Pertemuan 4:
+
+✅ Menyelesaikan 1 mini project website sederhana  
+✅ Merapikan struktur HTML sebelum dipresentasikan  
+✅ Memberi sentuhan akhir dengan warna dan gambar  
+✅ Menjelaskan judul, isi, dan bagian favorit website
+
+### Setelah Pertemuan 5:
 
 ✅ Membuat unordered list dengan `<ul>` dan `<li>`  
 ✅ Membuat ordered list dengan `<ol>` dan `<li>`  

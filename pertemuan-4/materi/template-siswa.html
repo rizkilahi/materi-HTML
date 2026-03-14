@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template Siswa - Pertemuan 4</title>
+    <title>Template Siswa - Pertemuan 4 Mini Project</title>
     <style>
         .nav-bar {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+            background: linear-gradient(135deg, #f97316 0%, #ef4444 100%);
             padding: 10px 20px;
             z-index: 1000;
             display: flex;
@@ -44,12 +44,12 @@
             margin: 0;
             padding: 60px 15px 30px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #e0ecff 0%, #c7d2fe 100%);
+            background: linear-gradient(135deg, #fff7ed 0%, #fee2e2 100%);
             font-size: 14px;
         }
 
         .container {
-            max-width: 850px;
+            max-width: 880px;
             margin: 0 auto;
             background: white;
             border-radius: 14px;
@@ -58,53 +58,44 @@
         }
 
         h1 {
-            color: #1d4ed8;
+            color: #c2410c;
             text-align: center;
             font-size: 1.8em;
             margin-bottom: 10px;
         }
 
         h2 {
-            color: #3730a3;
-            font-size: 1.25em;
+            color: #b91c1c;
+            font-size: 1.2em;
             margin-top: 20px;
-            border-bottom: 2px solid #bfdbfe;
+            border-bottom: 2px solid #fdba74;
             padding-bottom: 6px;
         }
 
         .task-box {
-            background: #eff6ff;
-            border-left: 4px solid #2563eb;
+            background: #ffedd5;
+            border-left: 4px solid #ea580c;
             padding: 14px;
             border-radius: 8px;
             margin-bottom: 18px;
         }
 
-        .sample {
+        .code {
             background: #1f2937;
             color: #e5e7eb;
             padding: 10px;
             border-radius: 6px;
             overflow-x: auto;
             font-size: 0.88em;
+            white-space: pre-wrap;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 12px;
-        }
-
-        th,
-        td {
-            border: 1px solid #cbd5e1;
-            padding: 8px;
-            text-align: left;
-            font-size: 0.92em;
-        }
-
-        th {
-            background: #dbeafe;
+        .present-box {
+            background: #fee2e2;
+            border-left: 4px solid #dc2626;
+            padding: 14px;
+            border-radius: 8px;
+            margin-top: 16px;
         }
 
         @media screen and (max-width: 768px) {
@@ -126,77 +117,53 @@
 
 <body>
     <nav class="nav-bar">
-        <div class="nav-title">📋 Pertemuan 4: Template Tugas</div>
+        <div class="nav-title">🎯 Pertemuan 4: Template Mini Project</div>
         <div class="nav-links">
             <a href="../../index.html">🏠 Home</a>
             <a href="index.html">📖 Presentasi</a>
             <a href="cheat-sheet.html">📝 Cheat Sheet</a>
             <a href="../../pertemuan-3/materi/template-siswa.html">⬅️ Pertemuan 3</a>
+            <a href="../../pertemuan-5/materi/template-siswa.html">➡️ Pertemuan 5</a>
         </div>
     </nav>
 
     <div class="container">
-        <h1>Template Tugas: List & Tabel</h1>
+        <h1>Template Tugas Mini Project</h1>
 
         <div class="task-box">
-            <p><b>Instruksi:</b> Isi bagian berikut dengan data kamu sendiri.</p>
+            <p><b>Pilih 1 tema mini project:</b></p>
             <ul>
-                <li>Buat 1 unordered list (<code>&lt;ul&gt;</code>)</li>
-                <li>Buat 1 ordered list (<code>&lt;ol&gt;</code>)</li>
-                <li>Buat 1 tabel minimal 3 baris data</li>
+                <li>Website Tentang Aku</li>
+                <li>Website Hewan Kesukaan</li>
+                <li>Website Game Favorit</li>
+                <li>Website Keluargaku</li>
             </ul>
         </div>
 
-        <h2>1) Hobi Favorit (Unordered List)</h2>
-        <div class="sample">&lt;ul&gt;
-            &lt;li&gt;[Hobi 1]&lt;/li&gt;
-            &lt;li&gt;[Hobi 2]&lt;/li&gt;
-            &lt;li&gt;[Hobi 3]&lt;/li&gt;
-            &lt;/ul&gt;</div>
+        <h2>Struktur Dasar Website</h2>
+        <div class="code">&lt;h1&gt;[Judul Website]&lt;/h1&gt;
+            &lt;p&gt;[Paragraf pembuka tentang tema kamu]&lt;/p&gt;
+            &lt;img src="[nama-gambar].jpg" width="200" alt="[deskripsi]"&gt;
+            &lt;p&gt;[Paragraf kedua tentang hal favoritmu]&lt;/p&gt;
+            &lt;a href="https://contoh.com" target="_blank"&gt;Link Referensi&lt;/a&gt;</div>
 
-        <h2>2) Jadwal Pagi (Ordered List)</h2>
-        <div class="sample">&lt;ol&gt;
-            &lt;li&gt;[Kegiatan 1]&lt;/li&gt;
-            &lt;li&gt;[Kegiatan 2]&lt;/li&gt;
-            &lt;li&gt;[Kegiatan 3]&lt;/li&gt;
-            &lt;/ol&gt;</div>
+        <h2>Checklist Sentuhan Akhir</h2>
+        <ul>
+            <li>Tambahkan warna judul dan background</li>
+            <li>Tambahkan minimal 1 gambar</li>
+            <li>Rapikan jarak antar elemen</li>
+            <li>Cek semua tag sudah ditutup</li>
+        </ul>
 
-        <h2>3) Data Teman (Tabel)</h2>
-        <div class="sample">&lt;table&gt;
-            &lt;tr&gt;
-            &lt;th&gt;Nama&lt;/th&gt;
-            &lt;th&gt;Umur&lt;/th&gt;
-            &lt;th&gt;Hobi&lt;/th&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-            &lt;td&gt;[Nama 1]&lt;/td&gt;
-            &lt;td&gt;[Umur]&lt;/td&gt;
-            &lt;td&gt;[Hobi]&lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;/table&gt;</div>
-
-        <table>
-            <tr>
-                <th>Nama</th>
-                <th>Umur</th>
-                <th>Hobi</th>
-            </tr>
-            <tr>
-                <td>[Isi Nama]</td>
-                <td>[Isi Umur]</td>
-                <td>[Isi Hobi]</td>
-            </tr>
-            <tr>
-                <td>[Isi Nama]</td>
-                <td>[Isi Umur]</td>
-                <td>[Isi Hobi]</td>
-            </tr>
-            <tr>
-                <td>[Isi Nama]</td>
-                <td>[Isi Umur]</td>
-                <td>[Isi Hobi]</td>
-            </tr>
-        </table>
+        <div class="present-box">
+            <h2 style="margin-top:0; border:0; padding:0;">Template Presentasi Anak</h2>
+            <ol>
+                <li>Judul web saya adalah: <b>[Isi]</b></li>
+                <li>Isi web saya tentang: <b>[Isi]</b></li>
+                <li>Bagian favorit saya: <b>[Isi]</b></li>
+            </ol>
+            <p><b>Penutup:</b> "Terima kasih sudah melihat karya saya!"</p>
+        </div>
     </div>
 </body>
 

@@ -4,13 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Kursus HTML Pertemuan 4 - List & Tabel</title>
+    <title>Kursus HTML Pertemuan 4 - Mini Project & Presentasi</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/night.min.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css">
 
     <style>
         .nav-bar {
@@ -18,7 +16,7 @@
             top: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+            background: linear-gradient(135deg, #f97316 0%, #ef4444 100%);
             padding: 10px 20px;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
@@ -53,17 +51,17 @@
         }
 
         .reveal h1 {
-            color: #93c5fd;
-            font-size: 2.2em;
+            color: #fdba74;
+            font-size: 2.1em;
         }
 
         .reveal h2 {
-            color: #93c5fd;
-            font-size: 1.6em;
+            color: #fdba74;
+            font-size: 1.55em;
         }
 
         .reveal h3 {
-            color: #bfdbfe;
+            color: #fed7aa;
             font-size: 1.15em;
         }
 
@@ -72,28 +70,23 @@
             font-size: 0.85em;
         }
 
-        .reveal pre {
-            border: 2px solid #3b82f6;
-            border-radius: 8px;
-            font-size: 0.75em;
-        }
-
         .box-info {
-            background: #dbeafe;
-            color: #1e3a8a;
-            border-left: 4px solid #2563eb;
+            background: #ffedd5;
+            color: #7c2d12;
+            border-left: 4px solid #ea580c;
             border-radius: 8px;
             padding: 12px;
-            font-size: 0.78em;
+            font-size: 0.8em;
+            text-align: left;
         }
 
         .box-task {
-            background: #e0e7ff;
-            color: #312e81;
-            border: 2px dashed #6366f1;
+            background: #fee2e2;
+            color: #7f1d1d;
+            border: 2px dashed #ef4444;
             border-radius: 8px;
             padding: 14px;
-            font-size: 0.8em;
+            font-size: 0.82em;
             text-align: left;
         }
 
@@ -112,7 +105,7 @@
             }
 
             .reveal h2 {
-                font-size: 1.3em;
+                font-size: 1.25em;
             }
         }
     </style>
@@ -120,10 +113,11 @@
 
 <body>
     <nav class="nav-bar">
-        <div class="nav-title">📋 Pertemuan 4: List & Tabel</div>
+        <div class="nav-title">🎯 Pertemuan 4: Mini Project & Presentasi</div>
         <div class="nav-links">
             <a href="../../index.html">🏠 Home</a>
             <a href="../../pertemuan-3/materi/index.html">📖 Pertemuan 3</a>
+            <a href="../../pertemuan-5/materi/index.html">➡️ Pertemuan 5</a>
             <a href="template-siswa.html">✍️ Template</a>
             <a href="cheat-sheet.html">📝 Cheat Sheet</a>
         </div>
@@ -132,135 +126,104 @@
     <div class="reveal">
         <div class="slides">
             <section>
-                <h1>📋 List & Tabel</h1>
-                <h3>Kursus HTML Pertemuan 4</h3>
-                <p>Merapikan informasi dengan daftar dan tabel</p>
+                <h1>🎯 Mini Project & Presentasi</h1>
+                <h3>Kursus HTML Pertemuan 4 (2 Jam)</h3>
+                <p>Waktunya menyelesaikan website sederhana kamu sendiri!</p>
             </section>
 
             <section>
-                <h2>Review Pertemuan 3 🔗</h2>
-                <ul>
-                    <li>Kita sudah belajar membuat link dengan <code>&lt;a&gt;</code></li>
-                    <li>Sudah bisa bikin menu navigasi antar halaman</li>
-                    <li>Website kita sekarang punya banyak halaman</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>1. List itu apa? 📝</h2>
-                <p>List dipakai untuk menulis data berurutan atau poin-poin.</p>
+                <h2>Tujuan Hari Ini</h2>
                 <div class="box-info">
-                    <p style="margin:0;"><b>Jenis list di HTML:</b></p>
-                    <ul style="margin:8px 0 0 20px;">
-                        <li><code>&lt;ul&gt;</code> = bullet list</li>
-                        <li><code>&lt;ol&gt;</code> = list bernomor</li>
-                        <li><code>&lt;li&gt;</code> = isi tiap item</li>
+                    <ul style="margin: 0 0 0 18px;">
+                        <li>Anak menyelesaikan 1 website sederhana.</li>
+                        <li>Anak percaya diri mempresentasikan hasil karya.</li>
                     </ul>
                 </div>
             </section>
 
             <section>
-                <h2>2. Unordered List (UL) •</h2>
-                <pre><code class="language-html" data-trim>
-&lt;ul&gt;
-  &lt;li&gt;Pensil&lt;/li&gt;
-  &lt;li&gt;Buku&lt;/li&gt;
-  &lt;li&gt;Penghapus&lt;/li&gt;
-&lt;/ul&gt;
-                </code></pre>
-                <p>Hasilnya: titik bullet di depan item.</p>
-            </section>
-
-            <section>
-                <h2>3. Ordered List (OL) 1,2,3</h2>
-                <pre><code class="language-html" data-trim>
-&lt;ol&gt;
-  &lt;li&gt;Bangun pagi&lt;/li&gt;
-  &lt;li&gt;Sarapan&lt;/li&gt;
-  &lt;li&gt;Berangkat sekolah&lt;/li&gt;
-&lt;/ol&gt;
-                </code></pre>
-                <p>Hasilnya: item otomatis bernomor.</p>
-            </section>
-
-            <section>
-                <h2>4. Tabel itu apa? 📊</h2>
-                <p>Tabel dipakai untuk data yang punya baris dan kolom.</p>
-                <pre><code class="language-html" data-trim>
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;th&gt;Nama&lt;/th&gt;
-    &lt;th&gt;Umur&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Rani&lt;/td&gt;
-    &lt;td&gt;11&lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;
-                </code></pre>
-            </section>
-
-            <section>
-                <h2>Bedah Tag Tabel 🔍</h2>
+                <h2>Review Semua Tag HTML 🔁</h2>
                 <ul>
-                    <li><code>&lt;table&gt;</code> = pembungkus tabel</li>
-                    <li><code>&lt;tr&gt;</code> = table row (baris)</li>
-                    <li><code>&lt;th&gt;</code> = judul kolom</li>
-                    <li><code>&lt;td&gt;</code> = isi data</li>
+                    <li><code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code> untuk judul dan teks</li>
+                    <li><code>&lt;img&gt;</code> untuk gambar</li>
+                    <li><code>&lt;a&gt;</code> untuk link dan navigasi</li>
+                    <li><code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;table&gt;</code> untuk data</li>
                 </ul>
             </section>
 
             <section>
-                <h2>Contoh Tabel Nilai 🏆</h2>
-                <div class="box-info" style="text-align:left;">
-                    <table style="width:100%; border-collapse:collapse; background:white; color:#1f2937;">
-                        <tr style="background:#bfdbfe;">
-                            <th style="border:1px solid #93c5fd; padding:8px;">Nama</th>
-                            <th style="border:1px solid #93c5fd; padding:8px;">Nilai HTML</th>
-                        </tr>
-                        <tr>
-                            <td style="border:1px solid #93c5fd; padding:8px;">Alya</td>
-                            <td style="border:1px solid #93c5fd; padding:8px;">95</td>
-                        </tr>
-                        <tr>
-                            <td style="border:1px solid #93c5fd; padding:8px;">Bima</td>
-                            <td style="border:1px solid #93c5fd; padding:8px;">90</td>
-                        </tr>
-                    </table>
-                </div>
-            </section>
-
-            <section>
-                <h2>Tips List & Tabel 💡</h2>
+                <h2>Rapikan Struktur HTML 🧼</h2>
                 <ul>
-                    <li>Gunakan list untuk poin singkat</li>
-                    <li>Gunakan tabel untuk data perbandingan</li>
-                    <li>Jangan isi tabel terlalu banyak kolom</li>
-                    <li>Beri judul kolom yang jelas</li>
+                    <li>Pastikan ada <code>&lt;!doctype html&gt;</code></li>
+                    <li>Gunakan <code>&lt;head&gt;</code> dan <code>&lt;body&gt;</code> dengan benar</li>
+                    <li>Urutkan konten: judul, isi, penutup</li>
+                    <li>Gunakan indentasi yang rapi</li>
                 </ul>
             </section>
 
             <section>
-                <h2>🚀 Misi Hari Ini</h2>
+                <h2>Sentuhan Akhir ✨</h2>
+                <ul>
+                    <li>Tambah warna pada judul dan background</li>
+                    <li>Tambah minimal 1 gambar</li>
+                    <li>Buat tampilan lebih personal sesuai tema</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Mini Project (Bebas Pilih)</h2>
                 <div class="box-task">
-                    <p><b>Buat halaman profil kelas berisi:</b></p>
-                    <ol>
-                        <li>List hobi favorit (pakai <code>&lt;ul&gt;</code>)</li>
-                        <li>List jadwal harian (pakai <code>&lt;ol&gt;</code>)</li>
-                        <li>Tabel data teman (Nama, Umur, Hobi)</li>
+                    <ol style="margin: 0 0 0 18px;">
+                        <li>Website Tentang Aku</li>
+                        <li>Website Hewan Kesukaan</li>
+                        <li>Website Game Favorit</li>
+                        <li>Website Keluargaku</li>
                     </ol>
                 </div>
             </section>
 
             <section>
-                <h1>🎉 Great Job!</h1>
-                <p>Sekarang kamu bisa menyusun data dengan lebih rapi pakai list dan tabel.</p>
-                <div class="box-info" style="max-width:640px; margin:16px auto;">
-                    <ol style="margin: 0 0 0 18px; text-align:left;">
+                <h2>Checklist Project ✅</h2>
+                <ul>
+                    <li>Ada judul website</li>
+                    <li>Ada isi utama (minimal 2 paragraf)</li>
+                    <li>Ada gambar</li>
+                    <li>Ada warna</li>
+                    <li>Ada minimal 1 link</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Sesi Presentasi 🎤</h2>
+                <div class="box-info">
+                    <p><b>Anak menjelaskan:</b></p>
+                    <ul style="margin: 8px 0 0 18px;">
+                        <li>Judul web</li>
+                        <li>Isi web</li>
+                        <li>Bagian favorit</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Penutup Seru 🎉</h2>
+                <ul>
+                    <li>Sertifikat mini</li>
+                    <li>Foto hasil karya</li>
+                    <li>Apresiasi untuk semua peserta</li>
+                </ul>
+            </section>
+
+            <section>
+                <h1>🎊 Keren!</h1>
+                <p>Kamu sudah siap jadi kreator website cilik.</p>
+                <div class="box-info" style="max-width: 640px; margin: 14px auto;">
+                    <ol style="margin: 0 0 0 18px;">
                         <li>Pertemuan 1: Dasar HTML</li>
                         <li>Pertemuan 2: Gambar & Warna</li>
                         <li>Pertemuan 3: Link & Navigasi</li>
-                        <li>Pertemuan 4: List & Tabel</li>
+                        <li>Pertemuan 4: Mini Project & Presentasi</li>
+                        <li>Pertemuan 5: List & Tabel</li>
                     </ol>
                 </div>
             </section>
@@ -268,9 +231,8 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/highlight.min.js"></script>
     <script>
-        Reveal.initialize({ controls: true, progress: true, center: true, hash: true, plugins: [RevealHighlight] });
+        Reveal.initialize({ controls: true, progress: true, center: true, hash: true });
     </script>
 </body>
 
