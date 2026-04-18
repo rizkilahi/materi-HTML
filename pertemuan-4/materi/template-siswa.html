@@ -80,6 +80,19 @@
             margin-bottom: 18px;
         }
 
+        .plan-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .plan-card {
+            background: #fff7ed;
+            border: 1px solid #fdba74;
+            border-radius: 8px;
+            padding: 12px;
+        }
+
         .code {
             background: #1f2937;
             color: #e5e7eb;
@@ -98,6 +111,25 @@
             margin-top: 16px;
         }
 
+        .rubric-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92em;
+            margin-top: 10px;
+        }
+
+        .rubric-table th,
+        .rubric-table td {
+            border: 1px solid #fed7aa;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .rubric-table th {
+            background: #ffedd5;
+            color: #7c2d12;
+        }
+
         @media screen and (max-width: 768px) {
             .nav-bar {
                 flex-direction: column;
@@ -110,6 +142,10 @@
 
             .container {
                 padding: 16px;
+            }
+
+            .plan-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -140,12 +176,57 @@
             </ul>
         </div>
 
-        <h2>Struktur Dasar Website</h2>
-        <div class="code">&lt;h1&gt;[Judul Website]&lt;/h1&gt;
+        <h2>Langkah 1: Rencana Cepat (Isi Dulu)</h2>
+        <div class="plan-grid">
+            <div class="plan-card">
+                <p><b>Judul Website:</b> ____________________</p>
+                <p><b>Tema yang dipilih:</b> ____________________</p>
+            </div>
+            <div class="plan-card">
+                <p><b>Gambar yang dipakai:</b> ____________________</p>
+                <p><b>Warna utama:</b> ____________________</p>
+            </div>
+            <div class="plan-card">
+                <p><b>Isi paragraf 1:</b> ____________________</p>
+                <p><b>Isi paragraf 2:</b> ____________________</p>
+            </div>
+            <div class="plan-card">
+                <p><b>Link referensi:</b> ____________________</p>
+                <p><b>Bagian favorit:</b> ____________________</p>
+            </div>
+        </div>
+
+        <h2>Langkah 2: Struktur Website Lengkap</h2>
+        <div class="code">&lt;!doctype html&gt;
+            &lt;html lang="id"&gt;
+            &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;title&gt;[Judul Website]&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body style="background:#fff7ed; font-family:Arial,sans-serif;"&gt;
+            &lt;h1 style="color:#c2410c;"&gt;[Judul Website]&lt;/h1&gt;
             &lt;p&gt;[Paragraf pembuka tentang tema kamu]&lt;/p&gt;
-            &lt;img src="[nama-gambar].jpg" width="200" alt="[deskripsi]"&gt;
+            &lt;img src="[nama-gambar].jpg" width="220" alt="[deskripsi gambar]"&gt;
             &lt;p&gt;[Paragraf kedua tentang hal favoritmu]&lt;/p&gt;
-            &lt;a href="https://contoh.com" target="_blank"&gt;Link Referensi&lt;/a&gt;</div>
+
+            &lt;h2&gt;Fakta Singkat&lt;/h2&gt;
+            &lt;ul&gt;
+            &lt;li&gt;Fakta 1&lt;/li&gt;
+            &lt;li&gt;Fakta 2&lt;/li&gt;
+            &lt;li&gt;Fakta 3&lt;/li&gt;
+            &lt;/ul&gt;
+
+            &lt;a href="https://contoh.com" target="_blank"&gt;Link Referensi&lt;/a&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;</div>
+
+        <h2>Langkah 3: Opsi Bonus (Pilih Salah Satu)</h2>
+        <ul>
+            <li>Tambah tabel kecil berisi 3 data penting</li>
+            <li>Tambah halaman kedua dan hubungkan dengan link</li>
+            <li>Tambah 2 gambar dan beri keterangan singkat</li>
+        </ul>
 
         <h2>Checklist Sentuhan Akhir</h2>
         <ul>
@@ -153,6 +234,16 @@
             <li>Tambahkan minimal 1 gambar</li>
             <li>Rapikan jarak antar elemen</li>
             <li>Cek semua tag sudah ditutup</li>
+            <li>Pastikan link bisa dibuka</li>
+            <li>Pastikan ukuran teks nyaman dibaca</li>
+        </ul>
+
+        <h2>Cek Error Cepat Sebelum Presentasi</h2>
+        <ul>
+            <li>Jika gambar kosong: cek nama file dan format .jpg/.png</li>
+            <li>Jika link error: cek penulisan https://</li>
+            <li>Jika tampilan berantakan: cek tag yang belum ditutup</li>
+            <li>Jika tulisan menumpuk: tambah baris baru atau margin</li>
         </ul>
 
         <div class="present-box">
@@ -164,6 +255,44 @@
             </ol>
             <p><b>Penutup:</b> "Terima kasih sudah melihat karya saya!"</p>
         </div>
+
+        <h2>Penilaian Diri (Centang)</h2>
+        <table class="rubric-table">
+            <thead>
+                <tr>
+                    <th>Aspek</th>
+                    <th>Belum</th>
+                    <th>Sudah</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Website memiliki judul yang jelas</td>
+                    <td>☐</td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td>Isi website minimal 2 paragraf</td>
+                    <td>☐</td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td>Gambar tampil dengan benar</td>
+                    <td>☐</td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td>Link berfungsi dan bisa diklik</td>
+                    <td>☐</td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td>Saya siap presentasi 30-60 detik</td>
+                    <td>☐</td>
+                    <td>☐</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </body>
 

@@ -68,7 +68,9 @@
         }
 
         .reveal p,
-        .reveal li {
+        .reveal li,
+        .reveal td,
+        .reveal th {
             font-size: 0.85em;
         }
 
@@ -97,6 +99,55 @@
             text-align: left;
         }
 
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+            text-align: left;
+        }
+
+        .mini-card {
+            background: rgba(219, 234, 254, 0.95);
+            border-left: 4px solid #3b82f6;
+            border-radius: 8px;
+            padding: 10px;
+            color: #1e3a8a;
+            font-size: 0.78em;
+        }
+
+        .mini-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.75em;
+        }
+
+        .mini-table th,
+        .mini-table td {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 7px;
+            text-align: left;
+        }
+
+        .mini-table th {
+            background: rgba(59, 130, 246, 0.25);
+            color: #dbeafe;
+        }
+
+        .mini-table td {
+            background: rgba(0, 0, 0, 0.15);
+            color: #e0e7ff;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 999px;
+            background: #2563eb;
+            color: white;
+            font-size: 0.7em;
+            margin-right: 6px;
+        }
+
         @media screen and (max-width: 768px) {
             .nav-bar {
                 flex-direction: column;
@@ -113,6 +164,10 @@
 
             .reveal h2 {
                 font-size: 1.3em;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -135,6 +190,52 @@
                 <h1>📋 List & Tabel</h1>
                 <h3>Kursus HTML Pertemuan 5</h3>
                 <p>Merapikan informasi dengan daftar dan tabel</p>
+            </section>
+
+            <section>
+                <h2>Tujuan Hari Ini 🎯</h2>
+                <div class="box-info">
+                    <ul style="margin: 0 0 0 18px;">
+                        <li>Memahami kapan pakai list dan kapan pakai tabel.</li>
+                        <li>Mampu membuat halaman data sederhana yang rapi.</li>
+                        <li>Mampu mengecek struktur HTML list dan tabel dengan mandiri.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Rundown 2 Jam ⏰</h2>
+                <table class="mini-table">
+                    <thead>
+                        <tr>
+                            <th>Durasi</th>
+                            <th>Kegiatan</th>
+                            <th>Hasil</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>20 menit</td>
+                            <td>Review link dan struktur halaman</td>
+                            <td>Siap lanjut ke data terstruktur</td>
+                        </tr>
+                        <tr>
+                            <td>45 menit</td>
+                            <td>Latihan UL dan OL</td>
+                            <td>Daftar hobi dan aktivitas selesai</td>
+                        </tr>
+                        <tr>
+                            <td>40 menit</td>
+                            <td>Latihan tabel data teman</td>
+                            <td>Tabel 3-5 baris data selesai</td>
+                        </tr>
+                        <tr>
+                            <td>15 menit</td>
+                            <td>Presentasi singkat dan refleksi</td>
+                            <td>Anak paham hasil karyanya</td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
 
             <section>
@@ -201,6 +302,24 @@
             </section>
 
             <section>
+                <h2>Kapan Pakai List vs Tabel?</h2>
+                <div class="grid-2">
+                    <div class="mini-card">
+                        <p><span class="badge">Pakai List</span>untuk poin singkat, ide, langkah kegiatan.</p>
+                    </div>
+                    <div class="mini-card">
+                        <p><span class="badge">Pakai Tabel</span>untuk data yang dibandingkan per kolom.</p>
+                    </div>
+                    <div class="mini-card">
+                        <p><span class="badge">Contoh List</span>hobi, alat sekolah, jadwal harian.</p>
+                    </div>
+                    <div class="mini-card">
+                        <p><span class="badge">Contoh Tabel</span>nama, umur, nilai, hobi.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
                 <h2>Bedah Tag Tabel 🔍</h2>
                 <ul>
                     <li><code>&lt;table&gt;</code> = pembungkus tabel</li>
@@ -241,6 +360,19 @@
             </section>
 
             <section>
+                <h2>Langkah Praktik Bertahap</h2>
+                <div class="box-task">
+                    <ol style="margin: 0 0 0 18px;">
+                        <li>Buat judul halaman: Profil Kelas Saya.</li>
+                        <li>Tambah UL berisi 3 hobi favorit.</li>
+                        <li>Tambah OL berisi 3 kegiatan pagi.</li>
+                        <li>Buat tabel 3 kolom dan isi minimal 3 baris data.</li>
+                        <li>Rapikan tampilan dengan border, padding, dan warna.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section>
                 <h2>🚀 Misi Hari Ini</h2>
                 <div class="box-task">
                     <p><b>Buat halaman profil kelas berisi:</b></p>
@@ -248,6 +380,66 @@
                         <li>List hobi favorit (pakai <code>&lt;ul&gt;</code>)</li>
                         <li>List jadwal harian (pakai <code>&lt;ol&gt;</code>)</li>
                         <li>Tabel data teman (Nama, Umur, Hobi)</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section>
+                <h2>Troubleshooting Cepat</h2>
+                <div class="box-info">
+                    <ul style="margin: 0 0 0 18px;">
+                        <li>Nomor OL tidak muncul: pastikan pakai <code>&lt;ol&gt;</code>, bukan
+                            <code>&lt;ul&gt;</code>.</li>
+                        <li>Tabel berantakan: cek setiap baris punya jumlah <code>&lt;td&gt;</code> yang sama.</li>
+                        <li>Border tidak terlihat: tambahkan style border di table/th/td.</li>
+                        <li>Data tidak sejajar: periksa tag <code>&lt;tr&gt;</code> terbuka dan tertutup dengan benar.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Rubrik Penilaian Sederhana</h2>
+                <table class="mini-table">
+                    <thead>
+                        <tr>
+                            <th>Aspek</th>
+                            <th>Skor 1</th>
+                            <th>Skor 2</th>
+                            <th>Skor 3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Kelengkapan tugas</td>
+                            <td>Ada 1 bagian</td>
+                            <td>Ada 2 bagian</td>
+                            <td>Semua bagian lengkap</td>
+                        </tr>
+                        <tr>
+                            <td>Kerapian struktur HTML</td>
+                            <td>Masih acak</td>
+                            <td>Cukup rapi</td>
+                            <td>Rapi sekali</td>
+                        </tr>
+                        <tr>
+                            <td>Kejelasan data</td>
+                            <td>Sulit dibaca</td>
+                            <td>Cukup jelas</td>
+                            <td>Sangat jelas</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>Refleksi Akhir Kelas</h2>
+                <div class="box-task">
+                    <p style="margin-top:0;"><b>Jawab 3 pertanyaan ini:</b></p>
+                    <ol style="margin: 0 0 0 18px;">
+                        <li>Bagian mana yang paling mudah, list atau tabel?</li>
+                        <li>Apa tantangan paling besar saat membuat tabel?</li>
+                        <li>Apa yang ingin ditambah di halamanmu minggu depan?</li>
                     </ol>
                 </div>
             </section>

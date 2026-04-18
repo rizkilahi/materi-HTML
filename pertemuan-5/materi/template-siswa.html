@@ -80,6 +80,19 @@
             margin-bottom: 18px;
         }
 
+        .plan-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .plan-card {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            padding: 12px;
+        }
+
         .sample {
             background: #1f2937;
             color: #e5e7eb;
@@ -107,6 +120,10 @@
             background: #dbeafe;
         }
 
+        .rubric-table {
+            margin-top: 16px;
+        }
+
         @media screen and (max-width: 768px) {
             .nav-bar {
                 flex-direction: column;
@@ -119,6 +136,10 @@
 
             .container {
                 padding: 16px;
+            }
+
+            .plan-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -145,6 +166,26 @@
                 <li>Buat 1 ordered list (<code>&lt;ol&gt;</code>)</li>
                 <li>Buat 1 tabel minimal 3 baris data</li>
             </ul>
+        </div>
+
+        <h2>Langkah 1: Rencana Halaman</h2>
+        <div class="plan-grid">
+            <div class="plan-card">
+                <p><b>Judul halaman:</b> ____________________</p>
+                <p><b>Tema data:</b> ____________________</p>
+            </div>
+            <div class="plan-card">
+                <p><b>3 hobi favorit:</b> ____________________</p>
+                <p><b>3 kegiatan pagi:</b> ____________________</p>
+            </div>
+            <div class="plan-card">
+                <p><b>Kolom tabel:</b> ____________________</p>
+                <p><b>Jumlah baris data:</b> ____________________</p>
+            </div>
+            <div class="plan-card">
+                <p><b>Warna tema:</b> ____________________</p>
+                <p><b>Bagian tersulit:</b> ____________________</p>
+            </div>
         </div>
 
         <h2>1) Hobi Favorit (Unordered List)</h2>
@@ -175,6 +216,39 @@
             &lt;/tr&gt;
             &lt;/table&gt;</div>
 
+        <h2>4) Template Halaman Lengkap</h2>
+        <div class="sample">&lt;!doctype html&gt;
+            &lt;html lang="id"&gt;
+            &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;title&gt;Profil Kelas Saya&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body style="font-family:Arial,sans-serif; background:#eff6ff;"&gt;
+            &lt;h1 style="color:#1d4ed8;"&gt;Profil Kelas Saya&lt;/h1&gt;
+
+            &lt;h2&gt;Hobi Favorit&lt;/h2&gt;
+            &lt;ul&gt;
+            &lt;li&gt;Hobi 1&lt;/li&gt;
+            &lt;li&gt;Hobi 2&lt;/li&gt;
+            &lt;li&gt;Hobi 3&lt;/li&gt;
+            &lt;/ul&gt;
+
+            &lt;h2&gt;Jadwal Pagi&lt;/h2&gt;
+            &lt;ol&gt;
+            &lt;li&gt;Kegiatan 1&lt;/li&gt;
+            &lt;li&gt;Kegiatan 2&lt;/li&gt;
+            &lt;li&gt;Kegiatan 3&lt;/li&gt;
+            &lt;/ol&gt;
+
+            &lt;h2&gt;Data Teman&lt;/h2&gt;
+            &lt;table border="1" cellpadding="6" style="border-collapse:collapse;"&gt;
+            &lt;tr&gt;&lt;th&gt;Nama&lt;/th&gt;&lt;th&gt;Umur&lt;/th&gt;&lt;th&gt;Hobi&lt;/th&gt;&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;Alya&lt;/td&gt;&lt;td&gt;11&lt;/td&gt;&lt;td&gt;Membaca&lt;/td&gt;&lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;</div>
+
         <table>
             <tr>
                 <th>Nama</th>
@@ -195,6 +269,49 @@
                 <td>[Isi Nama]</td>
                 <td>[Isi Umur]</td>
                 <td>[Isi Hobi]</td>
+            </tr>
+        </table>
+
+        <h2>Checklist Debug Cepat</h2>
+        <ul>
+            <li>Setiap item list sudah berada di dalam tag <code>&lt;li&gt;</code></li>
+            <li>Jumlah kolom header sama dengan jumlah kolom data</li>
+            <li>Tidak ada tag tabel yang tertinggal</li>
+            <li>Judul halaman mudah dipahami</li>
+            <li>Warna dan jarak sudah nyaman dibaca</li>
+        </ul>
+
+        <h2>Penilaian Diri (Centang)</h2>
+        <table class="rubric-table">
+            <tr>
+                <th>Aspek</th>
+                <th>Belum</th>
+                <th>Sudah</th>
+            </tr>
+            <tr>
+                <td>UL berisi minimal 3 item</td>
+                <td>☐</td>
+                <td>☐</td>
+            </tr>
+            <tr>
+                <td>OL berisi minimal 3 langkah</td>
+                <td>☐</td>
+                <td>☐</td>
+            </tr>
+            <tr>
+                <td>Tabel berisi minimal 3 baris data</td>
+                <td>☐</td>
+                <td>☐</td>
+            </tr>
+            <tr>
+                <td>Data rapi dan mudah dibaca</td>
+                <td>☐</td>
+                <td>☐</td>
+            </tr>
+            <tr>
+                <td>Saya siap menjelaskan hasil kerja</td>
+                <td>☐</td>
+                <td>☐</td>
             </tr>
         </table>
     </div>

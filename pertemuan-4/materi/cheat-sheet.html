@@ -83,6 +83,33 @@
             white-space: pre-wrap;
         }
 
+        .hint-box {
+            background: #fff7ed;
+            border-left: 4px solid #fb923c;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 12px;
+        }
+
+        .mini-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92em;
+            margin-top: 8px;
+        }
+
+        .mini-table th,
+        .mini-table td {
+            border: 1px solid #fed7aa;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .mini-table th {
+            background: #ffedd5;
+            color: #7c2d12;
+        }
+
         ul,
         ol {
             line-height: 1.6;
@@ -120,6 +147,15 @@
     <div class="container">
         <h1>Cheat Sheet: Mini Project & Presentasi</h1>
 
+        <h2>Alur Cepat Pertemuan 4</h2>
+        <ol>
+            <li>Pilih tema project</li>
+            <li>Tulis rencana isi singkat</li>
+            <li>Buat halaman HTML lengkap</li>
+            <li>Cek error dan rapikan tampilan</li>
+            <li>Presentasi 30-60 detik</li>
+        </ol>
+
         <h2>Tag Inti yang Wajib Dipakai</h2>
         <ul>
             <li><code>&lt;h1&gt;</code> untuk judul website</li>
@@ -128,6 +164,23 @@
             <li><code>&lt;a&gt;</code> untuk link</li>
             <li><code>style</code> untuk warna sederhana</li>
         </ul>
+
+        <h2>Template Kerangka Paling Aman</h2>
+        <div class="code">&lt;!doctype html&gt;
+            &lt;html lang="id"&gt;
+            &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;title&gt;Judul Project&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+            &lt;h1&gt;Judul Website&lt;/h1&gt;
+            &lt;p&gt;Paragraf pembuka&lt;/p&gt;
+            &lt;img src="gambar.jpg" width="220" alt="deskripsi"&gt;
+            &lt;p&gt;Paragraf isi kedua&lt;/p&gt;
+            &lt;a href="https://example.com" target="_blank"&gt;Referensi&lt;/a&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;</div>
 
         <h2>Template Cepat Halaman Project</h2>
         <div class="code">&lt;!doctype html&gt;
@@ -144,6 +197,27 @@
             &lt;/body&gt;
             &lt;/html&gt;</div>
 
+        <h2>Snippet Bonus: List dan Tabel</h2>
+        <div class="code">&lt;h2&gt;Fakta Singkat&lt;/h2&gt;
+            &lt;ul&gt;
+            &lt;li&gt;Fakta 1&lt;/li&gt;
+            &lt;li&gt;Fakta 2&lt;/li&gt;
+            &lt;/ul&gt;
+
+            &lt;h2&gt;Data Kecil&lt;/h2&gt;
+            &lt;table border="1" cellpadding="6"&gt;
+            &lt;tr&gt;&lt;th&gt;Nama&lt;/th&gt;&lt;th&gt;Info&lt;/th&gt;&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;Item 1&lt;/td&gt;&lt;td&gt;Deskripsi&lt;/td&gt;&lt;/tr&gt;
+            &lt;/table&gt;</div>
+
+        <h2>Palet Warna Rekomendasi</h2>
+        <ul>
+            <li>Latar hangat: <code>#fff7ed</code></li>
+            <li>Judul utama: <code>#c2410c</code></li>
+            <li>Subjudul: <code>#b91c1c</code></li>
+            <li>Kotak info: <code>#ffedd5</code></li>
+        </ul>
+
         <h2>Checklist Final Sebelum Presentasi</h2>
         <ol>
             <li>Judul sudah jelas</li>
@@ -151,7 +225,37 @@
             <li>Gambar tampil dengan benar</li>
             <li>Warna sudah ditambahkan</li>
             <li>Link bisa diklik</li>
+            <li>Tag pembuka dan penutup sudah cocok</li>
+            <li>Tidak ada teks yang terlalu kecil</li>
         </ol>
+
+        <h2>Troubleshooting Cepat</h2>
+        <table class="mini-table">
+            <thead>
+                <tr>
+                    <th>Masalah</th>
+                    <th>Penyebab Umum</th>
+                    <th>Solusi Cepat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Gambar tidak tampil</td>
+                    <td>Nama file tidak sama</td>
+                    <td>Samakan nama di src dengan file asli</td>
+                </tr>
+                <tr>
+                    <td>Link tidak terbuka</td>
+                    <td>URL belum lengkap</td>
+                    <td>Tambahkan https:// di depan alamat</td>
+                </tr>
+                <tr>
+                    <td>Tampilan berantakan</td>
+                    <td>Ada tag belum ditutup</td>
+                    <td>Cek ulang pasangan tag pembuka-penutup</td>
+                </tr>
+            </tbody>
+        </table>
 
         <h2>Panduan Presentasi Anak</h2>
         <ol>
@@ -160,10 +264,16 @@
             <li>"Bagian favorit saya adalah ..."</li>
         </ol>
 
+        <div class="hint-box">
+            <p><b>Tips berbicara:</b> lihat audiens, bicara perlahan, dan sebutkan 1 hal yang paling dibanggakan dari
+                project.</p>
+        </div>
+
         <h2>Penutup Kelas</h2>
         <ul>
             <li>Sertifikat mini untuk semua peserta</li>
             <li>Foto hasil karya bersama</li>
+            <li>Tantangan rumah: tambah 1 halaman baru dengan link navigasi</li>
         </ul>
     </div>
 </body>

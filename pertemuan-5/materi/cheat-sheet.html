@@ -82,6 +82,32 @@
             font-size: 0.88em;
         }
 
+        .hint-box {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 12px;
+        }
+
+        .mini-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+        }
+
+        .mini-table th,
+        .mini-table td {
+            border: 1px solid #cbd5e1;
+            padding: 8px;
+            text-align: left;
+            font-size: 0.92em;
+        }
+
+        .mini-table th {
+            background: #dbeafe;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -131,6 +157,15 @@
     <div class="container">
         <h1>Cheat Sheet: List & Tabel</h1>
 
+        <h2>Alur Cepat Belajar Hari Ini</h2>
+        <ol>
+            <li>Kenali perbedaan UL, OL, dan Tabel</li>
+            <li>Latihan membuat 2 jenis list</li>
+            <li>Latihan membuat tabel 3 kolom</li>
+            <li>Cek kerapian HTML</li>
+            <li>Presentasi singkat hasil halaman</li>
+        </ol>
+
         <h2>Tag List Dasar</h2>
         <table>
             <tr>
@@ -164,6 +199,22 @@
             &lt;ol&gt;
             &lt;li&gt;Bangun tidur&lt;/li&gt;
             &lt;li&gt;Sarapan&lt;/li&gt;
+            &lt;/ol&gt;</div>
+
+        <h2>Template Paling Aman</h2>
+        <div class="code">&lt;h1&gt;Profil Kelas Saya&lt;/h1&gt;
+            &lt;h2&gt;Hobi Favorit&lt;/h2&gt;
+            &lt;ul&gt;
+            &lt;li&gt;Membaca&lt;/li&gt;
+            &lt;li&gt;Bermain bola&lt;/li&gt;
+            &lt;li&gt;Menggambar&lt;/li&gt;
+            &lt;/ul&gt;
+
+            &lt;h2&gt;Jadwal Pagi&lt;/h2&gt;
+            &lt;ol&gt;
+            &lt;li&gt;Bangun tidur&lt;/li&gt;
+            &lt;li&gt;Sarapan&lt;/li&gt;
+            &lt;li&gt;Berangkat sekolah&lt;/li&gt;
             &lt;/ol&gt;</div>
 
         <h2>Tag Tabel Dasar</h2>
@@ -207,6 +258,20 @@
             &lt;/tr&gt;
             &lt;/table&gt;</div>
 
+        <h2>Snippet Tabel Lebih Rapi</h2>
+        <div class="code">&lt;table border="1" cellpadding="6" style="border-collapse:collapse;"&gt;
+            &lt;tr&gt;
+            &lt;th&gt;Nama&lt;/th&gt;
+            &lt;th&gt;Umur&lt;/th&gt;
+            &lt;th&gt;Hobi&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+            &lt;td&gt;Alya&lt;/td&gt;
+            &lt;td&gt;11&lt;/td&gt;
+            &lt;td&gt;Membaca&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;/table&gt;</div>
+
         <h2>Tips Cepat</h2>
         <ul>
             <li>Pakai <b>UL</b> untuk daftar tanpa urutan.</li>
@@ -214,6 +279,44 @@
             <li>Pakai <b>TH</b> untuk judul kolom tabel.</li>
             <li>Data yang sejenis lebih mudah dibaca jika pakai tabel.</li>
         </ul>
+
+        <h2>Troubleshooting Cepat</h2>
+        <table class="mini-table">
+            <tr>
+                <th>Masalah</th>
+                <th>Penyebab</th>
+                <th>Solusi</th>
+            </tr>
+            <tr>
+                <td>Nomor list tidak muncul</td>
+                <td>Pakai UL, bukan OL</td>
+                <td>Ubah tag menjadi <code>&lt;ol&gt;</code></td>
+            </tr>
+            <tr>
+                <td>Tabel miring/acak</td>
+                <td>Jumlah kolom tidak sama</td>
+                <td>Samakan jumlah <code>&lt;td&gt;</code> di tiap baris</td>
+            </tr>
+            <tr>
+                <td>Border tabel hilang</td>
+                <td>Style border belum ada</td>
+                <td>Tambahkan border pada table, th, dan td</td>
+            </tr>
+        </table>
+
+        <h2>Checklist Final</h2>
+        <ul>
+            <li>UL berisi minimal 3 item</li>
+            <li>OL berisi minimal 3 langkah</li>
+            <li>Tabel punya header yang jelas</li>
+            <li>Tabel berisi minimal 3 baris data</li>
+            <li>Semua tag pembuka dan penutup sudah benar</li>
+        </ul>
+
+        <div class="hint-box">
+            <p><b>Tips presentasi:</b> jelaskan mengapa kamu memilih data tersebut dan bagian mana yang paling kamu
+                banggakan.</p>
+        </div>
     </div>
 </body>
 

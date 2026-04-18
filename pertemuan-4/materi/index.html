@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Kursus HTML Pertemuan 4 - Mini Project & Presentasi</title>
+    <title>Kursus HTML Pertemuan 4 - Mini Project dan Presentasi</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
@@ -66,7 +66,9 @@
         }
 
         .reveal p,
-        .reveal li {
+        .reveal li,
+        .reveal td,
+        .reveal th {
             font-size: 0.85em;
         }
 
@@ -90,6 +92,55 @@
             text-align: left;
         }
 
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+            text-align: left;
+        }
+
+        .mini-card {
+            background: rgba(255, 237, 213, 0.95);
+            border-left: 4px solid #f97316;
+            border-radius: 8px;
+            padding: 10px;
+            color: #7c2d12;
+            font-size: 0.78em;
+        }
+
+        .mini-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.75em;
+        }
+
+        .mini-table th,
+        .mini-table td {
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 7px;
+            text-align: left;
+        }
+
+        .mini-table th {
+            background: rgba(249, 115, 22, 0.25);
+            color: #ffedd5;
+        }
+
+        .mini-table td {
+            background: rgba(0, 0, 0, 0.15);
+            color: #fef3c7;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 999px;
+            background: #f97316;
+            color: white;
+            font-size: 0.7em;
+            margin-right: 6px;
+        }
+
         @media screen and (max-width: 768px) {
             .nav-bar {
                 flex-direction: column;
@@ -106,6 +157,10 @@
 
             .reveal h2 {
                 font-size: 1.25em;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -126,7 +181,7 @@
     <div class="reveal">
         <div class="slides">
             <section>
-                <h1>🎯 Mini Project & Presentasi</h1>
+                <h1>🎯 Mini Project dan Presentasi</h1>
                 <h3>Kursus HTML Pertemuan 4 (2 Jam)</h3>
                 <p>Waktunya menyelesaikan website sederhana kamu sendiri!</p>
             </section>
@@ -137,8 +192,44 @@
                     <ul style="margin: 0 0 0 18px;">
                         <li>Anak menyelesaikan 1 website sederhana.</li>
                         <li>Anak percaya diri mempresentasikan hasil karya.</li>
+                        <li>Anak belajar cek hasil sendiri sebelum dipresentasikan.</li>
                     </ul>
                 </div>
+            </section>
+
+            <section>
+                <h2>Rundown 2 Jam ⏰</h2>
+                <table class="mini-table">
+                    <thead>
+                        <tr>
+                            <th>Durasi</th>
+                            <th>Kegiatan</th>
+                            <th>Target</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>20 menit</td>
+                            <td>Review cepat HTML</td>
+                            <td>Ingat tag penting</td>
+                        </tr>
+                        <tr>
+                            <td>60 menit</td>
+                            <td>Bangun mini project</td>
+                            <td>Website jadi dan rapi</td>
+                        </tr>
+                        <tr>
+                            <td>30 menit</td>
+                            <td>Presentasi karya</td>
+                            <td>Percaya diri berbicara</td>
+                        </tr>
+                        <tr>
+                            <td>10 menit</td>
+                            <td>Apresiasi dan foto karya</td>
+                            <td>Penutup menyenangkan</td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
 
             <section>
@@ -149,6 +240,24 @@
                     <li><code>&lt;a&gt;</code> untuk link dan navigasi</li>
                     <li><code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;table&gt;</code> untuk data</li>
                 </ul>
+            </section>
+
+            <section>
+                <h2>Aturan Mini Project</h2>
+                <div class="grid-2">
+                    <div class="mini-card">
+                        <p><span class="badge">Wajib</span>Judul + 2 paragraf + 1 gambar + 1 link</p>
+                    </div>
+                    <div class="mini-card">
+                        <p><span class="badge">Wajib</span>Struktur HTML rapi dan tag ditutup</p>
+                    </div>
+                    <div class="mini-card">
+                        <p><span class="badge">Bonus</span>Tambah list atau tabel sederhana</p>
+                    </div>
+                    <div class="mini-card">
+                        <p><span class="badge">Bonus</span>Warna tema sesuai topik website</p>
+                    </div>
+                </div>
             </section>
 
             <section>
@@ -183,6 +292,24 @@
             </section>
 
             <section>
+                <h2>Contoh Ide Isi per Tema</h2>
+                <div class="grid-2">
+                    <div class="mini-card">
+                        <p><b>Tentang Aku</b><br>Nama, hobi, makanan favorit</p>
+                    </div>
+                    <div class="mini-card">
+                        <p><b>Hewan Kesukaan</b><br>Jenis hewan, habitat, fakta lucu</p>
+                    </div>
+                    <div class="mini-card">
+                        <p><b>Game Favorit</b><br>Nama game, alasan suka, tips bermain</p>
+                    </div>
+                    <div class="mini-card">
+                        <p><b>Keluargaku</b><br>Anggota keluarga, aktivitas bersama</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
                 <h2>Checklist Project ✅</h2>
                 <ul>
                     <li>Ada judul website</li>
@@ -191,6 +318,52 @@
                     <li>Ada warna</li>
                     <li>Ada minimal 1 link</li>
                 </ul>
+            </section>
+
+            <section>
+                <h2>Kesalahan Umum dan Solusinya</h2>
+                <div class="box-info">
+                    <ul style="margin: 0 0 0 18px;">
+                        <li>Gambar tidak muncul: cek nama file gambar sama persis.</li>
+                        <li>Link tidak jalan: pastikan ada <code>https://</code>.</li>
+                        <li>Layout berantakan: cek tag yang belum ditutup.</li>
+                        <li>Teks terlalu mepet: tambah jarak pakai margin atau br.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Rubrik Penilaian Sederhana</h2>
+                <table class="mini-table">
+                    <thead>
+                        <tr>
+                            <th>Aspek</th>
+                            <th>Skor 1</th>
+                            <th>Skor 2</th>
+                            <th>Skor 3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Kelengkapan isi</td>
+                            <td>Kurang lengkap</td>
+                            <td>Cukup</td>
+                            <td>Lengkap</td>
+                        </tr>
+                        <tr>
+                            <td>Kerapian HTML</td>
+                            <td>Masih acak</td>
+                            <td>Cukup rapi</td>
+                            <td>Rapi sekali</td>
+                        </tr>
+                        <tr>
+                            <td>Presentasi</td>
+                            <td>Masih malu</td>
+                            <td>Cukup jelas</td>
+                            <td>Percaya diri</td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
 
             <section>
@@ -206,11 +379,24 @@
             </section>
 
             <section>
+                <h2>Format Presentasi 30-60 Detik</h2>
+                <div class="box-task">
+                    <ol style="margin: 0 0 0 18px;">
+                        <li>Halo, nama saya ... dan ini website saya.</li>
+                        <li>Website ini bercerita tentang ...</li>
+                        <li>Bagian favorit saya adalah ...</li>
+                        <li>Terima kasih sudah melihat karya saya.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section>
                 <h2>Penutup Seru 🎉</h2>
                 <ul>
                     <li>Sertifikat mini</li>
                     <li>Foto hasil karya</li>
                     <li>Apresiasi untuk semua peserta</li>
+                    <li>Tantangan rumah: tambahkan 1 halaman baru</li>
                 </ul>
             </section>
 
