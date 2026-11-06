@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat Sheet - Pertemuan 6</title>
+    <style>
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+            padding: 10px 20px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+        }
+
+        .nav-title {
+            color: white;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 12px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            font-size: 0.85em;
+        }
+
+        body {
+            margin: 0;
+            padding: 60px 15px 30px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fce7f3 0%, #ede9fe 100%);
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 14px;
+            padding: 24px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            color: #be185d;
+            text-align: center;
+            font-size: 1.8em;
+        }
+
+        h2 {
+            color: #6d28d9;
+            font-size: 1.3em;
+            background: #fdf2f8;
+            border-left: 4px solid #db2777;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-top: 22px;
+        }
+
+        .code {
+            background: #1f2937;
+            color: #e5e7eb;
+            padding: 10px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-size: 0.88em;
+            white-space: pre;
+            font-family: Consolas, 'Courier New', monospace;
+        }
+
+        .result {
+            border: 2px dashed #c4b5fd;
+            border-radius: 6px;
+            padding: 10px;
+            margin-top: 8px;
+            font-family: Arial, sans-serif;
+        }
+
+        .result::before {
+            content: "Hasil:";
+            display: block;
+            font-size: 0.8em;
+            color: #7c3aed;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .hint-box {
+            background: #fdf2f8;
+            border-left: 4px solid #ec4899;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 12px;
+        }
+
+        .swatches {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .swatch {
+            border-radius: 8px;
+            padding: 8px 10px;
+            font-family: Consolas, 'Courier New', monospace;
+            font-size: 0.9em;
+            border: 1px solid #e5e7eb;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+
+        th,
+        td {
+            border: 1px solid #e9d5ff;
+            padding: 8px;
+            text-align: left;
+            font-size: 0.92em;
+            vertical-align: top;
+        }
+
+        th {
+            background: #fce7f3;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-bar {
+                flex-direction: column;
+                padding: 8px;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+
+            .container {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <div class="nav-title">📦 Pertemuan 6: Cheat Sheet</div>
+        <div class="nav-links">
+            <a href="../../index.html">🏠 Home</a>
+            <a href="index.html">📖 Presentasi</a>
+            <a href="template-siswa.html">✍️ Template</a>
+            <a href="../../playground.html">🧪 Editor Coba-Coba</a>
+            <a href="../../pertemuan-5/materi/cheat-sheet.html">⬅️ Pertemuan 5</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Cheat Sheet: Kotak & Tombol</h1>
+
+        <h2>Alur Cepat Belajar Hari Ini</h2>
+        <ol>
+            <li>Website = kumpulan kotak: kepala, menu, isi, kaki</li>
+            <li>Buat kotak dengan <code>&lt;div&gt;</code></li>
+            <li>Hias kotak dengan <code>style</code></li>
+            <li>Jajarkan kotak dengan <code>display: flex</code></li>
+            <li>Buat tombol dari link <code>&lt;a&gt;</code> yang dihias</li>
+        </ol>
+
+        <h2>Tag Baru</h2>
+        <table>
+            <tr>
+                <th>Tag</th>
+                <th>Fungsi</th>
+                <th>Contoh</th>
+            </tr>
+            <tr>
+                <td><code>&lt;div&gt;</code></td>
+                <td>Kotak pembungkus (wadah)</td>
+                <td><code>&lt;div&gt;...isi...&lt;/div&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;button&gt;</code></td>
+                <td>Tombol (nanti dipakai bersama JavaScript)</td>
+                <td><code>&lt;button&gt;Klik Aku&lt;/button&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;a&gt;</code> + style</td>
+                <td>Tombol yang bisa pindah halaman</td>
+                <td><code>&lt;a href="hobi.html" style="..."&gt;Hobi&lt;/a&gt;</code></td>
+            </tr>
+        </table>
+
+        <h2>Kamus Gaya Kotak</h2>
+        <table>
+            <tr>
+                <th>Gaya</th>
+                <th>Artinya</th>
+                <th>Contoh</th>
+            </tr>
+            <tr>
+                <td><code>background-color</code></td>
+                <td>Warna isi kotak</td>
+                <td><code>background-color: pink;</code></td>
+            </tr>
+            <tr>
+                <td><code>color</code></td>
+                <td>Warna tulisan</td>
+                <td><code>color: white;</code></td>
+            </tr>
+            <tr>
+                <td><code>border</code></td>
+                <td>Garis pinggir (tebal, jenis, warna)</td>
+                <td><code>border: 3px solid purple;</code></td>
+            </tr>
+            <tr>
+                <td><code>border-radius</code></td>
+                <td>Sudut membulat</td>
+                <td><code>border-radius: 12px;</code></td>
+            </tr>
+            <tr>
+                <td><code>padding</code></td>
+                <td>Jarak di <b>dalam</b> kotak (isi ke garis)</td>
+                <td><code>padding: 15px;</code></td>
+            </tr>
+            <tr>
+                <td><code>margin</code></td>
+                <td>Jarak di <b>luar</b> kotak (ke kotak lain)</td>
+                <td><code>margin: 10px;</code></td>
+            </tr>
+            <tr>
+                <td><code>width</code></td>
+                <td>Lebar kotak</td>
+                <td><code>width: 200px;</code></td>
+            </tr>
+            <tr>
+                <td><code>text-align</code></td>
+                <td>Posisi tulisan</td>
+                <td><code>text-align: center;</code></td>
+            </tr>
+            <tr>
+                <td><code>display: flex</code></td>
+                <td>Isi kotak berjajar ke samping</td>
+                <td>Ditulis di kotak <b>pembungkus</b></td>
+            </tr>
+            <tr>
+                <td><code>gap</code></td>
+                <td>Jarak antar kotak yang berjajar</td>
+                <td><code>gap: 10px;</code></td>
+            </tr>
+            <tr>
+                <td><code>text-decoration: none</code></td>
+                <td>Menghapus garis bawah link</td>
+                <td>Wajib untuk tombol dari <code>&lt;a&gt;</code></td>
+            </tr>
+        </table>
+
+        <h2>Contoh Kartu</h2>
+        <div class="code">&lt;div style="background-color: lightyellow; border: 3px solid orange; border-radius: 12px; padding: 15px;"&gt;
+  &lt;h3&gt;Kucingku&lt;/h3&gt;
+  &lt;p&gt;Namanya Oyen.&lt;/p&gt;
+&lt;/div&gt;</div>
+        <div class="result">
+            <div style="background-color: lightyellow; border: 3px solid orange; border-radius: 12px; padding: 15px;">
+                <h3 style="margin:0 0 6px;">Kucingku</h3>
+                <p style="margin:0;">Namanya Oyen.</p>
+            </div>
+        </div>
+
+        <h2>Contoh Kotak Berjajar</h2>
+        <div class="code">&lt;div style="display: flex; gap: 10px;"&gt;
+  &lt;div style="background: pink; padding: 10px;"&gt;🍕 Pizza&lt;/div&gt;
+  &lt;div style="background: lightblue; padding: 10px;"&gt;🍜 Mie&lt;/div&gt;
+  &lt;div style="background: lightgreen; padding: 10px;"&gt;🍩 Donat&lt;/div&gt;
+&lt;/div&gt;</div>
+        <div class="result">
+            <div style="display: flex; gap: 10px;">
+                <div style="background: pink; padding: 10px;">🍕 Pizza</div>
+                <div style="background: lightblue; padding: 10px;">🍜 Mie</div>
+                <div style="background: lightgreen; padding: 10px;">🍩 Donat</div>
+            </div>
+        </div>
+
+        <h2>Contoh Tombol</h2>
+        <div class="code">&lt;a href="hobi.html" style="background-color: hotpink; color: white; padding: 10px 20px; border-radius: 20px; text-decoration: none;"&gt;Lihat Hobiku&lt;/a&gt;
+
+&lt;button&gt;Klik Aku&lt;/button&gt;</div>
+        <div class="result" style="padding:16px 10px;">
+            <a href="#" onclick="return false;"
+                style="background-color: hotpink; color: white; padding: 10px 20px; border-radius: 20px; text-decoration: none;">Lihat
+                Hobiku</a>
+            &nbsp;&nbsp;
+            <button>Klik Aku</button>
+        </div>
+
+        <h2>Kerangka Layout 4 Bagian</h2>
+        <div class="code">&lt;div&gt; KEPALA: judul website &lt;/div&gt;
+&lt;div&gt; MENU: tombol-tombol &lt;/div&gt;
+&lt;div style="display: flex;"&gt;
+  &lt;div&gt; KARTU 1 &lt;/div&gt;
+  &lt;div&gt; KARTU 2 &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt; KAKI: Dibuat oleh ... &lt;/div&gt;</div>
+
+        <h2>Palet Warna Rekomendasi</h2>
+        <div class="swatches">
+            <span class="swatch" style="background:hotpink; color:white;">hotpink</span>
+            <span class="swatch" style="background:purple; color:white;">purple</span>
+            <span class="swatch" style="background:teal; color:white;">teal</span>
+            <span class="swatch" style="background:orange;">orange</span>
+            <span class="swatch" style="background:lightyellow;">lightyellow</span>
+            <span class="swatch" style="background:lightblue;">lightblue</span>
+            <span class="swatch" style="background:lightgreen;">lightgreen</span>
+            <span class="swatch" style="background:lavender;">lavender</span>
+            <span class="swatch" style="background:#fdf2f8;">#fdf2f8</span>
+        </div>
+        <div class="hint-box">
+            <p style="margin:0;"><b>Tips warna:</b> kotak besar pakai warna <b>muda</b> (light...), tombol dan kepala
+                pakai warna <b>tua</b> dengan tulisan putih supaya mudah dibaca.</p>
+        </div>
+
+        <h2>Troubleshooting Cepat</h2>
+        <table>
+            <tr>
+                <th>Masalah</th>
+                <th>Penyebab</th>
+                <th>Solusi</th>
+            </tr>
+            <tr>
+                <td>Semua bagian ikut berwarna sama</td>
+                <td>Ada <code>&lt;/div&gt;</code> yang lupa</td>
+                <td>Hitung jumlah <code>&lt;div&gt;</code> dan <code>&lt;/div&gt;</code>, harus sama</td>
+            </tr>
+            <tr>
+                <td>Kartu tidak berjajar</td>
+                <td><code>display: flex</code> salah tempat</td>
+                <td>Pindahkan ke div <b>pembungkus</b> kartu</td>
+            </tr>
+            <tr>
+                <td>Gaya tidak berubah</td>
+                <td>Lupa <code>:</code> / <code>;</code> / tanda kutip</td>
+                <td>Tulis <code>style="nama: nilai; nama: nilai;"</code></td>
+            </tr>
+            <tr>
+                <td>Tombol bergaris bawah</td>
+                <td>Gaya bawaan link</td>
+                <td>Tambah <code>text-decoration: none;</code></td>
+            </tr>
+            <tr>
+                <td>Tulisan mepet ke garis</td>
+                <td>Belum ada padding</td>
+                <td>Tambah <code>padding: 15px;</code></td>
+            </tr>
+            <tr>
+                <td>Kotak saling menempel</td>
+                <td>Belum ada jarak</td>
+                <td>Tambah <code>margin</code> atau <code>gap</code></td>
+            </tr>
+        </table>
+
+        <h2>Checklist Final</h2>
+        <ul>
+            <li>Ada 4 bagian: kepala, menu, isi, kaki</li>
+            <li>Minimal 2 tombol menu</li>
+            <li>Minimal 2 kartu ranking berjajar, tiap kartu berisi <code>&lt;ol&gt;</code> top 3</li>
+            <li>Semua <code>&lt;div&gt;</code> sudah ditutup</li>
+            <li>Warna nyaman dibaca</li>
+        </ul>
+
+        <div class="hint-box">
+            <p style="margin:0;"><b>Tips presentasi:</b> tunjukkan kartu ranking favoritmu dan ceritakan kenapa juara
+                nomor 1 pantas menang!</p>
+        </div>
+    </div>
+</body>
+
+</html>

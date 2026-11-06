@@ -2,32 +2,18 @@
 
 ## 📁 File yang Tersedia
 
-### 1. **index.html** ⭐ (FILE UTAMA)
+Setiap pertemuan ada di `pertemuan-N/materi/` dan berisi 3 file:
 
-- Materi presentasi lengkap dengan 12 slide
-- Sistem kode akses (password: `html2025`)
-- Quiz interaktif & demo langsung
-- **Cara pakai:** Buka di browser, masukkan kode akses
+| File                    | Untuk     | Cara Pakai                                                  |
+| ----------------------- | --------- | ----------------------------------------------------------- |
+| ⭐ `index.html`          | Instruktur | Slide presentasi. Buka di Chrome, tekan F11 untuk fullscreen |
+| ✍️ `template-siswa.html` | Siswa     | Instruksi tugas, kerangka kode, checklist, penilaian diri  |
+| 📝 `cheat-sheet.html`    | Siswa     | Buka di tab terpisah sebagai referensi saat praktik        |
 
-### 2. **template-siswa.html** 📝
+Ditambah di folder utama:
 
-- Template kosong untuk tugas siswa
-- Sudah ada struktur & instruksi
-- Sudah include styling dasar
-- **Cara pakai:** Bagikan ke siswa, minta mereka isi
-
-### 3. **cheat-sheet.html** 📖
-
-- Referensi lengkap semua materi
-- 12 kartu topik berbeda
-- Contoh kode & hasil preview
-- **Cara pakai:** Buka di tab terpisah sebagai referensi
-
-### 4. **README.md** 📄
-
-- Dokumentasi lengkap
-- Cara penggunaan detail
-- Tips customization
+- 🏠 **index.html**: halaman utama untuk memilih pertemuan.
+- 🧪 **playground.html** (Editor Coba-Coba): siswa mengetik HTML di kiri, hasilnya langsung tampil di kanan.
 
 ---
 
@@ -35,27 +21,42 @@
 
 ### Langkah 1: Buka Materi
 
-```
-Double-click: index.html
-Masukkan kode: html2025
+```text
+Double-click: index.html (folder utama) → pilih pertemuan → Buka Presentasi
+Pertemuan 1 saja: masukkan kode akses html2025
 ```
 
 ### Langkah 2: Ajarkan
 
-- Tekan SPASI untuk next slide
-- Minta siswa klik button interaktif
-- Slide 11: Beri waktu 15 menit praktek
+- Tekan SPASI atau → untuk slide berikutnya, ← untuk kembali, ESC untuk overview
+- Berhenti di slide kuis, demo, dan "Coba Langsung", lalu minta siswa ikut mencoba
+- Beri waktu praktik paling lama di slide Misi / Challenge
 
 ### Langkah 3: Beri Tugas
 
-```
-Bagikan: template-siswa.html
-Atau: Minta siswa buat dari nol
+```text
+Bagikan: template-siswa.html (+ cheat-sheet.html sebagai referensi)
+Praktik: Notepad / VS Code, atau Editor Coba-Coba (playground.html)
 ```
 
 ---
 
+## 🗺️ PETA PERTEMUAN
+
+| Pertemuan | Topik                    | Tag / Konsep Baru                                     | Tugas Siswa                               |
+| --------- | ------------------------ | ----------------------------------------------------- | ----------------------------------------- |
+| 1 🚀      | Dasar HTML               | `html`, `head`, `title`, `body`, `h1`-`h3`, `p`, `br` | Website Tentang Aku                       |
+| 2 🎨      | Gambar & Warna           | `img` (`src`, `width`), `style` color, `b` `i` `u`    | Website Kartun / Hewan Kesukaan           |
+| 3 🔗      | Link & Navigasi          | `a` (`href`, `target`), menu navigasi                 | Website 3 halaman dengan menu             |
+| 4 🎯      | Mini Project & Presentasi | Review semua tag                                     | 1 website jadi + presentasi 30-60 detik   |
+| 5 📋      | List & Tabel             | `ul`, `ol`, `li`, `table`, `tr`, `th`, `td`           | Halaman Profil Kelas                      |
+| 6 📦      | Kotak & Tombol           | `div`, padding/margin/border, `display: flex`, tombol | Website Ranking Favoritku                 |
+
+---
+
 ## 🎯 RUNDOWN 2 JAM
+
+### Pertemuan 1: Dasar HTML
 
 | Waktu         | Aktivitas                   | Slide |
 | ------------- | --------------------------- | ----- |
@@ -67,13 +68,64 @@ Atau: Minta siswa buat dari nol
 | 55-110 menit  | Challenge - praktek mandiri | 11    |
 | 110-120 menit | Review & closing            | 12    |
 
+### Pertemuan 2 & 3
+
+Slide belum memuat rundown waktu. Pola yang disarankan: ±15 menit review, ±45 menit materi sambil mencoba,
+±50 menit challenge, ±10 menit penutup.
+
+### Pertemuan 4: Mini Project & Presentasi
+
+| Durasi   | Kegiatan                | Hasil                  |
+| -------- | ----------------------- | ---------------------- |
+| 20 menit | Review cepat HTML       | Ingat tag penting      |
+| 60 menit | Bangun mini project     | Website jadi dan rapi  |
+| 30 menit | Presentasi karya        | Percaya diri berbicara |
+| 10 menit | Apresiasi dan foto karya | Penutup menyenangkan  |
+
+### Pertemuan 5: List & Tabel
+
+| Durasi   | Kegiatan                         | Hasil                              |
+| -------- | -------------------------------- | ---------------------------------- |
+| 20 menit | Review link dan struktur halaman | Siap lanjut ke data terstruktur    |
+| 45 menit | Latihan UL dan OL                | Daftar hobi dan aktivitas selesai  |
+| 40 menit | Latihan tabel data teman         | Tabel 3-5 baris data selesai       |
+| 15 menit | Presentasi singkat dan refleksi  | Anak paham hasil karyanya          |
+
+### Pertemuan 6: Kotak & Tombol
+
+| Durasi   | Kegiatan                               | Hasil                                | Slide |
+| -------- | -------------------------------------- | ------------------------------------ | ----- |
+| 15 menit | Review list & tabel + kuis kilat       | Ingat lagi materi minggu lalu        | 1-4   |
+| 30 menit | Kotak `<div>` dan cara menghiasnya     | Bisa membuat kartu berwarna          | 5-9   |
+| 20 menit | Tombol dan layout sederhana            | Punya menu tombol dan kotak berjajar | 10-14 |
+| 45 menit | Misi: Website Ranking Favoritku        | 1 halaman ranking selesai            | 15-17 |
+| 10 menit | Pamer karya dan refleksi               | Berani menjelaskan hasil             | 18-20 |
+
+**Catatan P6:**
+
+- Slide 9 (Padding vs Margin) paling sering membingungkan. Pakai analogi kado: isi → kertas kado → jarak di meja.
+- Slide 14 punya editor mini. Klik di kotak hitam dulu sebelum mengetik; selama kursor di sana, tombol panah tidak memindah slide.
+- Kesalahan paling umum: lupa `</div>` sehingga semua bagian ikut berwarna. Ajak siswa memakai tombol **🔍 Cek Tag** di Editor Coba-Coba.
+
+---
+
+## 🧪 MEMAKAI EDITOR COBA-COBA
+
+- Buka `playground.html` dari tombol di halaman utama. Tidak perlu internet.
+- **Mulai dari:** memuat contoh dari Pertemuan 1, 2, 3, 5, atau 6.
+- **🔍 Cek Tag:** menunjukkan tag yang lupa ditutup beserta nomor barisnya.
+- **💾 Simpan File:** mengunduh kode sebagai file `.html` ke folder Downloads.
+- **📂 Buka File:** membuka file `.html` milik siswa untuk diperiksa.
+- Kode tersimpan otomatis di browser laptop itu. Jika laptop dipakai bergantian, minta siswa **Simpan File** sebelum selesai.
+- Gambar dari folder komputer (`src="kucing.jpg"`) tidak tampil di editor. Untuk tugas bergambar, simpan file lalu buka langsung di Chrome dari folder yang sama dengan gambarnya.
+
 ---
 
 ## 🔧 CUSTOMIZATION CEPAT
 
 ### Ganti Kode Akses:
 
-Buka `index.html`, cari baris dengan:
+Buka `pertemuan-1/materi/index.html` (hanya Pertemuan 1 yang memakai kode akses), cari baris dengan:
 
 ```javascript
 const correctCode = "html2025"; // Ganti ini!
@@ -81,7 +133,7 @@ const correctCode = "html2025"; // Ganti ini!
 
 ### Ganti Warna Tema:
 
-Buka `index.html`, cari bagian CSS:
+Buka `index.html` pertemuan yang ingin diubah, cari bagian CSS `.nav-bar`:
 
 ```css
 background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -122,6 +174,14 @@ background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 2. Apakah tag sudah ditutup?
 3. Apakah di dalam <body>?
 4. Sudah refresh browser (F5)?
+
+### Masalah: Slide tidak tampil / layar kosong
+
+**Solusi:** Slide memuat reveal.js dari internet. Pastikan laptop tersambung internet, lalu refresh (F5).
+
+### Masalah: Semua bagian halaman ikut berwarna sama
+
+**Solusi:** Ada `</div>` yang lupa ditutup. Tempel kode siswa ke Editor Coba-Coba, klik **🔍 Cek Tag**.
 
 ### Masalah: Slide tidak maju
 
@@ -170,5 +230,5 @@ Tidak masalah kalau ada error - itu bagian dari proses belajar! 💪
 
 ---
 
-_Versi 1.0 - Januari 2026_
+_Versi 2.0 - November 2026 (Pertemuan 1-6 + Editor Coba-Coba)_
 _Dibuat dengan ❤️ untuk pendidikan coding anak Indonesia_

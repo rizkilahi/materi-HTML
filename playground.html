@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor Coba-Coba - Kursus HTML</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f3f0ff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-bar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+        }
+
+        .nav-title {
+            color: white;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 12px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            font-size: 0.85em;
+        }
+
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            padding: 10px 16px;
+            background: white;
+            border-bottom: 1px solid #ddd6fe;
+        }
+
+        .toolbar label {
+            font-size: 0.9em;
+            color: #4c1d95;
+            font-weight: 600;
+        }
+
+        .toolbar select,
+        .btn {
+            font: inherit;
+            font-size: 0.9em;
+            padding: 7px 12px;
+            border-radius: 8px;
+            border: 2px solid #c4b5fd;
+            background: white;
+            color: #4c1d95;
+            cursor: pointer;
+        }
+
+        .btn:hover,
+        .toolbar select:hover {
+            border-color: #7c3aed;
+        }
+
+        .btn-primary {
+            background: #7c3aed;
+            border-color: #7c3aed;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5b21b6;
+        }
+
+        .spacer {
+            flex: 1;
+        }
+
+        .workspace {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            padding: 12px 16px;
+            min-height: 0;
+        }
+
+        .panel {
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+
+        .panel-title {
+            font-size: 0.8em;
+            font-weight: bold;
+            color: #6d28d9;
+            margin: 0 0 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .editor-wrap {
+            flex: 1;
+            display: flex;
+            border: 2px solid #7c3aed;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #1f2937;
+            min-height: 0;
+        }
+
+        .gutter {
+            padding: 12px 8px 12px 10px;
+            color: #6b7280;
+            text-align: right;
+            user-select: none;
+            font-family: Consolas, 'Courier New', monospace;
+            line-height: 1.5;
+            white-space: pre;
+            overflow: hidden;
+            background: #111827;
+        }
+
+        textarea {
+            flex: 1;
+            border: none;
+            outline: none;
+            resize: none;
+            padding: 12px;
+            background: #1f2937;
+            color: #f9fafb;
+            font-family: Consolas, 'Courier New', monospace;
+            line-height: 1.5;
+            tab-size: 2;
+            white-space: pre;
+            overflow: auto;
+        }
+
+        iframe {
+            flex: 1;
+            width: 100%;
+            border: 2px solid #c4b5fd;
+            border-radius: 10px;
+            background: white;
+        }
+
+        .status {
+            margin: 0 16px 12px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 0.92em;
+            background: #ede9fe;
+            color: #4c1d95;
+            min-height: 1.2em;
+        }
+
+        .status.ok {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .status.warn {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        @media (max-width: 800px) {
+            body {
+                height: auto;
+            }
+
+            .workspace {
+                grid-template-columns: 1fr;
+            }
+
+            .editor-wrap,
+            iframe {
+                height: 50vh;
+                flex: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <div class="nav-title">🧪 Editor Coba-Coba HTML</div>
+        <div class="nav-links">
+            <a href="index.html">🏠 Home</a>
+        </div>
+    </nav>
+
+    <div class="toolbar">
+        <label for="template">Mulai dari:</label>
+        <select id="template">
+            <option value="">-- pilih contoh --</option>
+            <option value="kosong">📄 Halaman kosong</option>
+            <option value="p1">🚀 P1: Tentang Aku</option>
+            <option value="p2">🎨 P2: Hewan Kesukaan</option>
+            <option value="p3">🔗 P3: Menu Link</option>
+            <option value="p5">📋 P5: List & Tabel</option>
+            <option value="p6">📦 P6: Ranking Favoritku</option>
+        </select>
+        <button class="btn" id="btn-cek" title="Cari tag yang lupa ditutup">🔍 Cek Tag</button>
+        <button class="btn" id="btn-kecil" title="Perkecil tulisan">A−</button>
+        <button class="btn" id="btn-besar" title="Perbesar tulisan">A+</button>
+        <span class="spacer"></span>
+        <button class="btn" id="btn-buka" title="Buka file .html dari komputer">📂 Buka File</button>
+        <input type="file" id="file-input" accept=".html,.htm,text/html" hidden>
+        <button class="btn btn-primary" id="btn-unduh" title="Simpan sebagai file .html">💾 Simpan File</button>
+    </div>
+
+    <div class="workspace">
+        <div class="panel">
+            <p class="panel-title">✍️ KODE HTML</p>
+            <div class="editor-wrap">
+                <div class="gutter" id="gutter" aria-hidden="true">1</div>
+                <textarea id="code" spellcheck="false" aria-label="Kode HTML"></textarea>
+            </div>
+        </div>
+        <div class="panel">
+            <p class="panel-title">👀 HASIL</p>
+            <iframe id="preview" title="Hasil kode HTML" sandbox="allow-popups"></iframe>
+        </div>
+    </div>
+
+    <div class="status" id="status">Ketik kode di kiri, hasilnya langsung muncul di kanan. Kodemu tersimpan otomatis di
+        browser ini.</div>
+
+    <script>
+        var TEMPLATES = {
+            kosong: [
+                '<!DOCTYPE html>',
+                '<html lang="id">',
+                '  <head>',
+                '    <meta charset="UTF-8">',
+                '    <title>Website Saya</title>',
+                '  </head>',
+                '  <body>',
+                '    ',
+                '  </body>',
+                '</html>'
+            ],
+            p1: [
+                '<!DOCTYPE html>',
+                '<html lang="id">',
+                '  <head>',
+                '    <meta charset="UTF-8">',
+                '    <title>Tentang Aku</title>',
+                '  </head>',
+                '  <body>',
+                '    <h1>Halo, Namaku Rani!</h1>',
+                '    <h3>Hobiku</h3>',
+                '    <p>Aku suka menggambar dan bermain sepeda.</p>',
+                '    <p>Umurku 11 tahun.<br>Aku kelas 5 SD.</p>',
+                '  </body>',
+                '</html>'
+            ],
+            p2: [
+                '<!DOCTYPE html>',
+                '<html lang="id">',
+                '  <head>',
+                '    <meta charset="UTF-8">',
+                '    <title>Hewan Kesukaanku</title>',
+                '  </head>',
+                '  <body style="background-color: lightyellow;">',
+                '    <h1 style="color: orange;">Kucing Kesayanganku</h1>',
+                '    <p>Kucingku bernama <b>Oyen</b>. Dia <i>sangat</i> <u>lucu</u>!</p>',
+                '    <img src="kucing.jpg" width="250" alt="Foto kucing">',
+                '    <p style="color: purple;">Oyen suka tidur di sofa.</p>',
+                '  </body>',
+                '</html>'
+            ],
+            p3: [
+                '<!DOCTYPE html>',
+                '<html lang="id">',
+                '  <head>',
+                '    <meta charset="UTF-8">',
+                '    <title>Menu Website</title>',
+                '  </head>',
+                '  <body>',
+                '    <p>',
+                '      <a href="index.html">Beranda</a> |',
+                '      <a href="hobi.html">Hobi</a> |',
+                '      <a href="https://www.wikipedia.org" target="_blank">Wikipedia</a>',
+                '    </p>',
+                '    <h1>Selamat Datang!</h1>',
+                '    <p>Klik menu di atas untuk pindah halaman.</p>',
+                '  </body>',
+                '</html>'
+            ],
+            p5: [
+                '<!DOCTYPE html>',
+                '<html lang="id">',
+                '  <head>',
+                '    <meta charset="UTF-8">',
+                '    <title>Profil Kelas Saya</title>',
+                '  </head>',
+                '  <body>',
+                '    <h1>Profil Kelas Saya</h1>',
+                '    <h2>Hobi Favorit</h2>',
+                '    <ul>',
+                '      <li>Membaca</li>',
+                '      <li>Menggambar</li>',
+                '      <li>Bermain bola</li>',
+                '    </ul>',
+                '    <h2>Jadwal Pagi</h2>',
+                '    <ol>',
+                '      <li>Bangun tidur</li>',
+                '      <li>Sarapan</li>',
+                '      <li>Berangkat sekolah</li>',
+                '    </ol>',
+                '    <h2>Data Teman</h2>',
+                '    <table border="1" cellpadding="6" style="border-collapse: collapse;">',
+                '      <tr><th>Nama</th><th>Umur</th><th>Hobi</th></tr>',
+                '      <tr><td>Alya</td><td>11</td><td>Membaca</td></tr>',
+                '      <tr><td>Bima</td><td>11</td><td>Sepak bola</td></tr>',
+                '    </table>',
+                '  </body>',
+                '</html>'
+            ],
+            p6: [
+                '<!DOCTYPE html>',
+                '<html lang="id">',
+                '  <head>',
+                '    <meta charset="UTF-8">',
+                '    <title>Ranking Favoritku</title>',
+                '  </head>',
+                '  <body style="font-family: Arial, sans-serif; background-color: #fdf2f8; margin: 0;">',
+                '',
+                '    <div style="background-color: purple; color: white; padding: 20px; text-align: center;">',
+                '      <h1>🏆 Ranking Favoritku</h1>',
+                '    </div>',
+                '',
+                '    <div style="padding: 10px; text-align: center;">',
+                '      <a href="#makanan" style="background-color: hotpink; color: white; padding: 8px 16px; border-radius: 20px; text-decoration: none;">Makanan</a>',
+                '      <a href="#game" style="background-color: hotpink; color: white; padding: 8px 16px; border-radius: 20px; text-decoration: none;">Game</a>',
+                '    </div>',
+                '',
+                '    <div style="display: flex; gap: 12px; padding: 10px;">',
+                '      <div id="makanan" style="flex: 1; background-color: lightyellow; padding: 12px; border-radius: 12px;">',
+                '        <h3>🍔 Makanan</h3>',
+                '        <ol>',
+                '          <li>Bakso</li>',
+                '          <li>Sate</li>',
+                '          <li>Martabak</li>',
+                '        </ol>',
+                '      </div>',
+                '      <div id="game" style="flex: 1; background-color: lightblue; padding: 12px; border-radius: 12px;">',
+                '        <h3>🎮 Game</h3>',
+                '        <ol>',
+                '          <li>Game A</li>',
+                '          <li>Game B</li>',
+                '          <li>Game C</li>',
+                '        </ol>',
+                '      </div>',
+                '    </div>',
+                '',
+                '    <div style="background-color: #eeeeee; padding: 10px; text-align: center;">',
+                '      Dibuat oleh: Namaku 😎',
+                '    </div>',
+                '',
+                '  </body>',
+                '</html>'
+            ]
+        };
+
+        var STORAGE_KEY = 'kursus-html-playground';
+        var FONT_KEY = 'kursus-html-playground-font';
+        var code = document.getElementById('code');
+        var gutter = document.getElementById('gutter');
+        var preview = document.getElementById('preview');
+        var statusBox = document.getElementById('status');
+        var fontSize = 16;
+        var timer = null;
+
+        function simpanLokal(key, value) {
+            try { localStorage.setItem(key, value); } catch (e) { /* mode privat: abaikan */ }
+        }
+
+        function bacaLokal(key) {
+            try { return localStorage.getItem(key); } catch (e) { return null; }
+        }
+
+        function setStatus(teks, jenis) {
+            statusBox.textContent = teks;
+            statusBox.className = 'status' + (jenis ? ' ' + jenis : '');
+        }
+
+        function updateGutter() {
+            var n = code.value.split('\n').length;
+            var lines = [];
+            for (var i = 1; i <= n; i++) lines.push(i);
+            gutter.textContent = lines.join('\n');
+            gutter.scrollTop = code.scrollTop;
+        }
+
+        function render() {
+            preview.srcdoc = code.value;
+            simpanLokal(STORAGE_KEY, code.value);
+        }
+
+        function onChange() {
+            updateGutter();
+            clearTimeout(timer);
+            timer = setTimeout(render, 300);
+        }
+
+        function setFont(size) {
+            fontSize = Math.max(12, Math.min(28, size));
+            code.style.fontSize = fontSize + 'px';
+            gutter.style.fontSize = fontSize + 'px';
+            simpanLokal(FONT_KEY, String(fontSize));
+        }
+
+        function muatTemplate(nama) {
+            if (!TEMPLATES[nama]) return;
+            if (code.value.trim() && !confirm('Kode yang sekarang akan diganti. Lanjut?')) return;
+            code.value = TEMPLATES[nama].join('\n');
+            updateGutter();
+            render();
+            setStatus('Contoh dimuat. Ayo ubah tulisannya jadi milikmu!');
+        }
+
+        // Cek tag: cari tag yang lupa ditutup atau tertukar urutannya
+        var VOID_TAGS = ['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'source', 'track', 'wbr'];
+
+        function cekTag() {
+            var teks = code.value.replace(/<!--[\s\S]*?-->/g, function (m) { return m.replace(/[^\n]/g, ' '); });
+            var re = /<\/?([a-zA-Z][a-zA-Z0-9]*)\b[^>]*>/g;
+            var stack = [];
+            var m;
+            function baris(idx) { return teks.slice(0, idx).split('\n').length; }
+            while ((m = re.exec(teks)) !== null) {
+                var nama = m[1].toLowerCase();
+                var tutup = m[0].charAt(1) === '/';
+                if (VOID_TAGS.indexOf(nama) !== -1) continue;
+                if (!tutup) {
+                    if (m[0].slice(-2) === '/>') continue;
+                    stack.push({ nama: nama, baris: baris(m.index) });
+                } else {
+                    if (!stack.length) {
+                        return setStatus('⚠️ Baris ' + baris(m.index) + ': ada </' + nama + '> tapi tidak ada <' + nama + '> pembukanya.', 'warn');
+                    }
+                    var atas = stack[stack.length - 1];
+                    if (atas.nama !== nama) {
+                        return setStatus('⚠️ Baris ' + baris(m.index) + ': ketemu </' + nama + '>, padahal <' + atas.nama + '> di baris ' + atas.baris + ' belum ditutup.', 'warn');
+                    }
+                    stack.pop();
+                }
+            }
+            if (stack.length) {
+                var sisa = stack[stack.length - 1];
+                return setStatus('⚠️ Tag <' + sisa.nama + '> di baris ' + sisa.baris + ' belum ditutup. Tambahkan </' + sisa.nama + '>.', 'warn');
+            }
+            setStatus('✅ Hebat! Semua tag sudah berpasangan dengan benar.', 'ok');
+        }
+
+        function unduh() {
+            var nama = prompt('Nama file?', 'index.html');
+            if (!nama) return;
+            if (!/\.html?$/i.test(nama)) nama += '.html';
+            var blob = new Blob([code.value], { type: 'text/html' });
+            var a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = nama;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+            setStatus('💾 File ' + nama + ' disimpan ke folder Unduhan (Downloads).', 'ok');
+        }
+
+        code.addEventListener('input', onChange);
+        code.addEventListener('scroll', function () { gutter.scrollTop = code.scrollTop; });
+        code.addEventListener('keydown', function (e) {
+            if (e.key === 'Tab') {
+                e.preventDefault();
+                code.setRangeText('  ', code.selectionStart, code.selectionEnd, 'end');
+                onChange();
+            }
+        });
+
+        document.getElementById('template').addEventListener('change', function (e) {
+            muatTemplate(e.target.value);
+            e.target.value = '';
+        });
+        document.getElementById('btn-cek').addEventListener('click', cekTag);
+        document.getElementById('btn-kecil').addEventListener('click', function () { setFont(fontSize - 2); });
+        document.getElementById('btn-besar').addEventListener('click', function () { setFont(fontSize + 2); });
+        document.getElementById('btn-unduh').addEventListener('click', unduh);
+        document.getElementById('btn-buka').addEventListener('click', function () {
+            document.getElementById('file-input').click();
+        });
+        document.getElementById('file-input').addEventListener('change', function (e) {
+            var file = e.target.files[0];
+            if (!file) return;
+            var reader = new FileReader();
+            reader.onload = function () {
+                code.value = reader.result;
+                updateGutter();
+                render();
+                setStatus('📂 File ' + file.name + ' dibuka. Catatan: gambar dari folder komputer belum tampil di sini.');
+            };
+            reader.readAsText(file);
+            e.target.value = '';
+        });
+
+        setFont(parseInt(bacaLokal(FONT_KEY), 10) || 16);
+        code.value = bacaLokal(STORAGE_KEY) || TEMPLATES.kosong.join('\n');
+        updateGutter();
+        render();
+    </script>
+</body>
+
+</html>

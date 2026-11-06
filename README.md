@@ -37,6 +37,14 @@ MATERI LES/HTML/
 │       ├── template-siswa.html
 │       └── cheat-sheet.html
 │
+├── 📁 pertemuan-6/           # Materi Pertemuan 6: Kotak & Tombol
+│   └── materi/
+│       ├── index.html        # ⭐ Presentasi utama
+│       ├── template-siswa.html
+│       └── cheat-sheet.html
+│
+├── 🧪 playground.html        # Editor Coba-Coba (offline, untuk semua pertemuan)
+│
 ├── 📁 docs/                  # Dokumentasi
 │   ├── PANDUAN-INSTRUKTUR.md
 │   ├── STRUKTUR-FOLDER.md
@@ -78,6 +86,19 @@ MATERI LES/HTML/
 1. Buka folder **pertemuan-5/materi/**
 2. Double-click **index.html**
 3. Mulai pembelajaran!
+
+### Pertemuan 6:
+
+1. Buka folder **pertemuan-6/materi/**
+2. Double-click **index.html**
+3. Mulai pembelajaran!
+
+### Editor Coba-Coba:
+
+1. Double-click **playground.html** (atau klik tombolnya di halaman utama)
+2. Pilih contoh dari pertemuan mana saja, lalu ubah kodenya
+3. Hasil langsung muncul di kanan, kode tersimpan otomatis di browser
+4. Klik **🔍 Cek Tag** untuk mencari tag yang lupa ditutup, **💾 Simpan File** untuk mengunduh `.html`
 
 ## 📖 Materi Pertemuan 1: Dasar HTML
 
@@ -190,6 +211,24 @@ MATERI LES/HTML/
 
 **Outcome:** Siswa dapat membuat daftar dan tabel HTML untuk menampilkan data dengan rapi
 
+## 📖 Materi Pertemuan 6: Kotak & Tombol
+
+**Topik:** Layout sederhana dengan `<div>` dan membuat tombol (melengkapi silabus: "Membuat tombol sederhana" dan "Layout sederhana pakai `<div>`")
+
+**20 Slide Pembelajaran** (inti):
+
+1. Opening, tujuan, dan rundown 2 jam
+2. Kuis kilat review list & tabel (interaktif)
+3. Website itu kotak-kotak: kepala, menu, isi, kaki
+4. Tag `<div>` dan cara menghias kotak (background, border, border-radius, padding, margin)
+5. Padding vs margin dengan analogi kado
+6. Kotak berjajar dengan `display: flex` dan `gap`
+7. Tombol: link `<a>` yang dihias vs `<button>`
+8. Coba Langsung: mini editor di dalam slide
+9. Misi: **Website Ranking Favoritku**, troubleshooting, rubrik, refleksi
+
+**Outcome:** Siswa dapat menyusun halaman dengan layout kotak dan menu tombol
+
 ## ✨ Fitur Unggulan
 
 - 🔐 **Kode Akses** - Sistem proteksi materi (default: `html2025`)
@@ -266,6 +305,14 @@ Lihat folder `docs/` untuk panduan lebih detail:
 ✅ Membuat ordered list dengan `<ol>` dan `<li>`  
 ✅ Memahami struktur tabel: `<table>`, `<tr>`, `<th>`, `<td>`  
 ✅ Menampilkan data sederhana dalam bentuk tabel
+
+### Setelah Pertemuan 6:
+
+✅ Membuat kotak dengan `<div>` dan menghiasnya  
+✅ Membedakan padding (jarak dalam) dan margin (jarak luar)  
+✅ Menjajarkan kotak ke samping dengan `display: flex`  
+✅ Membuat tombol menu dari link yang dihias  
+✅ Menyusun layout kepala, menu, isi, dan kaki
 
 ---
 

@@ -1,46 +1,68 @@
-# 📂 Struktur Folder - Pertemuan 1 HTML
+# 📂 Struktur Folder - Kursus HTML Anak SD
 
-```
-pertemuan 1 HTML/
+```text
+materi-HTML/
 │
-├── 📄 index.html                  ⭐ FILE UTAMA - Materi presentasi interaktif
-├── 📝 template-siswa.html         Template tugas untuk siswa
-├── 📖 cheat-sheet.html            Referensi cepat semua materi
+├── 📄 index.html                 🏠 Halaman utama (hub semua pertemuan)
+├── 🧪 playground.html            Editor Coba-Coba (offline, untuk semua pertemuan)
+├── 📋 README.md                  Dokumentasi utama
 │
-├── 📋 README.md                   Dokumentasi lengkap
-└── 🎓 PANDUAN-INSTRUKTUR.md       Panduan mengajar
+├── 📁 pertemuan-1/materi/        🚀 Dasar HTML (ada kode akses)
+├── 📁 pertemuan-2/materi/        🎨 Gambar & Warna
+├── 📁 pertemuan-3/materi/        🔗 Link & Navigasi
+├── 📁 pertemuan-4/materi/        🎯 Mini Project & Presentasi
+├── 📁 pertemuan-5/materi/        📋 List & Tabel
+├── 📁 pertemuan-6/materi/        📦 Kotak & Tombol
+│     ├── index.html              ⭐ Presentasi (slide reveal.js)
+│     ├── template-siswa.html     ✍️ Template tugas siswa
+│     └── cheat-sheet.html        📝 Referensi cepat
+│
+├── 📁 docs/
+│     ├── PANDUAN-INSTRUKTUR.md   Cara mengajar tiap pertemuan
+│     ├── STRUKTUR-FOLDER.md      File ini
+│     ├── FITUR-IMPROVEMENTS.md   Catatan fitur (Pertemuan 1)
+│     └── OPTIMASI-LAPTOP.md      Catatan ukuran layar (Pertemuan 1)
+│
+└── 📁 reference/
+      └── KURSUS HTML ANAK SD.pdf Silabus asli
 ```
+
+Setiap folder `pertemuan-N/materi/` berisi 3 file yang sama polanya: `index.html`, `template-siswa.html`, dan `cheat-sheet.html`.
 
 ## 📌 Deskripsi File
 
-### 🎯 File Utama
+### 🎯 Untuk Instruktur
 
-- **index.html** - Materi presentasi dengan 12 slide interaktif, kode akses, dan quiz
+- **index.html (root)**: pintu masuk; berisi kartu tiap pertemuan dan tombol Editor Coba-Coba.
+- **pertemuan-N/materi/index.html**: slide presentasi. Navigasi pakai SPASI / panah, ESC untuk overview.
+  Hanya Pertemuan 1 yang memakai kode akses (`html2025`).
 
-### 👨‍🎓 File untuk Siswa
+### 👨‍🎓 Untuk Siswa
 
-- **template-siswa.html** - Template HTML dengan instruksi untuk latihan
-- **cheat-sheet.html** - Panduan referensi dengan contoh kode
+- **template-siswa.html**: instruksi tugas, kerangka kode, checklist debug, dan penilaian diri.
+- **cheat-sheet.html**: tabel tag, contoh kode, dan troubleshooting.
+- **playground.html**: tempat mengetik HTML dan langsung melihat hasilnya, tanpa Notepad dan tanpa internet.
 
 ### 📚 Dokumentasi
 
-- **README.md** - Dokumentasi lengkap tentang fitur dan cara penggunaan
-- **PANDUAN-INSTRUKTUR.md** - Quick start dan tips mengajar
+- **README.md**: ringkasan materi dan outcome tiap pertemuan.
+- **docs/PANDUAN-INSTRUKTUR.md**: rundown, tips mengajar, troubleshooting, dan penilaian.
 
-## ✅ File Sudah Dibersihkan
+## 🔗 Aturan Navigasi Antar File
 
-File yang dihapus:
+- Semua link memakai path relatif, jadi folder bisa dipindah atau disalin ke flashdisk tanpa rusak.
+- Dari dalam `pertemuan-N/materi/`, kembali ke root memakai `../../`.
+- Setiap halaman punya nav-bar ke Home, file lain di pertemuan yang sama, serta pertemuan sebelum/sesudahnya.
 
-- ~~index-improved.html~~ (duplikat, sudah digabung ke index.html)
-- ~~.github/~~ (folder tidak diperlukan)
+## ➕ Menambah Pertemuan Baru
 
-## 🚀 Quick Start
+1. Salin folder pertemuan terakhir, ganti nomornya (mis. `pertemuan-7`).
+2. Ganti isi slide, template, dan cheat sheet. Pilih warna tema baru di `.nav-bar`.
+3. Tambahkan kartu baru di `index.html` (root).
+4. Tambahkan link "➡️ Pertemuan berikutnya" di nav-bar ketiga file pertemuan sebelumnya.
+5. Perbarui `README.md` dan dokumen ini.
 
-1. Buka **index.html** di browser
-2. Masukkan kode: `html2025`
-3. Tekan SPASI untuk navigasi
-4. Bagikan **template-siswa.html** untuk tugas
+## 🌐 Kebutuhan Internet
 
----
-
-_Folder sudah rapi dan siap digunakan!_ ✨
+- Semua slide presentasi (Pertemuan 1-6) memuat reveal.js dari CDN, jadi **perlu internet** saat dibuka.
+- Template, cheat sheet, dan `playground.html` bisa dipakai **tanpa internet**.
