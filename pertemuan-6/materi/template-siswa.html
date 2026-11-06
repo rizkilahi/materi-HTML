@@ -5,203 +5,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Template Siswa - Pertemuan 6</title>
+    <link rel="stylesheet" href="../../assets/kursus.css">
     <style>
-        .nav-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
-            padding: 10px 20px;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
-        }
-
-        .nav-title {
-            color: white;
-            font-weight: bold;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            padding: 5px 12px;
-            border-radius: 5px;
-            background: rgba(255, 255, 255, 0.2);
-            font-size: 0.85em;
-        }
-
-        body {
-            margin: 0;
-            padding: 60px 15px 30px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #fce7f3 0%, #ede9fe 100%);
-            font-size: 14px;
-        }
-
-        .container {
-            max-width: 850px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 14px;
-            padding: 22px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-        }
-
-        h1 {
-            color: #be185d;
-            text-align: center;
-            font-size: 1.8em;
-            margin-bottom: 10px;
-        }
-
-        h2 {
-            color: #6d28d9;
-            font-size: 1.25em;
-            margin-top: 22px;
-            border-bottom: 2px solid #fbcfe8;
-            padding-bottom: 6px;
-        }
-
-        .task-box {
-            background: #fdf2f8;
-            border-left: 4px solid #db2777;
-            padding: 14px;
-            border-radius: 8px;
-            margin-bottom: 18px;
-        }
-
-        .plan-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 12px;
-        }
-
-        .plan-card {
-            background: #fdf2f8;
-            border: 1px solid #fbcfe8;
-            border-radius: 8px;
-            padding: 12px;
-        }
-
-        .sample {
-            background: #1f2937;
-            color: #e5e7eb;
-            padding: 10px;
-            border-radius: 6px;
-            overflow-x: auto;
-            font-size: 0.88em;
-            white-space: pre;
-            font-family: Consolas, 'Courier New', monospace;
-        }
-
-        .copy-btn {
-            margin-top: 8px;
-            background: #db2777;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            padding: 6px 12px;
-            cursor: pointer;
-            font-size: 0.9em;
-        }
-
-        .copy-btn:hover {
-            background: #9d174d;
-        }
-
+        /* Denah layout: kepala, menu, kartu, kaki */
         .layout-demo {
-            border: 2px dashed #c4b5fd;
-            border-radius: 10px;
-            padding: 8px;
             display: grid;
             gap: 6px;
+            padding: 10px;
+            background: var(--putih);
+            border: 2px dashed var(--tinta-2);
+            border-radius: var(--radius);
+            font-weight: 700;
             text-align: center;
-            font-weight: bold;
-            color: #4c1d95;
         }
 
         .layout-demo div {
-            background: #ede9fe;
-            border-radius: 6px;
-            padding: 8px;
+            padding: 10px;
+            background: var(--kertas-2);
+            border-radius: 4px;
         }
 
         .layout-demo .row {
             display: flex;
             gap: 6px;
-            background: none;
             padding: 0;
+            background: none;
         }
 
         .layout-demo .row div {
             flex: 1;
-            background: #fce7f3;
-            color: #9d174d;
+            background: var(--aksen-muda);
+            color: var(--aksen);
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 12px;
-        }
-
-        th,
-        td {
-            border: 1px solid #e9d5ff;
-            padding: 8px;
-            text-align: left;
-            font-size: 0.92em;
-        }
-
-        th {
-            background: #fce7f3;
-        }
-
-        @media screen and (max-width: 768px) {
-            .nav-bar {
-                flex-direction: column;
-                padding: 8px;
-            }
-
-            .nav-links {
-                justify-content: center;
-            }
-
-            .container {
-                padding: 16px;
-            }
-
-            .plan-grid {
-                grid-template-columns: 1fr;
-            }
+        .aksi {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 8px;
         }
     </style>
 </head>
 
-<body>
+<body class="halaman" data-pertemuan="6">
     <nav class="nav-bar">
-        <div class="nav-title">📦 Pertemuan 6: Template Tugas</div>
+        <div class="nav-title">Pertemuan 6 · Kotak &amp; Tombol</div>
         <div class="nav-links">
-            <a href="../../index.html">🏠 Home</a>
-            <a href="index.html">📖 Presentasi</a>
-            <a href="cheat-sheet.html">📝 Cheat Sheet</a>
-            <a href="../../playground.html">🧪 Editor Coba-Coba</a>
-            <a href="../../pertemuan-5/materi/template-siswa.html">⬅️ Pertemuan 5</a>
+            <a href="../../index.html">Beranda</a>
+            <a href="index.html">Presentasi</a>
+            <a href="cheat-sheet.html">Cheat Sheet</a>
+            <a href="../../playground.html">Editor Coba-Coba</a>
+            <a href="../../pertemuan-5/materi/template-siswa.html">← Pertemuan 5</a>
         </div>
     </nav>
 
     <div class="container">
-        <h1>Template Tugas: Website Ranking Favoritku</h1>
+        <header class="kepala-halaman">
+            <span class="label-pertemuan">Pertemuan 6 · Template Tugas</span>
+            <h1>Website Ranking Favoritku</h1>
+            <p class="pembuka">Buat satu halaman yang tersusun dari kotak-kotak: kepala, menu, isi, dan kaki.</p>
+        </header>
 
         <div class="task-box">
             <p><b>Instruksi:</b> Buat 1 halaman website yang punya 4 bagian kotak:</p>
@@ -216,14 +79,14 @@
         <h2>Langkah 1: Gambar Rencanamu</h2>
         <div class="plan-grid">
             <div class="layout-demo">
-                <div>🏷️ KEPALA</div>
-                <div>🧭 MENU</div>
+                <div>Kepala</div>
+                <div>Menu</div>
                 <div class="row">
-                    <div>🃏 KARTU 1</div>
-                    <div>🃏 KARTU 2</div>
-                    <div>🃏 KARTU 3</div>
+                    <div>Kartu 1</div>
+                    <div>Kartu 2</div>
+                    <div>Kartu 3</div>
                 </div>
-                <div>👣 KAKI</div>
+                <div>Kaki</div>
             </div>
             <div class="plan-card">
                 <p><b>Judul website:</b> ____________________</p>
@@ -269,8 +132,8 @@
   &lt;/div&gt;
 
 &lt;/div&gt;</div>
-        <p>💡 <code>flex: 1</code> membuat semua kartu sama lebar. <code>id="makanan"</code> membuat tombol
-            <code>href="#makanan"</code> melompat ke kartu itu.</p>
+        <div class="hint-box"><p><code>flex: 1</code> membuat semua kartu sama lebar. <code>id="makanan"</code> membuat tombol
+            <code>href="#makanan"</code> melompat ke kartu itu.</p></div>
 
         <h2>Langkah 5: Kotak Kaki</h2>
         <div class="sample">&lt;div style="background-color: #eeeeee; padding: 10px; text-align: center; margin-top: 10px;"&gt;
@@ -321,9 +184,10 @@
 
   &lt;/body&gt;
 &lt;/html&gt;</div>
-        <button class="copy-btn" data-copy="template-lengkap">📋 Salin Template</button>
-        <a class="copy-btn" style="text-decoration:none; display:inline-block;" href="../../playground.html">🧪 Buka
-            Editor Coba-Coba</a>
+        <div class="aksi">
+            <button class="btn btn-primary" data-copy="template-lengkap">Salin template</button>
+            <a class="btn" href="../../playground.html">Buka Editor Coba-Coba</a>
+        </div>
 
         <h2>Checklist Debug Cepat</h2>
         <ul>
@@ -343,33 +207,33 @@
             </tr>
             <tr>
                 <td>Ada kotak kepala berwarna</td>
-                <td>☐</td>
-                <td>☐</td>
+                <td><span class="centang"></span></td>
+                <td><span class="centang"></span></td>
             </tr>
             <tr>
                 <td>Ada minimal 2 tombol menu</td>
-                <td>☐</td>
-                <td>☐</td>
+                <td><span class="centang"></span></td>
+                <td><span class="centang"></span></td>
             </tr>
             <tr>
                 <td>Ada minimal 2 kartu ranking berjajar</td>
-                <td>☐</td>
-                <td>☐</td>
+                <td><span class="centang"></span></td>
+                <td><span class="centang"></span></td>
             </tr>
             <tr>
                 <td>Setiap kartu berisi list bernomor top 3</td>
-                <td>☐</td>
-                <td>☐</td>
+                <td><span class="centang"></span></td>
+                <td><span class="centang"></span></td>
             </tr>
             <tr>
                 <td>Ada kotak kaki dengan namaku</td>
-                <td>☐</td>
-                <td>☐</td>
+                <td><span class="centang"></span></td>
+                <td><span class="centang"></span></td>
             </tr>
             <tr>
                 <td>Saya siap menjelaskan hasil kerja</td>
-                <td>☐</td>
-                <td>☐</td>
+                <td><span class="centang"></span></td>
+                <td><span class="centang"></span></td>
             </tr>
         </table>
     </div>
@@ -384,15 +248,15 @@
                     setTimeout(function () { btn.textContent = asli; }, 1500);
                 }
                 if (navigator.clipboard && window.isSecureContext) {
-                    navigator.clipboard.writeText(teks).then(function () { selesai('✅ Tersalin!'); },
-                        function () { selesai('❌ Gagal, blok & salin manual'); });
+                    navigator.clipboard.writeText(teks).then(function () { selesai('Tersalin'); },
+                        function () { selesai('Gagal, blok lalu salin manual'); });
                 } else {
                     var ta = document.createElement('textarea');
                     ta.value = teks;
                     document.body.appendChild(ta);
                     ta.select();
-                    try { document.execCommand('copy'); selesai('✅ Tersalin!'); }
-                    catch (e) { selesai('❌ Gagal, blok & salin manual'); }
+                    try { document.execCommand('copy'); selesai('Tersalin'); }
+                    catch (e) { selesai('Gagal, blok lalu salin manual'); }
                     document.body.removeChild(ta);
                 }
             });

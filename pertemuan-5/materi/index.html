@@ -8,193 +8,54 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/night.min.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="../../assets/kursus.css">
+    <link rel="stylesheet" href="../../assets/slides.css">
 
     <style>
-        .nav-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
-            padding: 10px 20px;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-title {
-            color: white;
-            font-weight: bold;
-            font-size: 1em;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            padding: 5px 12px;
-            border-radius: 5px;
-            background: rgba(255, 255, 255, 0.2);
-            font-size: 0.85em;
-        }
-
-        .reveal {
-            padding-top: 48px;
-        }
-
-        .reveal h1 {
-            color: #93c5fd;
-            font-size: 2.2em;
-        }
-
-        .reveal h2 {
-            color: #93c5fd;
-            font-size: 1.6em;
-        }
-
-        .reveal h3 {
-            color: #bfdbfe;
-            font-size: 1.15em;
-        }
-
-        .reveal p,
-        .reveal li,
-        .reveal td,
-        .reveal th {
-            font-size: 0.85em;
-        }
-
-        .reveal pre {
-            border: 2px solid #3b82f6;
-            border-radius: 8px;
-            font-size: 0.75em;
-        }
-
-        .box-info {
-            background: #dbeafe;
-            color: #1e3a8a;
-            border-left: 4px solid #2563eb;
-            border-radius: 8px;
-            padding: 12px;
-            font-size: 0.78em;
-        }
-
-        .box-task {
-            background: #e0e7ff;
-            color: #312e81;
-            border: 2px dashed #6366f1;
-            border-radius: 8px;
-            padding: 14px;
+        /* Contoh tabel ditampilkan apa adanya, seperti di browser */
+        .reveal .preview.tabel-hasil {
             font-size: 0.8em;
-            text-align: left;
         }
 
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 10px;
-            text-align: left;
+        .reveal .preview.tabel-hasil table {
+            width: auto;
+            margin: 0;
+            font-size: 1em;
+            background: #ffffff;
         }
 
-        .mini-card {
-            background: rgba(219, 234, 254, 0.95);
-            border-left: 4px solid #3b82f6;
-            border-radius: 8px;
-            padding: 10px;
-            color: #1e3a8a;
-            font-size: 0.78em;
-        }
-
-        .mini-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.75em;
-        }
-
-        .mini-table th,
-        .mini-table td {
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 7px;
-            text-align: left;
-        }
-
-        .mini-table th {
-            background: rgba(59, 130, 246, 0.25);
-            color: #dbeafe;
-        }
-
-        .mini-table td {
-            background: rgba(0, 0, 0, 0.15);
-            color: #e0e7ff;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 3px 8px;
-            border-radius: 999px;
-            background: #2563eb;
-            color: white;
-            font-size: 0.7em;
-            margin-right: 6px;
-        }
-
-        @media screen and (max-width: 768px) {
-            .nav-bar {
-                flex-direction: column;
-                padding: 8px;
-            }
-
-            .nav-links {
-                justify-content: center;
-            }
-
-            .reveal h1 {
-                font-size: 1.6em;
-            }
-
-            .reveal h2 {
-                font-size: 1.3em;
-            }
-
-            .grid-2 {
-                grid-template-columns: 1fr;
-            }
+        .reveal .preview.tabel-hasil th,
+        .reveal .preview.tabel-hasil td {
+            padding: 6px 16px;
+            color: #111111;
+            background: #ffffff;
+            border: 1px solid #555555;
         }
     </style>
 </head>
 
-<body>
+<body data-pertemuan="5">
     <nav class="nav-bar">
-        <div class="nav-title">📋 Pertemuan 5: List & Tabel</div>
+        <div class="nav-title">Pertemuan 5 · List &amp; Tabel</div>
         <div class="nav-links">
-            <a href="../../index.html">🏠 Home</a>
-            <a href="../../pertemuan-4/materi/index.html">📖 Pertemuan 4</a>
-            <a href="template-siswa.html">✍️ Template</a>
-            <a href="cheat-sheet.html">📝 Cheat Sheet</a>
-            <a href="../../pertemuan-6/materi/index.html">➡️ Pertemuan 6</a>
+            <a href="../../index.html">Beranda</a>
+            <a href="../../pertemuan-4/materi/index.html">← Pertemuan 4</a>
+            <a href="template-siswa.html">Template</a>
+            <a href="cheat-sheet.html">Cheat Sheet</a>
+            <a href="../../pertemuan-6/materi/index.html">Pertemuan 6 →</a>
         </div>
     </nav>
 
     <div class="reveal">
         <div class="slides">
-            <section>
-                <h1>📋 List & Tabel</h1>
-                <h3>Kursus HTML Pertemuan 5</h3>
+            <section class="sampul">
+                <span class="nomor">Pertemuan 5</span>
+                <h1>List &amp; Tabel</h1>
                 <p>Merapikan informasi dengan daftar dan tabel</p>
             </section>
 
             <section>
-                <h2>Tujuan Hari Ini 🎯</h2>
+                <h2>Tujuan Hari Ini</h2>
                 <div class="box-info">
                     <ul style="margin: 0 0 0 18px;">
                         <li>Memahami kapan pakai list dan kapan pakai tabel.</li>
@@ -205,7 +66,7 @@
             </section>
 
             <section>
-                <h2>Rundown 2 Jam ⏰</h2>
+                <h2>Rundown 2 Jam</h2>
                 <table class="mini-table">
                     <thead>
                         <tr>
@@ -240,7 +101,7 @@
             </section>
 
             <section>
-                <h2>Review Pertemuan 3 & 4 🔗</h2>
+                <h2>Review Pertemuan 3 & 4</h2>
                 <ul>
                     <li>Kita sudah belajar membuat link dengan <code>&lt;a&gt;</code></li>
                     <li>Sudah bisa bikin menu navigasi antar halaman</li>
@@ -249,7 +110,7 @@
             </section>
 
             <section>
-                <h2>1. List itu apa? 📝</h2>
+                <h2>1. List itu apa?</h2>
                 <p>List dipakai untuk menulis data berurutan atau poin-poin.</p>
                 <div class="box-info">
                     <p style="margin:0;"><b>Jenis list di HTML:</b></p>
@@ -286,7 +147,7 @@
             </section>
 
             <section>
-                <h2>4. Tabel itu apa? 📊</h2>
+                <h2>4. Tabel itu apa?</h2>
                 <p>Tabel dipakai untuk data yang punya baris dan kolom.</p>
                 <pre><code class="language-html" data-trim>
 &lt;table&gt;
@@ -321,7 +182,7 @@
             </section>
 
             <section>
-                <h2>Bedah Tag Tabel 🔍</h2>
+                <h2>Bedah Tag Tabel</h2>
                 <ul>
                     <li><code>&lt;table&gt;</code> = pembungkus tabel</li>
                     <li><code>&lt;tr&gt;</code> = table row (baris)</li>
@@ -331,27 +192,27 @@
             </section>
 
             <section>
-                <h2>Contoh Tabel Nilai 🏆</h2>
-                <div class="box-info" style="text-align:left;">
-                    <table style="width:100%; border-collapse:collapse; background:white; color:#1f2937;">
-                        <tr style="background:#bfdbfe;">
-                            <th style="border:1px solid #93c5fd; padding:8px;">Nama</th>
-                            <th style="border:1px solid #93c5fd; padding:8px;">Nilai HTML</th>
+                <h2>Contoh Tabel Nilai</h2>
+                <div class="preview tabel-hasil">
+                    <table border="1" cellpadding="8" style="border-collapse:collapse;">
+                        <tr>
+                            <th>Nama</th>
+                            <th>Nilai HTML</th>
                         </tr>
                         <tr>
-                            <td style="border:1px solid #93c5fd; padding:8px;">Alya</td>
-                            <td style="border:1px solid #93c5fd; padding:8px;">95</td>
+                            <td>Alya</td>
+                            <td>95</td>
                         </tr>
                         <tr>
-                            <td style="border:1px solid #93c5fd; padding:8px;">Bima</td>
-                            <td style="border:1px solid #93c5fd; padding:8px;">90</td>
+                            <td>Bima</td>
+                            <td>90</td>
                         </tr>
                     </table>
                 </div>
             </section>
 
             <section>
-                <h2>Tips List & Tabel 💡</h2>
+                <h2>Tips List & Tabel</h2>
                 <ul>
                     <li>Gunakan list untuk poin singkat</li>
                     <li>Gunakan tabel untuk data perbandingan</li>
@@ -374,7 +235,7 @@
             </section>
 
             <section>
-                <h2>🚀 Misi Hari Ini</h2>
+                <h2>Misi Hari Ini</h2>
                 <div class="box-task">
                     <p><b>Buat halaman profil kelas berisi:</b></p>
                     <ol>
@@ -446,7 +307,7 @@
             </section>
 
             <section>
-                <h1>🎉 Great Job!</h1>
+                <h1>Great Job!</h1>
                 <p>Sekarang kamu bisa menyusun data dengan lebih rapi pakai list dan tabel.</p>
                 <div class="box-info" style="max-width:640px; margin:16px auto;">
                     <ol style="margin: 0 0 0 18px; text-align:left;">

@@ -6,138 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Tentang Aku</title>
 
+    <link rel="stylesheet" href="../../assets/kursus.css">
     <style>
-        /* Navigation Bar */
-        .nav-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 10px 20px;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        /* Lembar website milik siswa: tampil seperti halaman di browser */
+        .lembar {
+            padding: 24px 28px;
+            background: #ffffff;
+            border: 2px solid var(--tinta);
+            border-radius: var(--radius);
+            box-shadow: 5px 5px 0 var(--aksen);
         }
 
-        .nav-bar .nav-title {
-            color: white;
-            font-weight: bold;
-            font-size: 1em;
+        .lembar h1,
+        .lembar h3 {
+            font-family: var(--font-judul);
         }
 
-        .nav-bar .nav-links {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .nav-bar a {
-            color: white;
-            text-decoration: none;
-            padding: 5px 12px;
-            border-radius: 5px;
-            background: rgba(255, 255, 255, 0.2);
-            transition: all 0.3s;
-            font-size: 0.85em;
-        }
-
-        .nav-bar a:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        /* Style sederhana untuk memperindah tampilan */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 70px 20px 50px 20px;
-            margin: 0;
-        }
-
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        h1 {
-            color: #667eea;
-            text-align: center;
-        }
-
-        h3 {
-            color: #764ba2;
-        }
-
-        p {
-            line-height: 1.6;
-            color: #333;
-        }
-
-        @media screen and (max-width: 768px) {
-            .nav-bar {
-                flex-direction: column;
-                padding: 10px;
-            }
-
-            .nav-bar .nav-links {
-                justify-content: center;
-            }
+        .lembar h1 {
+            margin-top: 0;
         }
     </style>
 </head>
 
-<body>
+<body class="halaman" data-pertemuan="1">
     <!-- Navigation Bar -->
     <nav class="nav-bar">
-        <div class="nav-title">🚀 Pertemuan 1: Template Tugas</div>
+        <div class="nav-title">Pertemuan 1 · Dasar HTML</div>
         <div class="nav-links">
-            <a href="../../index.html">🏠 Home</a>
-            <a href="index.html">📖 Presentasi</a>
-            <a href="cheat-sheet.html">📝 Cheat Sheet</a>
-            <a href="../../pertemuan-2/materi/template-siswa.html">➡️ Pertemuan 2</a>
+            <a href="../../index.html">Beranda</a>
+            <a href="index.html">Presentasi</a>
+            <a href="cheat-sheet.html">Cheat Sheet</a>
+            <a href="../../pertemuan-2/materi/template-siswa.html">Pertemuan 2 →</a>
         </div>
     </nav>
 
     <div class="container">
-        <!-- 
-        ========================================
-        TUGAS KAMU: ISI BAGIAN DI BAWAH INI!
-        ========================================
-        -->
+        <header class="kepala-halaman">
+            <span class="label-pertemuan">Pertemuan 1 · Template Tugas</span>
+            <h1>Website Tentang Aku</h1>
+            <p class="pembuka">Ganti tulisan di dalam kotak di bawah dengan cerita tentang dirimu.</p>
+        </header>
 
-        <!-- 1. NAMA LENGKAP (pakai <h1>) -->
-        <h1>Tulis Nama Lengkapmu Di Sini</h1>
+        <div class="lembar">
+            <!-- 
+            ========================================
+            TUGAS KAMU: ISI BAGIAN DI BAWAH INI!
+            ========================================
+            -->
 
-        <!-- 2. UMUR & KELAS (pakai <h3>) -->
-        <h3>Umur: ___ tahun | Kelas: ___</h3>
+            <!-- 1. NAMA LENGKAP (pakai <h1>) -->
+            <h1>Tulis Nama Lengkapmu Di Sini</h1>
 
-        <!-- 3. HOBI (pakai <p>) -->
-        <p>
-            Hobi saya adalah ...
-        </p>
+            <!-- 2. UMUR & KELAS (pakai <h3>) -->
+            <h3>Umur: ___ tahun | Kelas: ___</h3>
 
-        <!-- 4. CITA-CITA (pakai <p>) - BONUS! -->
-        <p>
-            Cita-cita saya adalah ...
-        </p>
+            <!-- 3. HOBI (pakai <p>) -->
+            <p>
+                Hobi saya adalah ...
+            </p>
 
-        <!-- 
-        ========================================
-        TANTANGAN TAMBAHAN (Opsional):
-        ========================================
-        - Tambahkan makanan favorit
-        - Tambahkan film atau game favorit
-        - Tambahkan <h2> untuk judul baru
-        ========================================
-        -->
+            <!-- 4. CITA-CITA (pakai <p>) - BONUS! -->
+            <p>
+                Cita-cita saya adalah ...
+            </p>
 
+            <!-- 
+            ========================================
+            TANTANGAN TAMBAHAN (Opsional):
+            ========================================
+            - Tambahkan makanan favorit
+            - Tambahkan film atau game favorit
+            - Tambahkan <h2> untuk judul baru
+            ========================================
+            -->
+        </div>
     </div>
 </body>
 

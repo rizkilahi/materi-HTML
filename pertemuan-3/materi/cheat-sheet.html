@@ -6,217 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cheat Sheet - Pertemuan 3: Link & Navigasi</title>
 
+    <link rel="stylesheet" href="../../assets/kursus.css">
     <style>
-        /* Navigation Bar */
-        .nav-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-            padding: 10px 20px;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-bar .nav-title {
-            color: white;
-            font-weight: bold;
-            font-size: 1em;
-        }
-
-        .nav-bar .nav-links {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .nav-bar a {
-            color: white;
-            text-decoration: none;
-            padding: 5px 12px;
-            border-radius: 5px;
-            background: rgba(255, 255, 255, 0.2);
-            transition: all 0.3s;
-            font-size: 0.85em;
-        }
-
-        .nav-bar a:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        /* Body Styles */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
-            padding: 60px 15px 30px 15px;
-            margin: 0;
-            font-size: 14px;
-        }
-
-        .container {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-            max-width: 950px;
-            margin: 0 auto;
-        }
-
-        h1 {
-            color: #11998e;
-            text-align: center;
-            border-bottom: 3px solid #38ef7d;
-            padding-bottom: 12px;
-            margin-bottom: 25px;
-            font-size: 1.8em;
-        }
-
-        h2 {
-            color: #00796b;
-            margin-top: 25px;
-            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
-            padding: 10px 15px;
-            border-radius: 8px;
-            border-left: 5px solid #11998e;
-            font-size: 1.4em;
-        }
-
-        h3 {
-            color: #11998e;
-            margin-top: 18px;
-            font-size: 1.1em;
-        }
-
-        .section {
-            margin-bottom: 30px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        table th {
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-            color: white;
-            padding: 10px;
-            text-align: left;
-            font-weight: bold;
-            font-size: 0.95em;
-        }
-
-        table td {
-            padding: 10px;
-            border-bottom: 1px solid #e0e0e0;
-            font-size: 0.9em;
-        }
-
-        table tr:hover {
-            background: #f5f5f5;
-        }
-
-        .code-box {
-            background: #2c3e50;
-            color: #ecf0f1;
-            padding: 12px;
-            border-radius: 8px;
-            font-family: 'Courier New', monospace;
-            overflow-x: auto;
-            margin: 12px 0;
-            border-left: 4px solid #38ef7d;
-            font-size: 0.9em;
-        }
-
+        /* Contoh: label kecil + blok kode, tanpa kotak */
         .example-box {
-            background: #fff3e0;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #11998e;
-            margin: 15px 0;
+            padding: 0;
+            background: none;
+            border: none;
+            font-family: inherit;
+            color: inherit;
         }
 
         .example-box h4 {
-            color: #00796b;
-            margin-top: 0;
-            font-size: 1.05em;
-        }
-
-        .tip-box {
-            background: #e8f5e9;
-            padding: 12px;
-            border-radius: 8px;
-            border-left: 4px solid #4caf50;
-            margin: 15px 0;
-        }
-
-        .tip-box strong {
-            color: #2e7d32;
-        }
-
-        .warning-box {
-            background: #ffebee;
-            padding: 12px;
-            border-radius: 8px;
-            border-left: 4px solid #f44336;
-            margin: 15px 0;
-        }
-
-        .warning-box strong {
-            color: #c62828;
-        }
-
-        @media screen and (max-width: 768px) {
-            .nav-bar {
-                flex-direction: column;
-                padding: 10px;
-            }
-
-            .nav-bar .nav-links {
-                justify-content: center;
-            }
-
-            .container {
-                padding: 15px;
-            }
-
-            table {
-                font-size: 0.9em;
-            }
+            margin: 0 0 6px;
+            font-size: 0.9rem;
+            color: var(--tinta-2);
         }
     </style>
 </head>
 
-<body>
+<body class="halaman" data-pertemuan="3">
     <!-- Navigation Bar -->
     <nav class="nav-bar">
-        <div class="nav-title">🔗 Pertemuan 3: Cheat Sheet</div>
+        <div class="nav-title">Pertemuan 3 · Link &amp; Navigasi</div>
         <div class="nav-links">
-            <a href="../../index.html">🏠 Home</a>
-            <a href="index.html">📖 Presentasi</a>
-            <a href="template-siswa.html">✍️ Template</a>
-            <a href="../../pertemuan-2/materi/cheat-sheet.html">⬅️ Pertemuan 2</a>
-            <a href="../../pertemuan-4/materi/cheat-sheet.html">➡️ Pertemuan 4</a>
+            <a href="../../index.html">Beranda</a>
+            <a href="index.html">Presentasi</a>
+            <a href="template-siswa.html">Template</a>
+            <a href="../../pertemuan-2/materi/cheat-sheet.html">← Pertemuan 2</a>
+            <a href="../../pertemuan-4/materi/cheat-sheet.html">Pertemuan 4 →</a>
         </div>
     </nav>
 
     <div class="container">
-        <h1>📝 Cheat Sheet: Link & Navigasi</h1>
+        <header class="kepala-halaman">
+            <span class="label-pertemuan">Pertemuan 3 · Cheat Sheet</span>
+            <h1>Link &amp; Navigasi</h1>
+            <p class="pembuka">Contekan cepat: tag &lt;a&gt;, jenis link, membuka tab baru, menu navigasi, dan menghias link.</p>
+        </header>
 
         <!-- SECTION 1: TAG <a> -->
-        <div class="section">
-            <h2>🔗 1. Tag &lt;a&gt; (Anchor/Link)</h2>
+        <section>
+            <h2>1. Tag &lt;a&gt; (Anchor/Link)</h2>
 
             <h3>Sintaks Dasar:</h3>
-            <div class="code-box">
-                &lt;a href="alamat-tujuan"&gt;Teks yang diklik&lt;/a&gt;
-            </div>
+            <div class="code-box">&lt;a href="alamat-tujuan"&gt;Teks yang diklik&lt;/a&gt;</div>
 
             <table>
                 <thead>
@@ -249,45 +83,41 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </section>
 
         <!-- SECTION 2: JENIS-JENIS LINK -->
-        <div class="section">
-            <h2>🌐 2. Jenis-Jenis Link</h2>
+        <section>
+            <h2>2. Jenis-Jenis Link</h2>
 
             <h3>A. Link External (ke website lain)</h3>
             <div class="example-box">
                 <h4>Contoh:</h4>
-                <div class="code-box">
-                    &lt;a href="https://youtube.com"&gt;Pergi ke YouTube&lt;/a&gt;
-                    &lt;a href="https://google.com"&gt;Buka Google&lt;/a&gt;
-                    &lt;a href="https://wikipedia.org"&gt;Wikipedia&lt;/a&gt;
-                </div>
+                <div class="code-box">&lt;a href="https://youtube.com"&gt;Pergi ke YouTube&lt;/a&gt;
+&lt;a href="https://google.com"&gt;Buka Google&lt;/a&gt;
+&lt;a href="https://wikipedia.org"&gt;Wikipedia&lt;/a&gt;</div>
             </div>
 
             <div class="tip-box">
-                <strong>💡 Tips:</strong> Link external harus menggunakan <code>https://</code> atau
+                <strong>Tips:</strong> Link external harus menggunakan <code>https://</code> atau
                 <code>http://</code>
             </div>
 
             <h3>B. Link Internal (ke halaman sendiri)</h3>
             <div class="example-box">
                 <h4>Contoh:</h4>
-                <div class="code-box">
-                    &lt;a href="halaman2.html"&gt;Ke Halaman 2&lt;/a&gt;
-                    &lt;a href="tentang.html"&gt;Tentang Saya&lt;/a&gt;
-                    &lt;a href="kontak.html"&gt;Kontak&lt;/a&gt;
-                </div>
+                <div class="code-box">&lt;a href="halaman2.html"&gt;Ke Halaman 2&lt;/a&gt;
+&lt;a href="tentang.html"&gt;Tentang Saya&lt;/a&gt;
+&lt;a href="kontak.html"&gt;Kontak&lt;/a&gt;</div>
             </div>
 
             <div class="tip-box">
-                <strong>💡 Tips:</strong> Link internal cukup tulis nama file tanpa <code>https://</code>
+                <strong>Tips:</strong> Link internal cukup tulis nama file tanpa <code>https://</code>
             </div>
-        </div>
+        </section>
 
         <!-- SECTION 3: ATRIBUT TARGET -->
-        <div class="section">
-            <h2>🎯 3. Atribut target</h2>
+        <section>
+            <h2>3. Atribut target</h2>
 
             <table>
                 <thead>
@@ -313,53 +143,45 @@
 
             <div class="example-box">
                 <h4>Contoh Penggunaan:</h4>
-                <div class="code-box">
-                    &lt;!-- Buka di tab baru --&gt;
-                    &lt;a href="https://youtube.com" target="_blank"&gt;YouTube (Tab Baru)&lt;/a&gt;
+                <div class="code-box">&lt;!-- Buka di tab baru --&gt;
+&lt;a href="https://youtube.com" target="_blank"&gt;YouTube (Tab Baru)&lt;/a&gt;
 
-                    &lt;!-- Buka di tab yang sama --&gt;
-                    &lt;a href="halaman2.html"&gt;Halaman 2 (Tab Sama)&lt;/a&gt;
-                </div>
+&lt;!-- Buka di tab yang sama --&gt;
+&lt;a href="halaman2.html"&gt;Halaman 2 (Tab Sama)&lt;/a&gt;</div>
             </div>
-        </div>
+        </section>
 
         <!-- SECTION 4: MENU NAVIGASI -->
-        <div class="section">
-            <h2>🧭 4. Membuat Menu Navigasi</h2>
+        <section>
+            <h2>4. Membuat Menu Navigasi</h2>
 
             <h3>Cara 1: Menu Sederhana</h3>
-            <div class="code-box">
-                &lt;nav&gt;
-                &lt;a href="index.html"&gt;Home&lt;/a&gt; |
-                &lt;a href="about.html"&gt;About&lt;/a&gt; |
-                &lt;a href="contact.html"&gt;Contact&lt;/a&gt;
-                &lt;/nav&gt;
-            </div>
+            <div class="code-box">&lt;nav&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt; |
+  &lt;a href="about.html"&gt;About&lt;/a&gt; |
+  &lt;a href="contact.html"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;</div>
 
             <h3>Cara 2: Menu dengan Styling</h3>
-            <div class="code-box">
-                &lt;nav style="background: lightblue; padding: 15px; text-align: center;"&gt;
-                &lt;a href="index.html" style="margin: 0 10px; color: blue;"&gt;Home&lt;/a&gt;
-                &lt;a href="about.html" style="margin: 0 10px; color: blue;"&gt;About&lt;/a&gt;
-                &lt;a href="contact.html" style="margin: 0 10px; color: blue;"&gt;Contact&lt;/a&gt;
-                &lt;/nav&gt;
-            </div>
+            <div class="code-box">&lt;nav style="background: lightblue; padding: 15px; text-align: center;"&gt;
+  &lt;a href="index.html" style="margin: 0 10px; color: blue;"&gt;Home&lt;/a&gt;
+  &lt;a href="about.html" style="margin: 0 10px; color: blue;"&gt;About&lt;/a&gt;
+  &lt;a href="contact.html" style="margin: 0 10px; color: blue;"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;</div>
 
             <h3>Cara 3: Menu dengan List</h3>
-            <div class="code-box">
-                &lt;nav&gt;
-                &lt;ul&gt;
-                &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
-                &lt;/ul&gt;
-                &lt;/nav&gt;
-            </div>
-        </div>
+            <div class="code-box">&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</div>
+        </section>
 
         <!-- SECTION 5: STYLING LINK -->
-        <div class="section">
-            <h2>🎨 5. Styling Link dengan CSS</h2>
+        <section>
+            <h2>5. Styling Link dengan CSS</h2>
 
             <table>
                 <thead>
@@ -399,29 +221,27 @@
             </table>
 
             <h3>Contoh Styling Link:</h3>
-            <div class="code-box">
-                &lt;!-- Link dengan button style --&gt;
-                &lt;a href="page.html" style="background: blue; color: white;
-                padding: 10px 20px; text-decoration: none; border-radius: 5px;"&gt;
-                Klik Saya
-                &lt;/a&gt;
+            <div class="code-box">&lt;!-- Link dengan button style --&gt;
+&lt;a href="page.html" style="background: blue; color: white;
+  padding: 10px 20px; text-decoration: none; border-radius: 5px;"&gt;
+  Klik Saya
+&lt;/a&gt;
 
-                &lt;!-- Link dengan hover effect (pakai CSS) --&gt;
-                &lt;style&gt;
-                a:hover {
-                color: red;
-                background: yellow;
-                }
-                &lt;/style&gt;
-            </div>
-        </div>
+&lt;!-- Link dengan hover effect (pakai CSS) --&gt;
+&lt;style&gt;
+  a:hover {
+    color: red;
+    background: yellow;
+  }
+&lt;/style&gt;</div>
+        </section>
 
         <!-- SECTION 6: TIPS & TRIK -->
-        <div class="section">
-            <h2>💡 6. Tips & Trik</h2>
+        <section>
+            <h2>6. Tips & Trik</h2>
 
             <div class="tip-box">
-                <strong>✅ DO (Lakukan):</strong>
+                <strong>DO (Lakukan):</strong>
                 <ul>
                     <li>Gunakan teks link yang jelas dan informatif</li>
                     <li>Pakai <code>target="_blank"</code> untuk link external</li>
@@ -431,7 +251,7 @@
             </div>
 
             <div class="warning-box">
-                <strong>❌ DON'T (Jangan):</strong>
+                <strong>DON'T (Jangan):</strong>
                 <ul>
                     <li>Jangan pakai teks "Klik di sini" saja</li>
                     <li>Jangan lupa tutup tag <code>&lt;/a&gt;</code></li>
@@ -439,64 +259,60 @@
                     <li>Jangan pakai link yang rusak (broken link)</li>
                 </ul>
             </div>
-        </div>
+        </section>
 
         <!-- SECTION 7: CONTOH LENGKAP -->
-        <div class="section">
-            <h2>📋 7. Contoh Website Lengkap</h2>
+        <section>
+            <h2>7. Contoh Website Lengkap</h2>
 
             <div class="example-box">
                 <h4>Website 3 Halaman dengan Menu Navigasi:</h4>
 
                 <p><strong>File: index.html</strong></p>
-                <div class="code-box">
-                    &lt;!DOCTYPE html&gt;
-                    &lt;html&gt;
-                    &lt;head&gt;
-                    &lt;title&gt;Home&lt;/title&gt;
-                    &lt;/head&gt;
-                    &lt;body&gt;
-                    &lt;nav style="background: lightblue; padding: 10px; text-align: center;"&gt;
-                    &lt;a href="index.html"&gt;Home&lt;/a&gt; |
-                    &lt;a href="hobi.html"&gt;Hobi&lt;/a&gt; |
-                    &lt;a href="favorit.html"&gt;Favorit&lt;/a&gt;
-                    &lt;/nav&gt;
+                <div class="code-box">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Home&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;nav style="background: lightblue; padding: 10px; text-align: center;"&gt;
+      &lt;a href="index.html"&gt;Home&lt;/a&gt; |
+      &lt;a href="hobi.html"&gt;Hobi&lt;/a&gt; |
+      &lt;a href="favorit.html"&gt;Favorit&lt;/a&gt;
+    &lt;/nav&gt;
 
-                    &lt;h1&gt;Selamat Datang!&lt;/h1&gt;
-                    &lt;p&gt;Ini adalah halaman utama website saya.&lt;/p&gt;
+    &lt;h1&gt;Selamat Datang!&lt;/h1&gt;
+    &lt;p&gt;Ini adalah halaman utama website saya.&lt;/p&gt;
 
-                    &lt;a href="https://youtube.com" target="_blank"&gt;Kunjungi YouTube&lt;/a&gt;
-                    &lt;/body&gt;
-                    &lt;/html&gt;
-                </div>
+    &lt;a href="https://youtube.com" target="_blank"&gt;Kunjungi YouTube&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</div>
 
                 <p><strong>File: hobi.html</strong></p>
-                <div class="code-box">
-                    &lt;!DOCTYPE html&gt;
-                    &lt;html&gt;
-                    &lt;head&gt;
-                    &lt;title&gt;Hobi Saya&lt;/title&gt;
-                    &lt;/head&gt;
-                    &lt;body&gt;
-                    &lt;nav style="background: lightblue; padding: 10px; text-align: center;"&gt;
-                    &lt;a href="index.html"&gt;Home&lt;/a&gt; |
-                    &lt;a href="hobi.html"&gt;Hobi&lt;/a&gt; |
-                    &lt;a href="favorit.html"&gt;Favorit&lt;/a&gt;
-                    &lt;/nav&gt;
+                <div class="code-box">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Hobi Saya&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;nav style="background: lightblue; padding: 10px; text-align: center;"&gt;
+      &lt;a href="index.html"&gt;Home&lt;/a&gt; |
+      &lt;a href="hobi.html"&gt;Hobi&lt;/a&gt; |
+      &lt;a href="favorit.html"&gt;Favorit&lt;/a&gt;
+    &lt;/nav&gt;
 
-                    &lt;h1&gt;Hobi Saya&lt;/h1&gt;
-                    &lt;p&gt;Saya suka bermain game dan menggambar.&lt;/p&gt;
+    &lt;h1&gt;Hobi Saya&lt;/h1&gt;
+    &lt;p&gt;Saya suka bermain game dan menggambar.&lt;/p&gt;
 
-                    &lt;a href="index.html"&gt;Kembali ke Home&lt;/a&gt;
-                    &lt;/body&gt;
-                    &lt;/html&gt;
-                </div>
+    &lt;a href="index.html"&gt;Kembali ke Home&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</div>
             </div>
-        </div>
+        </section>
 
         <!-- REFERENSI CEPAT -->
-        <div class="section">
-            <h2>⚡ Referensi Cepat</h2>
+        <section>
+            <h2>Referensi Cepat</h2>
 
             <table>
                 <thead>
@@ -534,12 +350,12 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </section>
 
         <!-- FOOTER -->
-        <div style="text-align: center; margin-top: 40px; padding: 20px; background: #f5f5f5; border-radius: 10px;">
-            <p><strong>🎓 Pertemuan 3: Link & Navigasi</strong></p>
-            <p>Selamat belajar! Jangan ragu untuk eksperimen dengan kode 🚀</p>
+        <div class="hint-box">
+            <p><strong>Pertemuan 3: Link &amp; Navigasi</strong></p>
+            <p>Selamat belajar! Jangan ragu untuk eksperimen dengan kode.</p>
         </div>
     </div>
 </body>

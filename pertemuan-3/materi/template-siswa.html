@@ -6,207 +6,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Utama - Website Multi-Halaman</title>
 
+    <link rel="stylesheet" href="../../assets/kursus.css">
     <style>
-        /* Navigation Bar */
-        .nav-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-            padding: 10px 20px;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        /* Area kerja siswa: contoh halaman utama yang diubah sendiri */
+        .lembar-kerja {
+            margin-top: 32px;
+            padding: 24px;
+            background: #ffffff;
+            border: 2px dashed var(--tinta-2);
+            border-radius: var(--radius);
         }
 
-        .nav-bar .nav-title {
-            color: white;
-            font-weight: bold;
-            font-size: 1em;
+        .lembar-kerja::before {
+            content: "Halaman kamu (index.html)";
+            display: block;
+            margin-bottom: 12px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--tinta-2);
         }
 
-        .nav-bar .nav-links {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
+        .lembar-kerja h1 {
+            font-size: 1.9rem;
         }
 
-        .nav-bar a {
-            color: white;
-            text-decoration: none;
-            padding: 5px 12px;
-            border-radius: 5px;
-            background: rgba(255, 255, 255, 0.2);
-            transition: all 0.3s;
-            font-size: 0.85em;
+        .lembar-kerja h2 {
+            margin-top: 28px;
         }
 
-        .nav-bar a:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        /* Body Styles */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
-            padding: 60px 15px 30px 15px;
-            margin: 0;
-            font-size: 14px;
-        }
-
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .instructions {
-            background: #fff3e0;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #11998e;
-            margin-bottom: 20px;
-        }
-
-        .instructions h2 {
-            color: #11998e;
-            margin-top: 0;
-            font-size: 1.2em;
-        }
-
-        .instructions ul,
-        .instructions ol {
-            color: #555;
-        }
-
-        .instructions code {
-            background: #e0f7fa;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-family: monospace;
-            color: #00796b;
-        }
-
-        /* Website Menu Navigation */
+        /* Menu navigasi website siswa */
         .website-nav {
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-            padding: 12px;
-            border-radius: 8px;
-            text-align: center;
-            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px 10px;
+            margin-bottom: 24px;
+            padding: 10px;
+            background: var(--aksen);
+            border-radius: var(--radius);
         }
 
         .website-nav a {
-            color: white;
+            padding: 6px 14px;
+            color: #ffffff;
+            font-weight: 700;
             text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            padding: 8px 15px;
-            border-radius: 5px;
-            display: inline-block;
-            transition: all 0.3s;
+            border-radius: 4px;
         }
 
         .website-nav a:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.18);
         }
 
-        h1 {
-            color: #11998e;
-            text-align: center;
-            margin-bottom: 15px;
-            font-size: 1.8em;
-        }
-
-        h2 {
-            color: #00796b;
-            border-bottom: 2px solid #38ef7d;
-            padding-bottom: 8px;
-            margin-top: 20px;
-            font-size: 1.3em;
-        }
-
-        p {
-            line-height: 1.6;
-            color: #333;
-        }
-
+        /* Link ke website luar */
         .external-links {
-            background: #e8f5e9;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 15px;
+            margin-top: 20px;
+            padding: 16px 18px;
+            background: var(--aksen-muda);
+            border-left: 4px solid var(--aksen);
+            border-radius: 0 var(--radius) var(--radius) 0;
         }
 
         .external-links h3 {
-            color: #2e7d32;
             margin-top: 0;
-            font-size: 1.1em;
         }
 
         .external-links a {
             display: inline-block;
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-            color: white;
-            text-decoration: none;
-            padding: 8px 15px;
-            border-radius: 6px;
-            margin: 8px 8px 8px 0;
-            transition: all 0.3s;
-            font-size: 0.9em;
+            margin: 6px 8px 0 0;
         }
 
-        .external-links a:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(17, 153, 142, 0.4);
-        }
-
-        @media screen and (max-width: 768px) {
-            .nav-bar {
-                flex-direction: column;
-                padding: 10px;
-            }
-
-            .nav-bar .nav-links {
-                justify-content: center;
-            }
-
-            .container {
-                padding: 15px;
-            }
-
-            .website-nav a {
-                display: block;
-                margin: 5px 0;
-            }
+        hr {
+            margin: 28px 0;
+            border: none;
+            border-top: 1px solid var(--garis);
         }
     </style>
 </head>
 
-<body>
+<body class="halaman" data-pertemuan="3">
     <!-- Navigation Bar Materi -->
     <nav class="nav-bar">
-        <div class="nav-title">🔗 Pertemuan 3: Template Tugas</div>
+        <div class="nav-title">Pertemuan 3 · Link &amp; Navigasi</div>
         <div class="nav-links">
-            <a href="../../index.html">🏠 Home</a>
-            <a href="index.html">📖 Presentasi</a>
-            <a href="cheat-sheet.html">📝 Cheat Sheet</a>
-            <a href="../../pertemuan-2/materi/template-siswa.html">⬅️ Pertemuan 2</a>
-            <a href="../../pertemuan-4/materi/template-siswa.html">➡️ Pertemuan 4</a>
+            <a href="../../index.html">Beranda</a>
+            <a href="index.html">Presentasi</a>
+            <a href="cheat-sheet.html">Cheat Sheet</a>
+            <a href="../../pertemuan-2/materi/template-siswa.html">← Pertemuan 2</a>
+            <a href="../../pertemuan-4/materi/template-siswa.html">Pertemuan 4 →</a>
         </div>
     </nav>
 
     <div class="container">
-        <div class="instructions">
-            <h2>🚀 TUGAS PERTEMUAN 3: WEBSITE MULTI-HALAMAN</h2>
+        <header class="kepala-halaman">
+            <span class="label-pertemuan">Pertemuan 3 · Template Tugas</span>
+            <h1>Website Multi-Halaman</h1>
+            <p class="pembuka">Tiga halaman yang saling terhubung lewat menu navigasi. File ini adalah halaman utamanya.</p>
+        </header>
 
+        <div class="instructions">
             <p><strong>Buat website dengan 3 halaman yang saling terhubung:</strong></p>
 
             <ol>
@@ -215,7 +113,7 @@
                 <li><strong>favorit.html</strong> - Halaman tentang hal favorit kamu</li>
             </ol>
 
-            <p><strong>💡 Yang Harus Ada di Setiap Halaman:</strong></p>
+            <p><strong>Yang Harus Ada di Setiap Halaman:</strong></p>
             <ul>
                 <li>Menu navigasi dengan link ke 3 halaman</li>
                 <li>Judul halaman yang jelas</li>
@@ -223,61 +121,62 @@
                 <li>Minimal 1 link ke website luar</li>
             </ul>
 
-            <p><strong>📝 CONTOH KODE MENU NAVIGASI:</strong></p>
-            <pre
-                style="background: #2c3e50; color: white; padding: 10px; border-radius: 5px; overflow-x: auto; font-size: 0.85em;"><code>&lt;nav style="text-align: center; padding: 15px; background: lightblue;"&gt;
+            <p><strong>Contoh kode menu navigasi:</strong></p>
+            <pre><code>&lt;nav style="text-align: center; padding: 15px; background: lightblue;"&gt;
   &lt;a href="index.html"&gt;Home&lt;/a&gt; | 
   &lt;a href="hobi.html"&gt;Hobi Saya&lt;/a&gt; | 
   &lt;a href="favorit.html"&gt;Favorit Saya&lt;/a&gt;
 &lt;/nav&gt;</code></pre>
 
-            <p><strong>📝 CONTOH LINK KE WEBSITE LUAR:</strong></p>
-            <pre
-                style="background: #2c3e50; color: white; padding: 10px; border-radius: 5px; overflow-x: auto; font-size: 0.85em;"><code>&lt;a href="https://youtube.com" target="_blank"&gt;Ke YouTube&lt;/a&gt;</code></pre>
+            <p><strong>Contoh link ke website luar:</strong></p>
+            <pre><code>&lt;a href="https://youtube.com" target="_blank"&gt;Ke YouTube&lt;/a&gt;</code></pre>
         </div>
 
+        <div class="lembar-kerja">
         <!-- MENU NAVIGASI WEBSITE -->
         <nav class="website-nav">
-            <a href="index.html">🏠 Home</a>
-            <a href="hobi.html">🎮 Hobi Saya</a>
-            <a href="favorit.html">⭐ Favorit Saya</a>
+            <a href="index.html">Home</a>
+            <a href="hobi.html">Hobi Saya</a>
+            <a href="favorit.html">Favorit Saya</a>
         </nav>
 
         <!-- KONTEN HALAMAN UTAMA -->
         <h1>Selamat Datang di Website Saya!</h1>
 
-        <h2>👋 Perkenalan</h2>
+        <h2>Perkenalan</h2>
         <p>
             Halo! Nama saya <strong>[Tulis Nama Kamu]</strong>.
             Saya berumur <strong>[Umur]</strong> tahun dan sekarang kelas <strong>[Kelas]</strong>.
         </p>
 
-        <h2>🌟 Tentang Website Ini</h2>
+        <h2>Tentang Website Ini</h2>
         <p>
             Website ini berisi informasi tentang hobi dan hal-hal favorit saya.
             Silakan jelajahi halaman-halaman berikut:
         </p>
         <ul>
-            <li><a href="hobi.html" style="color: #11998e;"><strong>Hobi Saya</strong></a> - Kegiatan yang saya sukai
+            <li><a href="hobi.html"><strong>Hobi Saya</strong></a> - Kegiatan yang saya sukai
             </li>
-            <li><a href="favorit.html" style="color: #11998e;"><strong>Favorit Saya</strong></a> - Hal-hal favorit saya
+            <li><a href="favorit.html"><strong>Favorit Saya</strong></a> - Hal-hal favorit saya
             </li>
         </ul>
 
         <!-- LINK KE WEBSITE LUAR -->
         <div class="external-links">
-            <h3>🔗 Link yang Saya Suka</h3>
+            <h3>Link yang Saya Suka</h3>
             <p>Berikut beberapa website favorit saya:</p>
-            <a href="https://youtube.com" target="_blank">📺 YouTube</a>
-            <a href="https://wikipedia.org" target="_blank">📚 Wikipedia</a>
-            <a href="https://google.com" target="_blank">🔍 Google</a>
+            <a href="https://youtube.com" target="_blank">YouTube</a>
+            <a href="https://wikipedia.org" target="_blank">Wikipedia</a>
+            <a href="https://google.com" target="_blank">Google</a>
         </div>
 
-        <hr style="margin: 20px 0; border: none; border-top: 2px solid #e0e0e0;">
+        </div>
+
+        <hr>
 
         <!-- INSTRUKSI -->
-        <div style="background: #e8f5e9; padding: 15px; border-radius: 8px; margin-top: 15px;">
-            <h3 style="color: #2e7d32; margin-top: 0; font-size: 1.1em;">📋 Langkah Selanjutnya:</h3>
+        <div class="hint-box">
+            <h3 style="margin-top: 0;">Langkah Selanjutnya:</h3>
             <ol>
                 <li>Selesaikan halaman ini (index.html)</li>
                 <li>Buat file baru <strong>hobi.html</strong> dan <strong>favorit.html</strong></li>

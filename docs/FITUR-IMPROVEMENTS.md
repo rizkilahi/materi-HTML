@@ -142,22 +142,11 @@ ESC : Overview mode
 const correctCode = "html2025"; // Ganti dengan kode Anda
 ```
 
-### Ganti Warna Tema:
+### Ganti Warna Tema & Font:
 
-```css
-/* Gradient utama */
-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-
-/* Button color */
-background: #667eea;
-```
-
-### Ubah Font:
-
-```css
-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-/* Ganti dengan font pilihan Anda */
-```
+Sejak desain "Buku Tulis", warna dan huruf tidak lagi diatur per file. Ubah token di
+`assets/kursus.css` (`--aksen` per pertemuan, `--font-judul`, `--font-teks`, `--font-kode`).
+Lihat PANDUAN-INSTRUKTUR.md bagian "Ganti Warna Tema".
 
 ## 📊 Browser Compatibility
 

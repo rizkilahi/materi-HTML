@@ -8,181 +8,27 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css">
-
-    <style>
-        .nav-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(135deg, #f97316 0%, #ef4444 100%);
-            padding: 10px 20px;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-title {
-            color: white;
-            font-weight: bold;
-            font-size: 1em;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            padding: 5px 12px;
-            border-radius: 5px;
-            background: rgba(255, 255, 255, 0.2);
-            font-size: 0.85em;
-        }
-
-        .reveal {
-            padding-top: 48px;
-        }
-
-        .reveal h1 {
-            color: #fdba74;
-            font-size: 2.1em;
-        }
-
-        .reveal h2 {
-            color: #fdba74;
-            font-size: 1.55em;
-        }
-
-        .reveal h3 {
-            color: #fed7aa;
-            font-size: 1.15em;
-        }
-
-        .reveal p,
-        .reveal li,
-        .reveal td,
-        .reveal th {
-            font-size: 0.85em;
-        }
-
-        .box-info {
-            background: #ffedd5;
-            color: #7c2d12;
-            border-left: 4px solid #ea580c;
-            border-radius: 8px;
-            padding: 12px;
-            font-size: 0.8em;
-            text-align: left;
-        }
-
-        .box-task {
-            background: #fee2e2;
-            color: #7f1d1d;
-            border: 2px dashed #ef4444;
-            border-radius: 8px;
-            padding: 14px;
-            font-size: 0.82em;
-            text-align: left;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 10px;
-            text-align: left;
-        }
-
-        .mini-card {
-            background: rgba(255, 237, 213, 0.95);
-            border-left: 4px solid #f97316;
-            border-radius: 8px;
-            padding: 10px;
-            color: #7c2d12;
-            font-size: 0.78em;
-        }
-
-        .mini-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.75em;
-        }
-
-        .mini-table th,
-        .mini-table td {
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            padding: 7px;
-            text-align: left;
-        }
-
-        .mini-table th {
-            background: rgba(249, 115, 22, 0.25);
-            color: #ffedd5;
-        }
-
-        .mini-table td {
-            background: rgba(0, 0, 0, 0.15);
-            color: #fef3c7;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 3px 8px;
-            border-radius: 999px;
-            background: #f97316;
-            color: white;
-            font-size: 0.7em;
-            margin-right: 6px;
-        }
-
-        @media screen and (max-width: 768px) {
-            .nav-bar {
-                flex-direction: column;
-                padding: 8px;
-            }
-
-            .nav-links {
-                justify-content: center;
-            }
-
-            .reveal h1 {
-                font-size: 1.6em;
-            }
-
-            .reveal h2 {
-                font-size: 1.25em;
-            }
-
-            .grid-2 {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../../assets/kursus.css">
+    <link rel="stylesheet" href="../../assets/slides.css">
 </head>
 
-<body>
+<body data-pertemuan="4">
     <nav class="nav-bar">
-        <div class="nav-title">🎯 Pertemuan 4: Mini Project & Presentasi</div>
+        <div class="nav-title">Pertemuan 4 · Mini Project</div>
         <div class="nav-links">
-            <a href="../../index.html">🏠 Home</a>
-            <a href="../../pertemuan-3/materi/index.html">📖 Pertemuan 3</a>
-            <a href="../../pertemuan-5/materi/index.html">➡️ Pertemuan 5</a>
-            <a href="template-siswa.html">✍️ Template</a>
-            <a href="cheat-sheet.html">📝 Cheat Sheet</a>
+            <a href="../../index.html">Beranda</a>
+            <a href="../../pertemuan-3/materi/index.html">← Pertemuan 3</a>
+            <a href="../../pertemuan-5/materi/index.html">Pertemuan 5 →</a>
+            <a href="template-siswa.html">Template</a>
+            <a href="cheat-sheet.html">Cheat Sheet</a>
         </div>
     </nav>
 
     <div class="reveal">
         <div class="slides">
-            <section>
-                <h1>🎯 Mini Project dan Presentasi</h1>
-                <h3>Kursus HTML Pertemuan 4 (2 Jam)</h3>
+            <section class="sampul">
+                <span class="nomor">Pertemuan 4</span>
+                <h1>Mini Project dan Presentasi</h1>
                 <p>Waktunya menyelesaikan website sederhana kamu sendiri!</p>
             </section>
 
@@ -198,7 +44,7 @@
             </section>
 
             <section>
-                <h2>Rundown 2 Jam ⏰</h2>
+                <h2>Rundown 2 Jam</h2>
                 <table class="mini-table">
                     <thead>
                         <tr>
@@ -233,7 +79,7 @@
             </section>
 
             <section>
-                <h2>Review Semua Tag HTML 🔁</h2>
+                <h2>Review Semua Tag HTML</h2>
                 <ul>
                     <li><code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code> untuk judul dan teks</li>
                     <li><code>&lt;img&gt;</code> untuk gambar</li>
@@ -261,7 +107,7 @@
             </section>
 
             <section>
-                <h2>Rapikan Struktur HTML 🧼</h2>
+                <h2>Rapikan Struktur HTML</h2>
                 <ul>
                     <li>Pastikan ada <code>&lt;!doctype html&gt;</code></li>
                     <li>Gunakan <code>&lt;head&gt;</code> dan <code>&lt;body&gt;</code> dengan benar</li>
@@ -271,7 +117,7 @@
             </section>
 
             <section>
-                <h2>Sentuhan Akhir ✨</h2>
+                <h2>Sentuhan Akhir</h2>
                 <ul>
                     <li>Tambah warna pada judul dan background</li>
                     <li>Tambah minimal 1 gambar</li>
@@ -310,7 +156,7 @@
             </section>
 
             <section>
-                <h2>Checklist Project ✅</h2>
+                <h2>Checklist Project</h2>
                 <ul>
                     <li>Ada judul website</li>
                     <li>Ada isi utama (minimal 2 paragraf)</li>
@@ -367,7 +213,7 @@
             </section>
 
             <section>
-                <h2>Sesi Presentasi 🎤</h2>
+                <h2>Sesi Presentasi</h2>
                 <div class="box-info">
                     <p><b>Anak menjelaskan:</b></p>
                     <ul style="margin: 8px 0 0 18px;">
@@ -391,7 +237,7 @@
             </section>
 
             <section>
-                <h2>Penutup Seru 🎉</h2>
+                <h2>Penutup Seru</h2>
                 <ul>
                     <li>Sertifikat mini</li>
                     <li>Foto hasil karya</li>
@@ -401,7 +247,7 @@
             </section>
 
             <section>
-                <h1>🎊 Keren!</h1>
+                <h1>Keren!</h1>
                 <p>Kamu sudah siap jadi kreator website cilik.</p>
                 <div class="box-info" style="max-width: 640px; margin: 14px auto;">
                     <ol style="margin: 0 0 0 18px;">

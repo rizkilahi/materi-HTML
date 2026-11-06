@@ -7,6 +7,10 @@ materi-HTML/
 ├── 🧪 playground.html            Editor Coba-Coba (offline, untuk semua pertemuan)
 ├── 📋 README.md                  Dokumentasi utama
 │
+├── 📁 assets/
+│     ├── kursus.css              Gaya bersama: warna, huruf, nav, kotak, tabel, tombol
+│     └── slides.css              Tema slide reveal.js (dipakai bersama kursus.css)
+│
 ├── 📁 pertemuan-1/materi/        🚀 Dasar HTML (ada kode akses)
 ├── 📁 pertemuan-2/materi/        🎨 Gambar & Warna
 ├── 📁 pertemuan-3/materi/        🔗 Link & Navigasi
@@ -52,17 +56,18 @@ Setiap folder `pertemuan-N/materi/` berisi 3 file yang sama polanya: `index.html
 
 - Semua link memakai path relatif, jadi folder bisa dipindah atau disalin ke flashdisk tanpa rusak.
 - Dari dalam `pertemuan-N/materi/`, kembali ke root memakai `../../`.
-- Setiap halaman punya nav-bar ke Home, file lain di pertemuan yang sama, serta pertemuan sebelum/sesudahnya.
+- Setiap halaman punya nav-bar ke Beranda, file lain di pertemuan yang sama, serta pertemuan sebelum/sesudahnya.
 
 ## ➕ Menambah Pertemuan Baru
 
 1. Salin folder pertemuan terakhir, ganti nomornya (mis. `pertemuan-7`).
-2. Ganti isi slide, template, dan cheat sheet. Pilih warna tema baru di `.nav-bar`.
-3. Tambahkan kartu baru di `index.html` (root).
-4. Tambahkan link "➡️ Pertemuan berikutnya" di nav-bar ketiga file pertemuan sebelumnya.
+2. Ganti isi slide, template, dan cheat sheet. Tambahkan warna sampul baru di `assets/kursus.css`
+   (`[data-pertemuan="7"] { --aksen: ...; }`) dan pasang `data-pertemuan="7"` di `<body>`.
+3. Tambahkan baris baru di daftar pertemuan `index.html` (root).
+4. Tambahkan link "Pertemuan berikutnya →" di nav-bar ketiga file pertemuan sebelumnya.
 5. Perbarui `README.md` dan dokumen ini.
 
 ## 🌐 Kebutuhan Internet
 
 - Semua slide presentasi (Pertemuan 1-6) memuat reveal.js dari CDN, jadi **perlu internet** saat dibuka.
-- Template, cheat sheet, dan `playground.html` bisa dipakai **tanpa internet**.
+- Template, cheat sheet, dan `playground.html` bisa dipakai **tanpa internet** (huruf otomatis diganti huruf sistem).

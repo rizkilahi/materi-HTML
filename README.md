@@ -231,11 +231,13 @@ MATERI LES/HTML/
 
 ## ✨ Fitur Unggulan
 
-- 🔐 **Kode Akses** - Sistem proteksi materi (default: `html2025`)
-- 🎨 **Desain Menarik** - Gradient background yang eye-catching
-- 📊 **Progress Indicator** - Melacak kemajuan pembelajaran
-- 🎮 **Interaktivitas** - Quiz, demo langsung, dan animasi
-- 📖 **Konten Terstruktur** - 12 slide pembelajaran bertahap
+- **Desain "Buku Tulis"** - latar kertas, tinta gelap, satu warna sampul per pertemuan, tanpa gradasi.
+  Semua gaya ada di `assets/kursus.css` dan `assets/slides.css`, jadi tampilan konsisten di semua halaman.
+- **Huruf mudah dibaca** - Atkinson Hyperlegible untuk isi, Bricolage Grotesque untuk judul, JetBrains Mono untuk kode
+  (tanpa internet otomatis memakai huruf sistem).
+- **Kode Akses** - proteksi slide Pertemuan 1 (default: `html2025`)
+- **Interaktif** - kuis, demo langsung, dan editor mini di slide
+- **Editor Coba-Coba** - praktik HTML di browser tanpa internet
 
 ## 🚀 Cara Menggunakan
 

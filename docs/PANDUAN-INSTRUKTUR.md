@@ -133,12 +133,17 @@ const correctCode = "html2025"; // Ganti ini!
 
 ### Ganti Warna Tema:
 
-Buka `index.html` pertemuan yang ingin diubah, cari bagian CSS `.nav-bar`:
+Semua warna, huruf, dan komponen diatur di satu tempat: `assets/kursus.css` (halaman biasa) dan
+`assets/slides.css` (slide). Warna aksen tiap pertemuan ada di bagian atas `assets/kursus.css`:
 
 ```css
-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-/* Ganti kode warna #667eea dan #764ba2 */
+[data-pertemuan="1"] { --aksen: var(--merah); }
+[data-pertemuan="2"] { --aksen: var(--kunyit); }
+/* ... ganti ke warna lain, mis. --aksen: #2f6f9f; */
 ```
+
+Halaman memilih warnanya lewat atribut `data-pertemuan` di `<body>`. Pastikan warna baru tetap
+kontras dengan latar kertas (`#f6f1e7`) dan dengan teks putih (rasio minimal 4.5:1).
 
 ---
 

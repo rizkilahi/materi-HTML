@@ -1,0 +1,343 @@
+/* ==========================================================
+   Tema slide reveal.js "Buku Tulis"
+   Muat SETELAH reveal.min.css dan kursus.css.
+   Tidak perlu tema reveal (night, dsb.) atau tema highlight.js.
+   ========================================================== */
+
+.reveal-viewport {
+    background: var(--kertas);
+}
+
+/* Nav bar menempel di atas slide */
+.reveal-viewport .nav-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+}
+
+.reveal {
+    padding-top: 52px;
+    box-sizing: border-box;
+    font-family: var(--font-teks);
+    font-size: 34px;
+    color: var(--tinta);
+}
+
+.reveal ::selection {
+    background: var(--aksen);
+    color: #ffffff;
+}
+
+/* ---------- Teks ---------- */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+    margin: 0 0 0.45em;
+    font-family: var(--font-judul);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    color: var(--tinta);
+    text-transform: none;
+    text-shadow: none;
+    word-wrap: break-word;
+}
+
+.reveal h1 {
+    font-size: 2.3em;
+}
+
+.reveal h2 {
+    font-size: 1.45em;
+}
+
+.reveal h3 {
+    font-size: 1em;
+    font-weight: 600;
+    color: var(--tinta-2);
+}
+
+/* Garis aksen di bawah judul slide */
+.reveal h2::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 6px;
+    margin: 0.3em auto 0;
+    background: var(--aksen);
+    border-radius: 2px;
+}
+
+.reveal p {
+    margin: 0 0 0.6em;
+    line-height: 1.4;
+}
+
+.reveal ul,
+.reveal ol {
+    display: inline-block;
+    text-align: left;
+    margin: 0 0 0 1.1em;
+}
+
+.reveal li {
+    margin-bottom: 0.25em;
+    line-height: 1.35;
+}
+
+.reveal li::marker {
+    color: var(--aksen);
+    font-weight: 700;
+}
+
+.reveal strong,
+.reveal b {
+    font-weight: 700;
+}
+
+.reveal a {
+    color: var(--aksen);
+    text-decoration: underline;
+    text-underline-offset: 0.12em;
+}
+
+/* Kode di dalam kalimat */
+.reveal :not(pre) > code {
+    background: var(--kertas-2);
+    color: var(--tinta);
+    padding: 0.05em 0.25em;
+    border-radius: 4px;
+}
+
+/* Halaman pembuka: <section class="sampul"> */
+.reveal .sampul h1 {
+    font-size: 2.8em;
+    margin-bottom: 0.2em;
+}
+
+.reveal .sampul .nomor {
+    display: inline-block;
+    margin-bottom: 0.6em;
+    padding: 0.15em 0.6em;
+    font-size: 0.6em;
+    font-weight: 700;
+    color: #ffffff;
+    background: var(--aksen);
+    border-radius: var(--radius);
+}
+
+.reveal .sampul p {
+    color: var(--tinta-2);
+}
+
+/* ---------- Blok kode ---------- */
+.reveal pre {
+    width: 100%;
+    margin: 0.4em auto;
+    font-size: 0.5em;
+    line-height: 1.55;
+    background: var(--kode-bg);
+    border-radius: 8px;
+    box-shadow: none;
+    text-align: left;
+}
+
+.reveal pre code {
+    display: block;
+    max-height: 520px;
+    padding: 0.9em 1.1em;
+    font-family: var(--font-kode);
+    background: transparent;
+    color: var(--kode-teks);
+    overflow: auto;
+    word-wrap: normal;
+}
+
+/* Warna sintaks (pengganti tema highlight.js) */
+.reveal .hljs { background: transparent; color: var(--kode-teks); }
+.reveal .hljs-tag,
+.reveal .hljs-name { color: #f4a48c; }
+.reveal .hljs-attr,
+.reveal .hljs-attribute { color: #e9c46a; }
+.reveal .hljs-string { color: #a6d49f; }
+.reveal .hljs-comment { color: #8f877a; font-style: italic; }
+.reveal .hljs-meta,
+.reveal .hljs-keyword { color: #9cc3e8; }
+.reveal .hljs-number,
+.reveal .hljs-literal { color: #e9a3c9; }
+
+/* ---------- Komponen di dalam slide ---------- */
+.reveal .box-info,
+.reveal .info-box,
+.reveal .hint-box,
+.reveal .tip,
+.reveal .note,
+.reveal .highlight-box,
+.reveal .warning-box,
+.reveal .box-warning,
+.reveal .success-box,
+.reveal .box-task,
+.reveal .task-box,
+.reveal .mini-card,
+.reveal .card {
+    font-size: 0.72em;
+    text-align: left;
+    line-height: 1.4;
+}
+
+.reveal .box-info p,
+.reveal .box-info li,
+.reveal .box-task p,
+.reveal .box-task li,
+.reveal .mini-card p,
+.reveal .warning-box p,
+.reveal .warning-box li,
+.reveal .success-box p,
+.reveal .success-box li,
+.reveal .info-box p,
+.reveal .info-box li,
+.reveal .highlight-box p,
+.reveal .highlight-box li {
+    font-size: 1em;
+}
+
+.reveal .box-task,
+.reveal .task-box {
+    box-shadow: 6px 6px 0 var(--aksen);
+}
+
+/* Beri ruang untuk nomor/bullet di dalam kotak */
+.reveal :is(.box-info, .info-box, .hint-box, .tip, .note, .highlight-box, .warning-box,
+    .box-warning, .success-box, .box-task, .task-box, .mini-card, .card) :is(ul, ol) {
+    padding-left: 1em;
+}
+
+.reveal .grid-2,
+.reveal .grid {
+    text-align: left;
+    align-items: start;
+}
+
+.reveal .grid-2 pre {
+    margin: 0;
+    font-size: 0.46em;
+}
+
+/* Label kecil di atas kolom: KODE / HASIL */
+.reveal .label {
+    margin: 0 0 6px;
+    font-size: 0.5em;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--tinta-2);
+}
+
+/* Hasil kode di dalam slide */
+.reveal .preview {
+    font-size: 0.5em;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.reveal .preview h1,
+.reveal .preview h2,
+.reveal .preview h3,
+.reveal .preview p {
+    margin: 4px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: inherit;
+    letter-spacing: 0;
+    line-height: 1.3;
+}
+
+.reveal .preview h2::after {
+    content: none;
+}
+
+.reveal .preview p,
+.reveal .preview li {
+    font-size: 1em;
+}
+
+.reveal .preview ul,
+.reveal .preview ol {
+    display: block;
+}
+
+/* Tabel di slide (kecuali tabel nomor baris highlight.js di dalam <pre>) */
+.reveal table:not(pre table),
+.reveal .mini-table {
+    width: 100%;
+    margin: 0.4em auto;
+    border-collapse: collapse;
+    font-size: 0.6em;
+    background: var(--putih);
+}
+
+.reveal table:not(pre table) th,
+.reveal table:not(pre table) td {
+    padding: 0.45em 0.65em;
+    text-align: left;
+    vertical-align: top;
+    border: none;
+    border-bottom: 1px solid var(--garis);
+    color: var(--tinta);
+    background: transparent;
+    font-size: 1em;
+}
+
+.reveal table:not(pre table) th {
+    font-weight: 700;
+    background: var(--aksen-muda);
+    border-bottom: 2px solid var(--tinta);
+}
+
+/* Lencana kecil */
+.reveal .badge {
+    display: inline-block;
+    margin-right: 0.4em;
+    padding: 0.1em 0.5em;
+    font-size: 0.85em;
+    font-weight: 700;
+    color: #ffffff;
+    background: var(--aksen);
+    border-radius: 4px;
+}
+
+/* Tombol di slide */
+.reveal .quiz-btn,
+.reveal .quiz-button {
+    font-size: 0.6em;
+}
+
+/* ---------- Kontrol reveal ---------- */
+.reveal .controls {
+    color: var(--aksen);
+}
+
+.reveal .progress {
+    height: 6px;
+    color: var(--aksen);
+    background: var(--kertas-2);
+}
+
+.reveal .slide-number {
+    background: transparent;
+    color: var(--tinta-2);
+    font-family: var(--font-teks);
+}
+
+@media screen and (max-width: 720px) {
+    .reveal {
+        padding-top: 84px;
+    }
+
+    .reveal h1 {
+        font-size: 1.7em;
+    }
+
+    .reveal h2 {
+        font-size: 1.25em;
+    }
+}

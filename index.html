@@ -4,519 +4,467 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kursus HTML untuk Anak SD - Hub Materi</title>
+    <title>Kursus HTML untuk Anak SD</title>
+    <link rel="stylesheet" href="assets/kursus.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
-
-        .container {
-            max-width: 1200px;
+        .hub {
+            max-width: 1080px;
             margin: 0 auto;
+            padding: 0 24px 80px;
         }
 
-        header {
-            text-align: center;
-            color: white;
-            margin-bottom: 50px;
-            animation: fadeInDown 0.8s ease-out;
-        }
-
-        header h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-        }
-
-        header p {
-            font-size: 1.3em;
-            opacity: 0.95;
-        }
-
-        .pertemuan-grid {
+        /* ---------- Pembuka ---------- */
+        .pembuka {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .pertemuan-card {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-            animation: fadeInUp 0.8s ease-out;
-            animation-fill-mode: both;
-        }
-
-        .pertemuan-card:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-
-        .pertemuan-card:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .pertemuan-card:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-
-        .pertemuan-card:nth-child(4) {
-            animation-delay: 0.4s;
-        }
-
-        .pertemuan-card:nth-child(5) {
-            animation-delay: 0.5s;
-        }
-
-        .pertemuan-card:nth-child(6) {
-            animation-delay: 0.6s;
-        }
-
-        .playground-cta {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 26px;
-            border-radius: 30px;
-            background: white;
-            color: #764ba2;
-            font-weight: bold;
-            text-decoration: none;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-            transition: transform 0.3s ease;
-        }
-
-        .playground-cta:hover {
-            transform: translateY(-3px);
-        }
-
-        .pertemuan-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .pertemuan-card h2 {
-            color: #667eea;
-            font-size: 1.8em;
-            margin-bottom: 15px;
-            display: flex;
+            grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+            gap: 48px;
             align-items: center;
-            gap: 10px;
+            padding: 64px 0 56px;
+            border-bottom: 2px solid var(--tinta);
         }
 
-        .pertemuan-card .badge {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.5em;
-            font-weight: bold;
+        .pembuka h1 {
+            font-size: clamp(2.4rem, 5.6vw, 4rem);
+            line-height: 1;
+            letter-spacing: -0.035em;
+            margin: 0 0 20px;
         }
 
-        .pertemuan-card h3 {
-            color: #764ba2;
-            font-size: 1.2em;
-            margin: 20px 0 10px 0;
+        .pembuka h1 em {
+            font-style: normal;
+            color: var(--merah);
         }
 
-        .pertemuan-card p {
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 15px;
+        .pembuka .ringkas {
+            font-size: 1.2rem;
+            color: var(--tinta-2);
+            max-width: 44ch;
+            margin-bottom: 28px;
         }
 
-        .pertemuan-card ul {
-            color: #666;
-            margin-left: 20px;
-            margin-bottom: 20px;
+        .aksi {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
         }
 
-        .pertemuan-card li {
-            margin-bottom: 8px;
+        .aksi .btn {
+            font-size: 1rem;
+            padding: 12px 20px;
         }
 
-        .links {
+        /* Contoh: kode → hasil */
+        .contoh {
+            display: grid;
+            gap: 0;
+            border: 2px solid var(--tinta);
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: #ffffff;
+            box-shadow: 6px 6px 0 var(--tinta);
+        }
+
+        .contoh .judul-jendela {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--tinta-2);
+            background: var(--kertas-2);
+            border-bottom: 2px solid var(--tinta);
+        }
+
+        .contoh pre {
+            margin: 0;
+            border-radius: 0;
+            font-size: 0.85rem;
+        }
+
+        .contoh .tag {
+            color: #f4a48c;
+        }
+
+        .contoh .atr {
+            color: #e9c46a;
+        }
+
+        .contoh .str {
+            color: #a6d49f;
+        }
+
+        .contoh .hasil {
+            padding: 16px 18px 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #111111;
+        }
+
+        .contoh .hasil h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            letter-spacing: 0;
+            margin: 0 0 6px;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .contoh .hasil p {
+            margin: 0;
+        }
+
+        /* ---------- Daftar pertemuan ---------- */
+        .bagian {
+            padding-top: 48px;
+        }
+
+        .bagian > h2 {
+            border: none;
+            padding: 0;
+            margin: 0 0 8px;
+            font-size: 1.8rem;
+        }
+
+        .bagian > .catatan {
+            color: var(--tinta-2);
+            margin-bottom: 24px;
+        }
+
+        .daftar {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border-top: 2px solid var(--tinta);
+        }
+
+        .pertemuan {
+            display: grid;
+            grid-template-columns: 96px minmax(0, 1fr) auto;
+            gap: 8px 28px;
+            align-items: start;
+            padding: 26px 0;
+            border-bottom: 1px solid var(--garis);
+            margin: 0;
+        }
+
+        .pertemuan .no {
+            font-family: var(--font-judul);
+            font-weight: 800;
+            font-size: 3.6rem;
+            line-height: 0.85;
+            letter-spacing: -0.04em;
+            color: var(--aksen);
+        }
+
+        .pertemuan h3 {
+            margin: 0 0 6px;
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .pertemuan p {
+            margin: 0 0 10px;
+            color: var(--tinta-2);
+            max-width: 52ch;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .tags li {
+            margin: 0;
+            padding: 1px 8px;
+            font-family: var(--font-kode);
+            font-size: 0.8rem;
+            background: var(--aksen-muda);
+            border: 1px solid color-mix(in srgb, var(--aksen) 35%, transparent);
+            border-radius: 4px;
+        }
+
+        .tautan {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            align-items: flex-start;
+            gap: 6px;
+            min-width: 170px;
+            padding-top: 4px;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 20px;
-            border-radius: 10px;
+        .tautan a {
+            color: var(--tinta);
             text-decoration: none;
-            font-weight: 600;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            border-bottom: 2px solid var(--garis);
+            line-height: 1.4;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        .tautan a:hover {
+            border-bottom-color: var(--aksen);
         }
 
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        .tautan a.utama {
+            font-weight: 700;
+            border-bottom-color: var(--aksen);
         }
 
-        .btn-secondary {
-            background: white;
-            color: #667eea;
-            border: 2px solid #667eea;
-        }
-
-        .btn-secondary:hover {
-            background: #667eea;
-            color: white;
-        }
-
-        .btn-success {
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-            color: white;
-            box-shadow: 0 4px 15px rgba(17, 153, 142, 0.4);
-        }
-
-        .btn-success:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(17, 153, 142, 0.6);
-        }
-
-        .docs-section {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 0.8s ease-out 0.4s;
-            animation-fill-mode: both;
-        }
-
-        .docs-section h2 {
-            color: #667eea;
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .docs-links {
+        /* ---------- Instruktur ---------- */
+        .instruktur {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
         }
 
-        .doc-link {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            text-decoration: none;
-            color: #555;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
+        .instruktur .card h3 {
+            margin: 0 0 8px;
+            font-size: 1.1rem;
         }
 
-        .doc-link:hover {
-            background: #667eea;
-            color: white;
-            border-color: #764ba2;
-            transform: translateX(5px);
+        .instruktur .card ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        kbd {
+            display: inline-block;
+            padding: 0 6px;
+            font-family: var(--font-kode);
+            font-size: 0.8rem;
+            border: 1.5px solid var(--tinta);
+            border-bottom-width: 3px;
+            border-radius: 4px;
+            background: var(--putih);
         }
 
         footer {
-            text-align: center;
-            color: white;
-            margin-top: 50px;
-            padding: 20px;
-            opacity: 0.9;
+            margin-top: 64px;
+            padding-top: 18px;
+            border-top: 2px solid var(--tinta);
+            font-size: 0.9rem;
+            color: var(--tinta-2);
         }
 
-        .emoji {
-            font-size: 1.5em;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
-            }
-
-            header p {
-                font-size: 1em;
-            }
-
-            .pertemuan-grid {
+        @media (max-width: 860px) {
+            .pembuka {
                 grid-template-columns: 1fr;
+                padding-top: 40px;
             }
 
-            .docs-links {
+            .pertemuan {
+                grid-template-columns: 64px minmax(0, 1fr);
+            }
+
+            .pertemuan .no {
+                font-size: 2.6rem;
+            }
+
+            .tautan {
+                grid-column: 2;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 6px 16px;
+            }
+
+            .instruktur {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 
-<body>
-    <div class="container">
-        <header>
-            <h1>📚 Kursus HTML untuk Anak SD</h1>
-            <p>Belajar HTML dengan Cara yang Menyenangkan!</p>
-            <a href="playground.html" class="playground-cta">🧪 Buka Editor Coba-Coba</a>
-        </header>
-
-        <div class="pertemuan-grid">
-            <!-- Pertemuan 1 -->
-            <div class="pertemuan-card">
-                <h2>
-                    <span class="emoji">🚀</span>
-                    Pertemuan 1
-                    <span class="badge">Dasar</span>
-                </h2>
-                <h3>Pengenalan HTML</h3>
-                <p>Belajar dasar-dasar HTML, struktur website, dan membuat halaman pertamamu!</p>
-
-                <ul>
-                    <li>Apa itu HTML?</li>
-                    <li>Struktur dasar HTML</li>
-                    <li>Tag Heading & Paragraph</li>
-                    <li>Membuat website pertama</li>
-                </ul>
-
-                <div class="links">
-                    <a href="pertemuan-1/materi/index.html" class="btn btn-primary">
-                        📖 Buka Presentasi
-                    </a>
-                    <a href="pertemuan-1/materi/template-siswa.html" class="btn btn-secondary">
-                        ✍️ Template Tugas
-                    </a>
-                    <a href="pertemuan-1/materi/cheat-sheet.html" class="btn btn-success">
-                        📝 Cheat Sheet
-                    </a>
-                </div>
-            </div>
-
-            <!-- Pertemuan 2 -->
-            <div class="pertemuan-card">
-                <h2>
-                    <span class="emoji">🎨</span>
-                    Pertemuan 2
-                    <span class="badge">Warna & Gambar</span>
-                </h2>
-                <h3>Mewarnai Web</h3>
-                <p>Tambahkan warna, gambar, dan gaya tulisan ke website-mu!</p>
-
-                <ul>
-                    <li>Memasukkan gambar</li>
-                    <li>Memberi warna tulisan</li>
-                    <li>Warna latar belakang</li>
-                    <li>Gaya tulisan (bold, italic)</li>
-                </ul>
-
-                <div class="links">
-                    <a href="pertemuan-2/materi/index.html" class="btn btn-primary">
-                        📖 Buka Presentasi
-                    </a>
-                    <a href="pertemuan-2/materi/template-siswa.html" class="btn btn-secondary">
-                        ✍️ Template Tugas
-                    </a>
-                    <a href="pertemuan-2/materi/cheat-sheet.html" class="btn btn-success">
-                        📝 Cheat Sheet
-                    </a>
-                </div>
-            </div>
-
-            <!-- Pertemuan 3 -->
-            <div class="pertemuan-card">
-                <h2>
-                    <span class="emoji">🔗</span>
-                    Pertemuan 3
-                    <span class="badge">Link & Navigasi</span>
-                </h2>
-                <h3>Link & Navigasi</h3>
-                <p>Belajar membuat link dan navigasi antar halaman!</p>
-
-                <ul>
-                    <li>Membuat link/tautan</li>
-                    <li>Link ke halaman lain</li>
-                    <li>Link ke website lain</li>
-                    <li>Membuat menu navigasi</li>
-                </ul>
-
-                <div class="links">
-                    <a href="pertemuan-3/materi/index.html" class="btn btn-primary">
-                        📖 Buka Presentasi
-                    </a>
-                    <a href="pertemuan-3/materi/template-siswa.html" class="btn btn-secondary">
-                        ✍️ Template Tugas
-                    </a>
-                    <a href="pertemuan-3/materi/cheat-sheet.html" class="btn btn-success">
-                        📝 Cheat Sheet
-                    </a>
-                </div>
-            </div>
-
-            <!-- Pertemuan 4 -->
-            <div class="pertemuan-card">
-                <h2>
-                    <span class="emoji">🎯</span>
-                    Pertemuan 4
-                    <span class="badge">Mini Project</span>
-                </h2>
-                <h3>Mini Project & Presentasi</h3>
-                <p>Selesaikan website sederhana dan presentasikan hasil karya dengan percaya diri!</p>
-
-                <ul>
-                    <li>Review semua tag HTML</li>
-                    <li>Rapikan struktur website</li>
-                    <li>Tambah sentuhan akhir (warna & gambar)</li>
-                    <li>Latihan presentasi hasil karya</li>
-                </ul>
-
-                <div class="links">
-                    <a href="pertemuan-4/materi/index.html" class="btn btn-primary">
-                        📖 Buka Presentasi
-                    </a>
-                    <a href="pertemuan-4/materi/template-siswa.html" class="btn btn-secondary">
-                        ✍️ Template Tugas
-                    </a>
-                    <a href="pertemuan-4/materi/cheat-sheet.html" class="btn btn-success">
-                        📝 Cheat Sheet
-                    </a>
-                </div>
-            </div>
-
-            <!-- Pertemuan 5 -->
-            <div class="pertemuan-card">
-                <h2>
-                    <span class="emoji">📋</span>
-                    Pertemuan 5
-                    <span class="badge">List & Tabel</span>
-                </h2>
-                <h3>List & Tabel</h3>
-                <p>Belajar menyusun data pakai daftar dan tabel supaya lebih rapi!</p>
-
-                <ul>
-                    <li>Unordered list (ul)</li>
-                    <li>Ordered list (ol)</li>
-                    <li>Struktur tabel dasar</li>
-                    <li>Membuat data kelas dalam tabel</li>
-                </ul>
-
-                <div class="links">
-                    <a href="pertemuan-5/materi/index.html" class="btn btn-primary">
-                        📖 Buka Presentasi
-                    </a>
-                    <a href="pertemuan-5/materi/template-siswa.html" class="btn btn-secondary">
-                        ✍️ Template Tugas
-                    </a>
-                    <a href="pertemuan-5/materi/cheat-sheet.html" class="btn btn-success">
-                        📝 Cheat Sheet
-                    </a>
-                </div>
-            </div>
-
-            <!-- Pertemuan 6 -->
-            <div class="pertemuan-card">
-                <h2>
-                    <span class="emoji">📦</span>
-                    Pertemuan 6
-                    <span class="badge">Kotak & Tombol</span>
-                </h2>
-                <h3>Layout & Tombol</h3>
-                <p>Susun website jadi kotak-kotak rapi dan buat tombol menu yang cantik!</p>
-
-                <ul>
-                    <li>Kotak dengan &lt;div&gt;</li>
-                    <li>Menghias kotak (warna, garis, jarak)</li>
-                    <li>Kotak berjajar ke samping</li>
-                    <li>Tombol menu & Website Ranking Favoritku</li>
-                </ul>
-
-                <div class="links">
-                    <a href="pertemuan-6/materi/index.html" class="btn btn-primary">
-                        📖 Buka Presentasi
-                    </a>
-                    <a href="pertemuan-6/materi/template-siswa.html" class="btn btn-secondary">
-                        ✍️ Template Tugas
-                    </a>
-                    <a href="pertemuan-6/materi/cheat-sheet.html" class="btn btn-success">
-                        📝 Cheat Sheet
-                    </a>
-                </div>
-            </div>
+<body class="halaman">
+    <nav class="nav-bar">
+        <div class="nav-title">Kursus HTML</div>
+        <div class="nav-links">
+            <a href="#pertemuan">Daftar Pertemuan</a>
+            <a href="playground.html">Editor Coba-Coba</a>
+            <a href="docs/PANDUAN-INSTRUKTUR.md">Panduan Instruktur</a>
         </div>
+    </nav>
 
-        <!-- Dokumentasi -->
-        <div class="docs-section">
-            <h2>
-                <span class="emoji">📖</span>
-                Dokumentasi & Panduan
-            </h2>
-            <div class="docs-links">
-                <a href="docs/PANDUAN-INSTRUKTUR.md" class="doc-link">
-                    <span class="emoji">👨‍🏫</span>
-                    <span>Panduan Instruktur</span>
-                </a>
-                <a href="docs/STRUKTUR-FOLDER.md" class="doc-link">
-                    <span class="emoji">📁</span>
-                    <span>Struktur Folder</span>
-                </a>
-                <a href="docs/FITUR-IMPROVEMENTS.md" class="doc-link">
-                    <span class="emoji">⚡</span>
-                    <span>Fitur & Improvement</span>
-                </a>
-                <a href="docs/OPTIMASI-LAPTOP.md" class="doc-link">
-                    <span class="emoji">💻</span>
-                    <span>Optimasi Laptop</span>
-                </a>
+    <main class="hub">
+        <section class="pembuka">
+            <div>
+                <h1>Bikin website sendiri, <em>satu tag</em> demi satu tag.</h1>
+                <p class="ringkas">Kursus HTML untuk anak SD usia 11 tahun. Enam pertemuan, 2 jam per pertemuan,
+                    dan setiap anak pulang membawa website buatannya sendiri.</p>
+                <div class="aksi">
+                    <a class="btn btn-primary" href="pertemuan-1/materi/index.html">Mulai Pertemuan 1</a>
+                    <a class="btn" href="playground.html">Buka Editor Coba-Coba</a>
+                </div>
             </div>
-        </div>
 
-        <footer>
-            <p><strong>Happy Learning! 🎉</strong></p>
-            <p>Dibuat dengan ❤️ untuk generasi programmer masa depan</p>
-        </footer>
-    </div>
+            <div class="contoh" aria-label="Contoh kode HTML dan hasilnya">
+                <div class="judul-jendela"><span>tentang-aku.html</span><span>kode</span></div>
+                <pre><span class="tag">&lt;h1&gt;</span>Halo, aku Rani!<span class="tag">&lt;/h1&gt;</span>
+<span class="tag">&lt;p</span> <span class="atr">style</span>=<span class="str">"color: green;"</span><span class="tag">&gt;</span>
+  Hobiku menggambar kucing.
+<span class="tag">&lt;/p&gt;</span></pre>
+                <div class="judul-jendela"><span>browser</span><span>hasil</span></div>
+                <div class="hasil">
+                    <h3>Halo, aku Rani!</h3>
+                    <p style="color: green;">Hobiku menggambar kucing.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bagian" id="pertemuan">
+            <h2>Daftar Pertemuan</h2>
+            <p class="catatan">Setiap pertemuan punya slide presentasi, template tugas, dan cheat sheet.</p>
+
+            <ol class="daftar">
+                <li class="pertemuan" data-pertemuan="1">
+                    <span class="no">01</span>
+                    <div>
+                        <h3>Dasar HTML</h3>
+                        <p>Kenalan dengan website, browser, dan struktur HTML. Membuat halaman "Tentang Aku".</p>
+                        <ul class="tags">
+                            <li>&lt;html&gt;</li>
+                            <li>&lt;head&gt;</li>
+                            <li>&lt;body&gt;</li>
+                            <li>&lt;h1&gt;</li>
+                            <li>&lt;p&gt;</li>
+                            <li>&lt;br&gt;</li>
+                        </ul>
+                    </div>
+                    <div class="tautan">
+                        <a class="utama" href="pertemuan-1/materi/index.html">Presentasi</a>
+                        <a href="pertemuan-1/materi/template-siswa.html">Template Tugas</a>
+                        <a href="pertemuan-1/materi/cheat-sheet.html">Cheat Sheet</a>
+                    </div>
+                </li>
+
+                <li class="pertemuan" data-pertemuan="2">
+                    <span class="no">02</span>
+                    <div>
+                        <h3>Gambar &amp; Warna</h3>
+                        <p>Memasang gambar, mewarnai tulisan dan latar, serta gaya tebal, miring, garis bawah.</p>
+                        <ul class="tags">
+                            <li>&lt;img&gt;</li>
+                            <li>style="color"</li>
+                            <li>background-color</li>
+                            <li>&lt;b&gt; &lt;i&gt; &lt;u&gt;</li>
+                        </ul>
+                    </div>
+                    <div class="tautan">
+                        <a class="utama" href="pertemuan-2/materi/index.html">Presentasi</a>
+                        <a href="pertemuan-2/materi/template-siswa.html">Template Tugas</a>
+                        <a href="pertemuan-2/materi/cheat-sheet.html">Cheat Sheet</a>
+                    </div>
+                </li>
+
+                <li class="pertemuan" data-pertemuan="3">
+                    <span class="no">03</span>
+                    <div>
+                        <h3>Link &amp; Navigasi</h3>
+                        <p>Menghubungkan halaman dengan link dan membuat menu untuk website beberapa halaman.</p>
+                        <ul class="tags">
+                            <li>&lt;a href&gt;</li>
+                            <li>target="_blank"</li>
+                            <li>menu navigasi</li>
+                        </ul>
+                    </div>
+                    <div class="tautan">
+                        <a class="utama" href="pertemuan-3/materi/index.html">Presentasi</a>
+                        <a href="pertemuan-3/materi/template-siswa.html">Template Tugas</a>
+                        <a href="pertemuan-3/materi/cheat-sheet.html">Cheat Sheet</a>
+                    </div>
+                </li>
+
+                <li class="pertemuan" data-pertemuan="4">
+                    <span class="no">04</span>
+                    <div>
+                        <h3>Mini Project &amp; Presentasi</h3>
+                        <p>Merapikan dan menyelesaikan satu website, lalu berlatih menceritakannya di depan kelas.</p>
+                        <ul class="tags">
+                            <li>review semua tag</li>
+                            <li>presentasi 60 detik</li>
+                        </ul>
+                    </div>
+                    <div class="tautan">
+                        <a class="utama" href="pertemuan-4/materi/index.html">Presentasi</a>
+                        <a href="pertemuan-4/materi/template-siswa.html">Template Tugas</a>
+                        <a href="pertemuan-4/materi/cheat-sheet.html">Cheat Sheet</a>
+                    </div>
+                </li>
+
+                <li class="pertemuan" data-pertemuan="5">
+                    <span class="no">05</span>
+                    <div>
+                        <h3>List &amp; Tabel</h3>
+                        <p>Menyusun data dengan daftar berpoin, daftar bernomor, dan tabel. Membuat Profil Kelas.</p>
+                        <ul class="tags">
+                            <li>&lt;ul&gt;</li>
+                            <li>&lt;ol&gt;</li>
+                            <li>&lt;li&gt;</li>
+                            <li>&lt;table&gt;</li>
+                            <li>&lt;tr&gt; &lt;th&gt; &lt;td&gt;</li>
+                        </ul>
+                    </div>
+                    <div class="tautan">
+                        <a class="utama" href="pertemuan-5/materi/index.html">Presentasi</a>
+                        <a href="pertemuan-5/materi/template-siswa.html">Template Tugas</a>
+                        <a href="pertemuan-5/materi/cheat-sheet.html">Cheat Sheet</a>
+                    </div>
+                </li>
+
+                <li class="pertemuan" data-pertemuan="6">
+                    <span class="no">06</span>
+                    <div>
+                        <h3>Kotak &amp; Tombol</h3>
+                        <p>Menyusun halaman dari kotak-kotak dan membuat tombol menu. Membuat Website Ranking
+                            Favoritku.</p>
+                        <ul class="tags">
+                            <li>&lt;div&gt;</li>
+                            <li>padding / margin</li>
+                            <li>display: flex</li>
+                            <li>tombol</li>
+                        </ul>
+                    </div>
+                    <div class="tautan">
+                        <a class="utama" href="pertemuan-6/materi/index.html">Presentasi</a>
+                        <a href="pertemuan-6/materi/template-siswa.html">Template Tugas</a>
+                        <a href="pertemuan-6/materi/cheat-sheet.html">Cheat Sheet</a>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <section class="bagian">
+            <h2>Untuk Instruktur</h2>
+            <p class="catatan">Hal yang perlu disiapkan sebelum kelas.</p>
+            <div class="instruktur">
+                <div class="card">
+                    <h3>Membuka slide</h3>
+                    <ul>
+                        <li>Slide butuh internet (memuat reveal.js).</li>
+                        <li>Kode akses Pertemuan 1: <code>html2025</code></li>
+                        <li>Tekan <kbd>F11</kbd> untuk layar penuh.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Navigasi slide</h3>
+                    <ul>
+                        <li><kbd>Spasi</kbd> atau <kbd>→</kbd> maju</li>
+                        <li><kbd>←</kbd> mundur</li>
+                        <li><kbd>Esc</kbd> lihat semua slide</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Dokumen</h3>
+                    <ul>
+                        <li><a href="docs/PANDUAN-INSTRUKTUR.md">Panduan Instruktur</a></li>
+                        <li><a href="docs/STRUKTUR-FOLDER.md">Struktur Folder</a></li>
+                        <li><a href="reference/KURSUS%20HTML%20ANAK%20SD.pdf">Silabus asli (PDF)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer>Kursus HTML untuk Anak SD &middot; 6 pertemuan &middot; 2 jam per pertemuan</footer>
+    </main>
 </body>
 
 </html>
